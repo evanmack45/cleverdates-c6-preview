@@ -1,7 +1,14 @@
 # Validates every trio and writes ../trios.json. Exits non-zero on any failure.
 import json,sys,urllib.parse,random
-import events, events2
+import events, events2, events3
+from feel import FEEL
+LURE_MIN=1.0   # a trio is low-surprise if its answer pair does not feel at least 1 era-step farther apart than some decoy pair
+LONG_GAP=1000  # years: an answer pair this far apart (and decisively the closest) is a long-gap surprise on its own
+import os
+MAX_LOW=float(os.environ.get('MAX_LOW','0.5'))   # at most 50% may be low-surprise (set at today's level so it cannot regress; tighten as more TIL trios are added)
+MAX_PLAIN=int(os.environ.get('MAX_PLAIN','15'))   # at most 15 plain same-decade coincidences (answer gap <= 10 years, no lure, no long gap)
 from events import E,T
+T[:]=[t for t in T if frozenset(t[:3]) not in events3.DROP]
 def gap(a,b):
     lo=max(0,a['lo']-b['hi'],b['lo']-a['hi']); hi=max(a['hi']-b['lo'],b['hi']-a['lo']); return lo,hi
 def mid(e): return (e['lo']+e['hi'])/2
@@ -30,7 +37,13 @@ for i,(a,b,c,hook) in enumerate(T):
     # display order: seeded shuffle so the answer pair is not always first
     order=ids[:]; random.Random(1000+i).shuffle(order)
     ans=sorted([ids[best[0]],ids[best[1]]],key=order.index)
-    out.append(dict(n=i+1,e=order,answer=ans,hook=hook,
+    if any(k not in FEEL for k in ids): bad.append(f'{i}: missing feel tag'); continue
+    fg=lambda p:abs(FEEL[ids[p[0]]]-FEEL[ids[p[1]]])
+    lure=fg(best)-min(fg(p) for p in others)   # >0: the true closest pair FEELS farther apart than a decoy pair
+    ratio=min(g[p][0] for p in others)/max(g[best][1],1)
+    decade=g[best][1]<=10
+    longgap=g[best][1]>=LONG_GAP and ratio<=6
+    out.append(dict(n=i+1,e=order,answer=ans,hook=hook,til=dict(lure=lure,ratio=round(ratio,1),sameDecade=decade,longGap=longgap,low=(lure<LURE_MIN and not longgap)),
         gaps={f'{ids[p[0]]}-{ids[p[1]]}':[round(g[p][0]),round(g[p][1])] for p in pairs},margin=round(margin)))
 from collections import Counter
 ansfirst=sum(1 for t in out if set(t['answer'])=={t['e'][0],t['e'][1]})
@@ -59,10 +72,14 @@ for n,_,_ in ERAS:
     if era_trios[n]<10: bad.append(f'era {n!r} touches only {era_trios[n]} trios (need 10)')
 slots=sum(reg_slots.values()); west=(reg_slots['Europe']+reg_slots['North America'])/slots
 if west>0.5: bad.append(f'Europe + North America are {west:.0%} of event slots (max 50%)')
+low=[t['n'] for t in out if t['til']['low']]
+plain=[t['n'] for t in out if t['til']['low'] and t['til']['sameDecade']]
+if len(plain)>MAX_PLAIN: bad.append(f'{len(plain)} plain same-decade trios (max {MAX_PLAIN}): {plain}')
+if len(low)>MAX_LOW*len(out): bad.append(f'{len(low)} low-surprise trios (max {MAX_LOW:.0%} = {int(MAX_LOW*len(out))}): {low}')
 if bad:
     print('\n'.join(bad)); sys.exit(1)
 ev={k:{x:E[k][x] for x in ('name','when','lo','hi','prec','src','region')} for k in sorted(cnt)}
-cov=dict(maxAnchorRepeat=max(cnt.values()),eraSlots=dict(era_slots),eraTrios=era_trios,regionSlots=dict(reg_slots),regionTrios=reg_trios,westShare=round(west,3))
+cov=dict(maxAnchorRepeat=max(cnt.values()),eraSlots=dict(era_slots),eraTrios=era_trios,regionSlots=dict(reg_slots),regionTrios=reg_trios,westShare=round(west,3),lowSurprise=len(low),lowSurpriseTrios=low,plainSameDecade=len(plain),plainTrios=plain,withLure=sum(1 for t in out if t['til']['lure']>=LURE_MIN),withLongGap=sum(1 for t in out if t['til']['longGap']),sameDecade=sum(1 for t in out if t['til']['sameDecade']))
 json.dump(dict(meta=dict(count=len(out),note='Years are astronomical (1 BC = 0). lo/hi bound each date; every answer holds at the worst case inside those bounds (margin = smallest other-pair gap minus largest answer-pair gap, in years). Built by tools/build_trios.py from tools/events.py and events2.py; every source page was fetched on 2026-11-25 and checked to contain the stated date. Rules enforced: 100+ trios, no event in more than 4 trios, every region and era covered.',checked='2026-11-25',coverage=cov),events=ev,trios=out),open('../trios.json','w'),ensure_ascii=False,indent=1)
 print(f'OK {len(out)} trios, {len(ev)} events; tightest margins:',sorted((t['margin'],t['n']) for t in out)[:6])
-print('max anchor repeat',cov['maxAnchorRepeat'],cnt.most_common(5)); print('west share',cov['westShare']); print('era trios',era_trios); print('region trios',reg_trios); print('answer = first two shown:',ansfirst)
+print('max anchor repeat',cov['maxAnchorRepeat'],cnt.most_common(5)); print('west share',cov['westShare']); print('era trios',era_trios); print('region trios',reg_trios); print('low-surprise',len(low),low,'plain',len(plain),plain,'lure',cov['withLure'],'longgap',cov['withLongGap'],'same-decade',cov['sameDecade']); print('answer = first two shown:',ansfirst)
