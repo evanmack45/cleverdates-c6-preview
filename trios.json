@@ -1,0 +1,2015 @@
+{
+ "meta": {
+  "count": 43,
+  "note": "Years are astronomical (1 BC = 0). lo/hi bound each date; every answer holds at the worst case inside those bounds (margin = smallest other-pair gap minus largest answer-pair gap, in years). Built by tools/build_trios.py from tools/events.py; every source page was fetched on 2026-11-25 and checked to contain the stated date.",
+  "checked": "2026-11-25"
+ },
+ "events": {
+  "alamo": {
+   "name": "The Battle of the Alamo",
+   "when": "1836",
+   "lo": 1836,
+   "hi": 1836.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Battle_of_the_Alamo"
+  },
+  "alaska": {
+   "name": "The US buys Alaska from Russia",
+   "when": "1867",
+   "lo": 1867,
+   "hi": 1867.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Alaska_Purchase"
+  },
+  "antarctica": {
+   "name": "People first see Antarctica",
+   "when": "1820",
+   "lo": 1820,
+   "hi": 1820.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Antarctica"
+  },
+  "antikythera": {
+   "name": "The Antikythera mechanism (an ancient Greek analog computer) is made",
+   "when": "c. 150–100 BC",
+   "lo": -204,
+   "hi": -59,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Antikythera_mechanism"
+  },
+  "armada": {
+   "name": "The Spanish Armada sails against England",
+   "when": "1588",
+   "lo": 1588,
+   "hi": 1588.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Spanish_Armada"
+  },
+  "barbie": {
+   "name": "Barbie goes on sale",
+   "when": "1959",
+   "lo": 1959,
+   "hi": 1959.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Barbie"
+  },
+  "basketball": {
+   "name": "Basketball is invented",
+   "when": "1891",
+   "lo": 1891,
+   "hi": 1891.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Basketball"
+  },
+  "bastille": {
+   "name": "The storming of the Bastille",
+   "when": "1789",
+   "lo": 1789,
+   "hi": 1789.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Storming_of_the_Bastille"
+  },
+  "battery": {
+   "name": "Volta builds the first battery",
+   "when": "1799–1800",
+   "lo": 1799,
+   "hi": 1800.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Voltaic_pile"
+  },
+  "benz": {
+   "name": "Benz builds the first car",
+   "when": "1885–86",
+   "lo": 1885,
+   "hi": 1886.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Benz_Patent-Motorwagen"
+  },
+  "boe": {
+   "name": "The Bank of England opens",
+   "when": "1694",
+   "lo": 1694,
+   "hi": 1694.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Bank_of_England"
+  },
+  "caesar": {
+   "name": "Julius Caesar is assassinated",
+   "when": "44 BC",
+   "lo": -43,
+   "hi": -42.001,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Assassination_of_Julius_Caesar"
+  },
+  "civilwar": {
+   "name": "The American Civil War ends",
+   "when": "1865",
+   "lo": 1865,
+   "hi": 1865.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/American_Civil_War"
+  },
+  "cleo": {
+   "name": "Cleopatra is born",
+   "when": "70 or 69 BC",
+   "lo": -69,
+   "hi": -67.001,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Cleopatra"
+  },
+  "colosseum": {
+   "name": "The Colosseum opens in Rome",
+   "when": "AD 80",
+   "lo": 80,
+   "hi": 80.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Colosseum"
+  },
+  "columbus": {
+   "name": "Columbus reaches the Americas",
+   "when": "1492",
+   "lo": 1492,
+   "hi": 1492.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus"
+  },
+  "concorde": {
+   "name": "Concorde starts carrying passengers",
+   "when": "1976",
+   "lo": 1976,
+   "hi": 1976.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Concorde"
+  },
+  "constantinople": {
+   "name": "Constantinople falls to the Ottomans",
+   "when": "1453",
+   "lo": 1453,
+   "hi": 1453.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Fall_of_Constantinople"
+  },
+  "cun_first": {
+   "name": "Cuneiform writing begins in Sumer",
+   "when": "c. 3300 BC",
+   "lo": -3499,
+   "hi": -3099,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Cuneiform"
+  },
+  "cun_last": {
+   "name": "The last known cuneiform tablet is written",
+   "when": "AD 75–80",
+   "lo": 75,
+   "hi": 80.999,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Cuneiform"
+  },
+  "declaration": {
+   "name": "The US Declaration of Independence is signed",
+   "when": "1776",
+   "lo": 1776,
+   "hi": 1776.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence"
+  },
+  "dna": {
+   "name": "The shape of DNA (the double helix) is published",
+   "when": "1953",
+   "lo": 1953,
+   "hi": 1953.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Nucleic_acid_double_helix"
+  },
+  "dodo": {
+   "name": "The last confirmed dodo sighting",
+   "when": "1662",
+   "lo": 1662,
+   "hi": 1662.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Dodo"
+  },
+  "email": {
+   "name": "The first network email is sent",
+   "when": "1971",
+   "lo": 1971,
+   "hi": 1971.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Email"
+  },
+  "eniac": {
+   "name": "ENIAC, the first general-purpose electronic computer, is finished",
+   "when": "1945",
+   "lo": 1945,
+   "hi": 1946.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/ENIAC"
+  },
+  "everest": {
+   "name": "First people on top of Everest",
+   "when": "1953",
+   "lo": 1953,
+   "hi": 1953.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/1953_British_Mount_Everest_expedition"
+  },
+  "fax": {
+   "name": "The fax machine is patented",
+   "when": "1843",
+   "lo": 1843,
+   "hi": 1843.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Fax"
+  },
+  "galileo": {
+   "name": "Galileo is put on trial by the Inquisition",
+   "when": "1633",
+   "lo": 1633,
+   "hi": 1633.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Galileo_affair"
+  },
+  "gettysburg": {
+   "name": "The Battle of Gettysburg",
+   "when": "1863",
+   "lo": 1863,
+   "hi": 1863.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg"
+  },
+  "glasses": {
+   "name": "Eyeglasses are invented in Italy",
+   "when": "c. 1290",
+   "lo": 1280,
+   "hi": 1300,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Glasses"
+  },
+  "gobekli": {
+   "name": "Göbekli Tepe, the oldest known temple, is built",
+   "when": "c. 9500 BC",
+   "lo": -9499,
+   "hi": -7999,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe"
+  },
+  "guillotine": {
+   "name": "France's last execution by guillotine",
+   "when": "1977",
+   "lo": 1977,
+   "hi": 1977.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Guillotine"
+  },
+  "gutenberg": {
+   "name": "The Gutenberg Bible is printed",
+   "when": "c. 1455",
+   "lo": 1454,
+   "hi": 1455.999,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Gutenberg_Bible"
+  },
+  "hamlet": {
+   "name": "Shakespeare writes Hamlet",
+   "when": "c. 1600",
+   "lo": 1599,
+   "hi": 1601.999,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Hamlet"
+  },
+  "harvard": {
+   "name": "Harvard is founded",
+   "when": "1636",
+   "lo": 1636,
+   "hi": 1636.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Harvard_University"
+  },
+  "hastings": {
+   "name": "The Battle of Hastings",
+   "when": "1066",
+   "lo": 1066,
+   "hi": 1066.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Battle_of_Hastings"
+  },
+  "hawaii": {
+   "name": "Hawaii becomes the 50th US state",
+   "when": "1959",
+   "lo": 1959,
+   "hi": 1959.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Hawaii_Admission_Act"
+  },
+  "hero": {
+   "name": "Hero of Alexandria describes a coin-operated vending machine",
+   "when": "1st century AD",
+   "lo": 10,
+   "hi": 85,
+   "prec": "century",
+   "src": "https://en.wikipedia.org/wiki/Vending_machine"
+  },
+  "iphone": {
+   "name": "The first iPhone goes on sale",
+   "when": "2007",
+   "lo": 2007,
+   "hi": 2007.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
+  },
+  "kongo": {
+   "name": "Kongō Gumi, a Japanese temple-building firm, is founded",
+   "when": "6th century AD",
+   "lo": 500,
+   "hi": 600.999,
+   "prec": "century",
+   "src": "https://en.wikipedia.org/wiki/Kong%C5%8D_Gumi"
+  },
+  "lincoln": {
+   "name": "Abraham Lincoln is assassinated",
+   "when": "1865",
+   "lo": 1865,
+   "hi": 1865.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Assassination_of_Abraham_Lincoln"
+  },
+  "loco": {
+   "name": "The first steam railway locomotive runs",
+   "when": "1804",
+   "lo": 1804,
+   "hi": 1804.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Steam_locomotive"
+  },
+  "lucy": {
+   "name": "Lucy, an early human ancestor, lives in Ethiopia",
+   "when": "3.2 million years ago",
+   "lo": -3247974.0,
+   "hi": -3147974.0,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Lucy_(Australopithecus)"
+  },
+  "machu": {
+   "name": "Machu Picchu is built",
+   "when": "c. 1450",
+   "lo": 1420,
+   "hi": 1470,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Machu_Picchu"
+  },
+  "magellan": {
+   "name": "Magellan's crew finishes the first trip around the world",
+   "when": "1522",
+   "lo": 1522,
+   "hi": 1522.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Magellan_expedition"
+  },
+  "magna": {
+   "name": "Magna Carta is sealed",
+   "when": "1215",
+   "lo": 1215,
+   "hi": 1215.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Magna_Carta"
+  },
+  "mammoth": {
+   "name": "The last woolly mammoths die out",
+   "when": "c. 2000 BC (about 4,000 years ago)",
+   "lo": -2299,
+   "hi": -1649,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Woolly_mammoth"
+  },
+  "mario": {
+   "name": "Super Mario Bros. comes out",
+   "when": "1985",
+   "lo": 1985,
+   "hi": 1985.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Super_Mario_Bros."
+  },
+  "mayflower": {
+   "name": "The Mayflower lands at Plymouth",
+   "when": "1620",
+   "lo": 1620,
+   "hi": 1620.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Mayflower"
+  },
+  "megalodon": {
+   "name": "Megalodon goes extinct",
+   "when": "c. 3.6 million years ago",
+   "lo": -3697974.0,
+   "hi": -2597974.0,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Megalodon"
+  },
+  "methuselah": {
+   "name": "Methuselah, a bristlecone pine still alive today, sprouts",
+   "when": "c. 2833 BC",
+   "lo": -2899,
+   "hi": -2799,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Methuselah_(pine_tree)"
+  },
+  "moai": {
+   "name": "The Easter Island statues (moai) are carved",
+   "when": "c. 1250–1500",
+   "lo": 1250,
+   "hi": 1500,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Moai"
+  },
+  "mobile": {
+   "name": "The first handheld mobile phone call",
+   "when": "1973",
+   "lo": 1973,
+   "hi": 1973.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Mobile_phone"
+  },
+  "moon": {
+   "name": "Apollo 11 lands on the Moon",
+   "when": "1969",
+   "lo": 1969,
+   "hi": 1969.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Apollo_11"
+  },
+  "nba": {
+   "name": "The first season of what became the NBA",
+   "when": "1946",
+   "lo": 1946,
+   "hi": 1946.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/1946%E2%80%9347_BAA_season"
+  },
+  "neptune": {
+   "name": "Neptune is discovered",
+   "when": "1846",
+   "lo": 1846,
+   "hi": 1846.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Discovery_of_Neptune"
+  },
+  "nintendo": {
+   "name": "Nintendo is founded (as a playing-card maker)",
+   "when": "1889",
+   "lo": 1889,
+   "hi": 1889.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Nintendo"
+  },
+  "nokia": {
+   "name": "Nokia starts out as a paper mill",
+   "when": "1865",
+   "lo": 1865,
+   "hi": 1865.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Nokia"
+  },
+  "notredame": {
+   "name": "The first stone of Notre-Dame de Paris is laid",
+   "when": "1163",
+   "lo": 1163,
+   "hi": 1163.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris"
+  },
+  "okcorral": {
+   "name": "The Gunfight at the O.K. Corral",
+   "when": "1881",
+   "lo": 1881,
+   "hi": 1881.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Gunfight_at_the_O.K._Corral"
+  },
+  "oreo": {
+   "name": "The first Oreo cookie is sold",
+   "when": "1912",
+   "lo": 1912,
+   "hi": 1912.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Oreo"
+  },
+  "origin": {
+   "name": "Darwin publishes On the Origin of Species",
+   "when": "1859",
+   "lo": 1859,
+   "hi": 1859.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/On_the_Origin_of_Species"
+  },
+  "ott_end": {
+   "name": "The Ottoman sultanate is abolished",
+   "when": "1922",
+   "lo": 1922,
+   "hi": 1922.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Abolition_of_the_Ottoman_sultanate"
+  },
+  "ott_start": {
+   "name": "The Ottoman Empire is founded",
+   "when": "c. 1299",
+   "lo": 1290,
+   "hi": 1310,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Ottoman_Empire"
+  },
+  "oxford": {
+   "name": "Teaching begins at Oxford",
+   "when": "1096 (by 1167 at the latest)",
+   "lo": 1096,
+   "hi": 1167,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/University_of_Oxford"
+  },
+  "pacman": {
+   "name": "Pac-Man comes out",
+   "when": "1980",
+   "lo": 1980,
+   "hi": 1980.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Pac-Man"
+  },
+  "phone": {
+   "name": "Bell patents the telephone",
+   "when": "1876",
+   "lo": 1876,
+   "hi": 1876.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Invention_of_the_telephone"
+  },
+  "pluto": {
+   "name": "Pluto is discovered",
+   "when": "1930",
+   "lo": 1930,
+   "hi": 1930.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Pluto"
+  },
+  "pompeii": {
+   "name": "Vesuvius buries Pompeii",
+   "when": "AD 79",
+   "lo": 79,
+   "hi": 79.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Eruption_of_Mount_Vesuvius_in_79_AD"
+  },
+  "pyramid": {
+   "name": "The Great Pyramid of Giza is built",
+   "when": "c. 2600 BC",
+   "lo": -2699,
+   "hi": -2499,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+  },
+  "rome": {
+   "name": "Rome is founded (by tradition)",
+   "when": "753 BC",
+   "lo": -799,
+   "hi": -699,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Founding_of_Rome"
+  },
+  "romefall": {
+   "name": "The last Western Roman emperor is deposed",
+   "when": "476",
+   "lo": 476,
+   "hi": 476.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire"
+  },
+  "safety": {
+   "name": "The modern-shape bicycle (the Rover) appears",
+   "when": "1885",
+   "lo": 1885,
+   "hi": 1885.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Safety_bicycle"
+  },
+  "salem": {
+   "name": "The Salem witch trials",
+   "when": "1692",
+   "lo": 1692,
+   "hi": 1693.4,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Salem_witch_trials"
+  },
+  "satsuma": {
+   "name": "The last samurai revolt (Satsuma Rebellion)",
+   "when": "1877",
+   "lo": 1877,
+   "hi": 1877.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Satsuma_Rebellion"
+  },
+  "sekigahara": {
+   "name": "The Battle of Sekigahara",
+   "when": "1600",
+   "lo": 1600,
+   "hi": 1600.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Battle_of_Sekigahara"
+  },
+  "sharks": {
+   "name": "The earliest shark relatives swim the seas",
+   "when": "over 420 million years ago",
+   "lo": -457997974.0,
+   "hi": -418997974.0,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Shark"
+  },
+  "sliced": {
+   "name": "Sliced bread is first sold",
+   "when": "1928",
+   "lo": 1928,
+   "hi": 1928.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Sliced_bread"
+  },
+  "smallpox": {
+   "name": "Smallpox is declared wiped out",
+   "when": "1980",
+   "lo": 1980,
+   "hi": 1980.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Smallpox"
+  },
+  "starry": {
+   "name": "Van Gogh paints The Starry Night",
+   "when": "1889",
+   "lo": 1889,
+   "hi": 1889.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/The_Starry_Night"
+  },
+  "starwars": {
+   "name": "Star Wars opens in cinemas",
+   "when": "1977",
+   "lo": 1977,
+   "hi": 1977.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Star_Wars_(film)"
+  },
+  "steg": {
+   "name": "Stegosaurus walks the Earth",
+   "when": "155–145 million years ago",
+   "lo": -154997974.0,
+   "hi": -144997974.0,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Stegosaurus"
+  },
+  "stonehenge": {
+   "name": "Stonehenge's big sarsen circle goes up",
+   "when": "c. 2500 BC",
+   "lo": -2599,
+   "hi": -2399,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Stonehenge"
+  },
+  "taj": {
+   "name": "Work begins on the Taj Mahal",
+   "when": "1632",
+   "lo": 1631,
+   "hi": 1632.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Taj_Mahal"
+  },
+  "tenoch": {
+   "name": "The Aztecs found their capital, Tenochtitlan",
+   "when": "1325",
+   "lo": 1325,
+   "hi": 1325.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Tenochtitlan"
+  },
+  "terracotta": {
+   "name": "China's Terracotta Army is made",
+   "when": "c. 246–208 BC",
+   "lo": -245,
+   "hi": -207,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Terracotta_Army"
+  },
+  "thylacine": {
+   "name": "The last known Tasmanian tiger dies",
+   "when": "1936",
+   "lo": 1936,
+   "hi": 1936.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Thylacine"
+  },
+  "titanic": {
+   "name": "The Titanic sinks",
+   "when": "1912",
+   "lo": 1912,
+   "hi": 1912.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Titanic"
+  },
+  "today": {
+   "name": "You, reading this",
+   "when": "2026",
+   "lo": 2026,
+   "hi": 2026.999,
+   "prec": "year",
+   "src": null
+  },
+  "toilet": {
+   "name": "The first flush toilet is built in England",
+   "when": "1596",
+   "lo": 1596,
+   "hi": 1596.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Flush_toilet"
+  },
+  "trees": {
+   "name": "The first trees",
+   "when": "c. 385 million years ago",
+   "lo": -394997974.0,
+   "hi": -379997974.0,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Wattieza"
+  },
+  "trex": {
+   "name": "Tyrannosaurus rex walks the Earth",
+   "when": "68–66 million years ago",
+   "lo": -69997974.0,
+   "hi": -65997974.0,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Tyrannosaurus"
+  },
+  "tv": {
+   "name": "Television is first shown to the public",
+   "when": "1926",
+   "lo": 1926,
+   "hi": 1926.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/John_Logie_Baird"
+  },
+  "uranus": {
+   "name": "Uranus is discovered",
+   "when": "1781",
+   "lo": 1781,
+   "hi": 1781.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Uranus"
+  },
+  "vaccine": {
+   "name": "The first vaccine (for smallpox)",
+   "when": "1796",
+   "lo": 1796,
+   "hi": 1796.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Smallpox_vaccine"
+  },
+  "vending": {
+   "name": "The first modern coin vending machines appear in London",
+   "when": "early 1880s",
+   "lo": 1880,
+   "hi": 1885,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Vending_machine"
+  },
+  "viking1": {
+   "name": "Viking 1 lands on Mars",
+   "when": "1976",
+   "lo": 1976,
+   "hi": 1976.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Viking_1"
+  },
+  "vikings": {
+   "name": "Vikings are cutting wood in Newfoundland",
+   "when": "1021",
+   "lo": 1021,
+   "hi": 1021.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/L%27Anse_aux_Meadows"
+  },
+  "willie": {
+   "name": "Mickey Mouse debuts in Steamboat Willie",
+   "when": "1928",
+   "lo": 1928,
+   "hi": 1928.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Steamboat_Willie"
+  },
+  "wright": {
+   "name": "The Wright brothers make the first powered flight",
+   "when": "1903",
+   "lo": 1903,
+   "hi": 1903.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Wright_Flyer"
+  }
+ },
+ "trios": [
+  {
+   "n": 1,
+   "e": [
+    "iphone",
+    "cleo",
+    "pyramid"
+   ],
+   "answer": [
+    "iphone",
+    "cleo"
+   ],
+   "hook": "Cleopatra lived closer in time to the iPhone than to the building of the Great Pyramid.",
+   "gaps": {
+    "cleo-pyramid": [
+     2430,
+     2632
+    ],
+    "cleo-iphone": [
+     2074,
+     2077
+    ],
+    "pyramid-iphone": [
+     4506,
+     4707
+    ]
+   },
+   "margin": 353
+  },
+  {
+   "n": 2,
+   "e": [
+    "steg",
+    "today",
+    "trex"
+   ],
+   "answer": [
+    "today",
+    "trex"
+   ],
+   "hook": "T. rex is closer in time to you than to Stegosaurus.",
+   "gaps": {
+    "trex-steg": [
+     75000000,
+     89000000
+    ],
+    "trex-today": [
+     66000000,
+     70000001
+    ],
+    "steg-today": [
+     145000000,
+     155000001
+    ]
+   },
+   "margin": 4999999
+  },
+  {
+   "n": 3,
+   "e": [
+    "mammoth",
+    "pyramid",
+    "colosseum"
+   ],
+   "answer": [
+    "mammoth",
+    "pyramid"
+   ],
+   "hook": "Woolly mammoths were still alive when the Great Pyramid went up.",
+   "gaps": {
+    "mammoth-pyramid": [
+     200,
+     1050
+    ],
+    "mammoth-colosseum": [
+     1729,
+     2380
+    ],
+    "pyramid-colosseum": [
+     2579,
+     2780
+    ]
+   },
+   "margin": 679
+  },
+  {
+   "n": 4,
+   "e": [
+    "nintendo",
+    "mario",
+    "starry"
+   ],
+   "answer": [
+    "nintendo",
+    "starry"
+   ],
+   "hook": "Nintendo is as old as The Starry Night.",
+   "gaps": {
+    "nintendo-starry": [
+     0,
+     1
+    ],
+    "nintendo-mario": [
+     95,
+     97
+    ],
+    "starry-mario": [
+     95,
+     97
+    ]
+   },
+   "margin": 94
+  },
+  {
+   "n": 5,
+   "e": [
+    "willie",
+    "ott_end",
+    "ott_start"
+   ],
+   "answer": [
+    "willie",
+    "ott_end"
+   ],
+   "hook": "The Ottoman Empire was still around 6 years before Mickey Mouse.",
+   "gaps": {
+    "ott_end-ott_start": [
+     612,
+     633
+    ],
+    "ott_end-willie": [
+     5,
+     7
+    ],
+    "ott_start-willie": [
+     618,
+     639
+    ]
+   },
+   "margin": 605
+  },
+  {
+   "n": 6,
+   "e": [
+    "harvard",
+    "declaration",
+    "galileo"
+   ],
+   "answer": [
+    "harvard",
+    "galileo"
+   ],
+   "hook": "Harvard was founded 3 years after Galileo was put on trial.",
+   "gaps": {
+    "harvard-galileo": [
+     2,
+     4
+    ],
+    "harvard-declaration": [
+     139,
+     141
+    ],
+    "galileo-declaration": [
+     142,
+     144
+    ]
+   },
+   "margin": 135
+  },
+  {
+   "n": 7,
+   "e": [
+    "sekigahara",
+    "satsuma",
+    "phone"
+   ],
+   "answer": [
+    "satsuma",
+    "phone"
+   ],
+   "hook": "Samurai were still fighting a year after the telephone was patented.",
+   "gaps": {
+    "satsuma-phone": [
+     0,
+     2
+    ],
+    "satsuma-sekigahara": [
+     276,
+     278
+    ],
+    "phone-sekigahara": [
+     275,
+     277
+    ]
+   },
+   "margin": 273
+  },
+  {
+   "n": 8,
+   "e": [
+    "alamo",
+    "email",
+    "fax"
+   ],
+   "answer": [
+    "alamo",
+    "fax"
+   ],
+   "hook": "The fax machine is 7 years younger than the Alamo.",
+   "gaps": {
+    "fax-alamo": [
+     6,
+     8
+    ],
+    "fax-email": [
+     127,
+     129
+    ],
+    "alamo-email": [
+     134,
+     136
+    ]
+   },
+   "margin": 119
+  },
+  {
+   "n": 9,
+   "e": [
+    "constantinople",
+    "gutenberg",
+    "romefall"
+   ],
+   "answer": [
+    "constantinople",
+    "gutenberg"
+   ],
+   "hook": "The Roman Empire (its eastern half) lasted until the age of the printing press.",
+   "gaps": {
+    "constantinople-gutenberg": [
+     0,
+     3
+    ],
+    "constantinople-romefall": [
+     976,
+     978
+    ],
+    "gutenberg-romefall": [
+     977,
+     980
+    ]
+   },
+   "margin": 973
+  },
+  {
+   "n": 10,
+   "e": [
+    "columbus",
+    "colosseum",
+    "machu"
+   ],
+   "answer": [
+    "columbus",
+    "machu"
+   ],
+   "hook": "Machu Picchu was only about 40 years old when Columbus sailed.",
+   "gaps": {
+    "machu-columbus": [
+     22,
+     73
+    ],
+    "machu-colosseum": [
+     1339,
+     1390
+    ],
+    "columbus-colosseum": [
+     1411,
+     1413
+    ]
+   },
+   "margin": 1266
+  },
+  {
+   "n": 11,
+   "e": [
+    "colosseum",
+    "pompeii",
+    "caesar"
+   ],
+   "answer": [
+    "colosseum",
+    "pompeii"
+   ],
+   "hook": "The Colosseum opened one year after Pompeii was buried.",
+   "gaps": {
+    "pompeii-colosseum": [
+     0,
+     2
+    ],
+    "pompeii-caesar": [
+     121,
+     123
+    ],
+    "colosseum-caesar": [
+     122,
+     124
+    ]
+   },
+   "margin": 119
+  },
+  {
+   "n": 12,
+   "e": [
+    "vikings",
+    "columbus",
+    "hastings"
+   ],
+   "answer": [
+    "vikings",
+    "hastings"
+   ],
+   "hook": "Vikings were in America 471 years before Columbus.",
+   "gaps": {
+    "vikings-hastings": [
+     44,
+     46
+    ],
+    "vikings-columbus": [
+     470,
+     472
+    ],
+    "hastings-columbus": [
+     425,
+     427
+    ]
+   },
+   "margin": 379
+  },
+  {
+   "n": 13,
+   "e": [
+    "bastille",
+    "guillotine",
+    "starwars"
+   ],
+   "answer": [
+    "guillotine",
+    "starwars"
+   ],
+   "hook": "France still used the guillotine the year Star Wars came out.",
+   "gaps": {
+    "guillotine-starwars": [
+     0,
+     1
+    ],
+    "guillotine-bastille": [
+     187,
+     189
+    ],
+    "starwars-bastille": [
+     187,
+     189
+    ]
+   },
+   "margin": 186
+  },
+  {
+   "n": 14,
+   "e": [
+    "antarctica",
+    "magellan",
+    "battery"
+   ],
+   "answer": [
+    "antarctica",
+    "battery"
+   ],
+   "hook": "People had batteries before anyone had seen Antarctica.",
+   "gaps": {
+    "antarctica-battery": [
+     19,
+     22
+    ],
+    "antarctica-magellan": [
+     297,
+     299
+    ],
+    "battery-magellan": [
+     276,
+     279
+    ]
+   },
+   "margin": 254
+  },
+  {
+   "n": 15,
+   "e": [
+    "mayflower",
+    "taj",
+    "machu"
+   ],
+   "answer": [
+    "mayflower",
+    "taj"
+   ],
+   "hook": "The Taj Mahal is younger than the Mayflower landing.",
+   "gaps": {
+    "taj-mayflower": [
+     10,
+     13
+    ],
+    "taj-machu": [
+     161,
+     213
+    ],
+    "mayflower-machu": [
+     150,
+     201
+    ]
+   },
+   "margin": 137
+  },
+  {
+   "n": 16,
+   "e": [
+    "trex",
+    "trees",
+    "sharks"
+   ],
+   "answer": [
+    "trees",
+    "sharks"
+   ],
+   "hook": "The shark family tree is older than trees.",
+   "gaps": {
+    "sharks-trees": [
+     24000000,
+     78000000
+    ],
+    "sharks-trex": [
+     349000000,
+     392000000
+    ],
+    "trees-trex": [
+     310000000,
+     329000000
+    ]
+   },
+   "margin": 232000000
+  },
+  {
+   "n": 17,
+   "e": [
+    "stonehenge",
+    "rome",
+    "pyramid"
+   ],
+   "answer": [
+    "stonehenge",
+    "pyramid"
+   ],
+   "hook": "Stonehenge and the Great Pyramid went up at about the same time.",
+   "gaps": {
+    "stonehenge-pyramid": [
+     0,
+     300
+    ],
+    "stonehenge-rome": [
+     1600,
+     1900
+    ],
+    "pyramid-rome": [
+     1700,
+     2000
+    ]
+   },
+   "margin": 1300
+  },
+  {
+   "n": 18,
+   "e": [
+    "wright",
+    "civilwar",
+    "moon"
+   ],
+   "answer": [
+    "wright",
+    "civilwar"
+   ],
+   "hook": "The first powered flight is closer to the Civil War than to the Moon landing.",
+   "gaps": {
+    "wright-moon": [
+     65,
+     67
+    ],
+    "wright-civilwar": [
+     37,
+     39
+    ],
+    "moon-civilwar": [
+     103,
+     105
+    ]
+   },
+   "margin": 26
+  },
+  {
+   "n": 19,
+   "e": [
+    "gobekli",
+    "today",
+    "pyramid"
+   ],
+   "answer": [
+    "today",
+    "pyramid"
+   ],
+   "hook": "The Great Pyramid is closer to us than to Göbekli Tepe.",
+   "gaps": {
+    "gobekli-pyramid": [
+     5300,
+     7000
+    ],
+    "gobekli-today": [
+     10025,
+     11526
+    ],
+    "pyramid-today": [
+     4525,
+     4726
+    ]
+   },
+   "margin": 574
+  },
+  {
+   "n": 20,
+   "e": [
+    "gettysburg",
+    "oreo",
+    "titanic"
+   ],
+   "answer": [
+    "oreo",
+    "titanic"
+   ],
+   "hook": "Oreos and the Titanic are the same age.",
+   "gaps": {
+    "titanic-oreo": [
+     0,
+     1
+    ],
+    "titanic-gettysburg": [
+     48,
+     50
+    ],
+    "oreo-gettysburg": [
+     48,
+     50
+    ]
+   },
+   "margin": 47
+  },
+  {
+   "n": 21,
+   "e": [
+    "benz",
+    "loco",
+    "safety"
+   ],
+   "answer": [
+    "benz",
+    "safety"
+   ],
+   "hook": "The modern bicycle and the car showed up within a year of each other.",
+   "gaps": {
+    "safety-benz": [
+     0,
+     2
+    ],
+    "safety-loco": [
+     80,
+     82
+    ],
+    "benz-loco": [
+     80,
+     83
+    ]
+   },
+   "margin": 78
+  },
+  {
+   "n": 22,
+   "e": [
+    "neptune",
+    "uranus",
+    "pluto"
+   ],
+   "answer": [
+    "neptune",
+    "uranus"
+   ],
+   "hook": "Neptune was found closer to Uranus than to Pluto.",
+   "gaps": {
+    "uranus-neptune": [
+     64,
+     66
+    ],
+    "uranus-pluto": [
+     148,
+     150
+    ],
+    "neptune-pluto": [
+     83,
+     85
+    ]
+   },
+   "margin": 17
+  },
+  {
+   "n": 23,
+   "e": [
+    "wright",
+    "sliced",
+    "tv"
+   ],
+   "answer": [
+    "sliced",
+    "tv"
+   ],
+   "hook": "Television is older than sliced bread.",
+   "gaps": {
+    "tv-sliced": [
+     1,
+     3
+    ],
+    "tv-wright": [
+     22,
+     24
+    ],
+    "sliced-wright": [
+     24,
+     26
+    ]
+   },
+   "margin": 19
+  },
+  {
+   "n": 24,
+   "e": [
+    "hero",
+    "pyramid",
+    "vending"
+   ],
+   "answer": [
+    "hero",
+    "vending"
+   ],
+   "hook": "There was a coin-operated vending machine in Roman Egypt.",
+   "gaps": {
+    "hero-vending": [
+     1795,
+     1875
+    ],
+    "hero-pyramid": [
+     2509,
+     2784
+    ],
+    "vending-pyramid": [
+     4379,
+     4584
+    ]
+   },
+   "margin": 634
+  },
+  {
+   "n": 25,
+   "e": [
+    "pyramid",
+    "eniac",
+    "antikythera"
+   ],
+   "answer": [
+    "eniac",
+    "antikythera"
+   ],
+   "hook": "An ancient Greek computer is closer to ENIAC than to the Great Pyramid.",
+   "gaps": {
+    "antikythera-eniac": [
+     2004,
+     2151
+    ],
+    "antikythera-pyramid": [
+     2295,
+     2640
+    ],
+    "eniac-pyramid": [
+     4444,
+     4646
+    ]
+   },
+   "margin": 144
+  },
+  {
+   "n": 26,
+   "e": [
+    "notredame",
+    "stonehenge",
+    "moai"
+   ],
+   "answer": [
+    "notredame",
+    "moai"
+   ],
+   "hook": "The Easter Island statues were carved after work began on Notre-Dame.",
+   "gaps": {
+    "moai-notredame": [
+     86,
+     337
+    ],
+    "moai-stonehenge": [
+     3649,
+     4099
+    ],
+    "notredame-stonehenge": [
+     3562,
+     3763
+    ]
+   },
+   "margin": 3225
+  },
+  {
+   "n": 27,
+   "e": [
+    "moon",
+    "pyramid",
+    "terracotta"
+   ],
+   "answer": [
+    "moon",
+    "terracotta"
+   ],
+   "hook": "China's Terracotta Army is closer in time to the Moon landing than to the Great Pyramid.",
+   "gaps": {
+    "terracotta-pyramid": [
+     2254,
+     2492
+    ],
+    "terracotta-moon": [
+     2176,
+     2215
+    ],
+    "pyramid-moon": [
+     4468,
+     4669
+    ]
+   },
+   "margin": 39
+  },
+  {
+   "n": 28,
+   "e": [
+    "lincoln",
+    "mobile",
+    "nokia"
+   ],
+   "answer": [
+    "lincoln",
+    "nokia"
+   ],
+   "hook": "Nokia started out the year Lincoln was shot.",
+   "gaps": {
+    "nokia-lincoln": [
+     0,
+     1
+    ],
+    "nokia-mobile": [
+     107,
+     109
+    ],
+    "lincoln-mobile": [
+     107,
+     109
+    ]
+   },
+   "margin": 106
+  },
+  {
+   "n": 29,
+   "e": [
+    "kongo",
+    "oxford",
+    "romefall"
+   ],
+   "answer": [
+    "kongo",
+    "romefall"
+   ],
+   "hook": "A Japanese building firm was founded in the century after the fall of Rome, five centuries before Oxford.",
+   "gaps": {
+    "kongo-romefall": [
+     23,
+     125
+    ],
+    "kongo-oxford": [
+     495,
+     667
+    ],
+    "romefall-oxford": [
+     619,
+     691
+    ]
+   },
+   "margin": 370
+  },
+  {
+   "n": 30,
+   "e": [
+    "salem",
+    "boe",
+    "armada"
+   ],
+   "answer": [
+    "salem",
+    "boe"
+   ],
+   "hook": "The Salem witch trials and the Bank of England are 2 years apart.",
+   "gaps": {
+    "salem-boe": [
+     1,
+     3
+    ],
+    "salem-armada": [
+     103,
+     105
+    ],
+    "boe-armada": [
+     105,
+     107
+    ]
+   },
+   "margin": 100
+  },
+  {
+   "n": 31,
+   "e": [
+    "trex",
+    "lucy",
+    "megalodon"
+   ],
+   "answer": [
+    "lucy",
+    "megalodon"
+   ],
+   "hook": "Megalodon and our ancestor Lucy are close in time.",
+   "gaps": {
+    "megalodon-lucy": [
+     0,
+     650000
+    ],
+    "megalodon-trex": [
+     62300000,
+     67400000
+    ],
+    "lucy-trex": [
+     62750000,
+     66850000
+    ]
+   },
+   "margin": 61650000
+  },
+  {
+   "n": 32,
+   "e": [
+    "magna",
+    "glasses",
+    "gutenberg"
+   ],
+   "answer": [
+    "magna",
+    "glasses"
+   ],
+   "hook": "Eyeglasses are more than 150 years older than the printing press.",
+   "gaps": {
+    "glasses-magna": [
+     64,
+     85
+    ],
+    "glasses-gutenberg": [
+     154,
+     176
+    ],
+    "magna-gutenberg": [
+     238,
+     241
+    ]
+   },
+   "margin": 69
+  },
+  {
+   "n": 33,
+   "e": [
+    "toilet",
+    "constantinople",
+    "hamlet"
+   ],
+   "answer": [
+    "toilet",
+    "hamlet"
+   ],
+   "hook": "The flush toilet is a few years older than Hamlet.",
+   "gaps": {
+    "toilet-hamlet": [
+     2,
+     6
+    ],
+    "toilet-constantinople": [
+     142,
+     144
+    ],
+    "hamlet-constantinople": [
+     145,
+     149
+    ]
+   },
+   "margin": 136
+  },
+  {
+   "n": 34,
+   "e": [
+    "moon",
+    "dodo",
+    "mammoth"
+   ],
+   "answer": [
+    "moon",
+    "dodo"
+   ],
+   "hook": "The dodo is closer in time to the Moon landing than to the woolly mammoth.",
+   "gaps": {
+    "dodo-moon": [
+     306,
+     308
+    ],
+    "dodo-mammoth": [
+     3311,
+     3962
+    ],
+    "moon-mammoth": [
+     3618,
+     4269
+    ]
+   },
+   "margin": 3003
+  },
+  {
+   "n": 35,
+   "e": [
+    "okcorral",
+    "nba",
+    "basketball"
+   ],
+   "answer": [
+    "okcorral",
+    "basketball"
+   ],
+   "hook": "Basketball was invented 10 years after the O.K. Corral gunfight.",
+   "gaps": {
+    "basketball-okcorral": [
+     9,
+     11
+    ],
+    "basketball-nba": [
+     54,
+     56
+    ],
+    "okcorral-nba": [
+     64,
+     66
+    ]
+   },
+   "margin": 43
+  },
+  {
+   "n": 36,
+   "e": [
+    "oxford",
+    "hastings",
+    "tenoch"
+   ],
+   "answer": [
+    "oxford",
+    "hastings"
+   ],
+   "hook": "Oxford was teaching more than 150 years before the Aztecs founded Tenochtitlan.",
+   "gaps": {
+    "oxford-hastings": [
+     29,
+     101
+    ],
+    "oxford-tenoch": [
+     158,
+     230
+    ],
+    "hastings-tenoch": [
+     258,
+     260
+    ]
+   },
+   "margin": 57
+  },
+  {
+   "n": 37,
+   "e": [
+    "wright",
+    "concorde",
+    "viking1"
+   ],
+   "answer": [
+    "concorde",
+    "viking1"
+   ],
+   "hook": "Concorde started flying passengers the year a probe first landed on Mars.",
+   "gaps": {
+    "concorde-viking1": [
+     0,
+     1
+    ],
+    "concorde-wright": [
+     72,
+     74
+    ],
+    "viking1-wright": [
+     72,
+     74
+    ]
+   },
+   "margin": 71
+  },
+  {
+   "n": 38,
+   "e": [
+    "vaccine",
+    "pacman",
+    "smallpox"
+   ],
+   "answer": [
+    "pacman",
+    "smallpox"
+   ],
+   "hook": "Smallpox was wiped out the year Pac-Man came out.",
+   "gaps": {
+    "smallpox-pacman": [
+     0,
+     1
+    ],
+    "smallpox-vaccine": [
+     183,
+     185
+    ],
+    "pacman-vaccine": [
+     183,
+     185
+    ]
+   },
+   "margin": 182
+  },
+  {
+   "n": 39,
+   "e": [
+    "cun_first",
+    "today",
+    "cun_last"
+   ],
+   "answer": [
+    "today",
+    "cun_last"
+   ],
+   "hook": "The last cuneiform tablet is closer to us than to the first.",
+   "gaps": {
+    "cun_last-cun_first": [
+     3174,
+     3580
+    ],
+    "cun_last-today": [
+     1945,
+     1952
+    ],
+    "cun_first-today": [
+     5125,
+     5526
+    ]
+   },
+   "margin": 1222
+  },
+  {
+   "n": 40,
+   "e": [
+    "pyramid",
+    "methuselah",
+    "rome"
+   ],
+   "answer": [
+    "pyramid",
+    "methuselah"
+   ],
+   "hook": "A tree alive today is older than the Great Pyramid.",
+   "gaps": {
+    "methuselah-pyramid": [
+     100,
+     400
+    ],
+    "methuselah-rome": [
+     2000,
+     2200
+    ],
+    "pyramid-rome": [
+     1700,
+     2000
+    ]
+   },
+   "margin": 1300
+  },
+  {
+   "n": 41,
+   "e": [
+    "alaska",
+    "hawaii",
+    "barbie"
+   ],
+   "answer": [
+    "hawaii",
+    "barbie"
+   ],
+   "hook": "Barbie is as old as the 50-state United States.",
+   "gaps": {
+    "hawaii-barbie": [
+     0,
+     1
+    ],
+    "hawaii-alaska": [
+     91,
+     93
+    ],
+    "barbie-alaska": [
+     91,
+     93
+    ]
+   },
+   "margin": 90
+  },
+  {
+   "n": 42,
+   "e": [
+    "dodo",
+    "thylacine",
+    "moon"
+   ],
+   "answer": [
+    "thylacine",
+    "moon"
+   ],
+   "hook": "The last Tasmanian tiger died 33 years before the Moon landing.",
+   "gaps": {
+    "thylacine-moon": [
+     32,
+     34
+    ],
+    "thylacine-dodo": [
+     273,
+     275
+    ],
+    "moon-dodo": [
+     306,
+     308
+    ]
+   },
+   "margin": 239
+  },
+  {
+   "n": 43,
+   "e": [
+    "dna",
+    "origin",
+    "everest"
+   ],
+   "answer": [
+    "dna",
+    "everest"
+   ],
+   "hook": "People first stood on Everest the year DNA's shape was published.",
+   "gaps": {
+    "everest-dna": [
+     0,
+     1
+    ],
+    "everest-origin": [
+     93,
+     95
+    ],
+    "dna-origin": [
+     93,
+     95
+    ]
+   },
+   "margin": 92
+  }
+ ]
+}
