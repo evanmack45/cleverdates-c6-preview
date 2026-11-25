@@ -166,7 +166,12 @@
     scrollTo({ top: 0, behavior: reduce.matches ? 'auto' : 'smooth' });
   });
 
-  function dareURL() { return location.origin + location.pathname + '#t=' + cur.ids.join('.'); }
+  // Switch to https://cleverdates.com/ at go-live.
+  const CANONICAL = 'https://evanmack45.github.io/cleverdates-c6-preview/';
+  const isLocalPage = () => location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  const publicPage = () => (isLocalPage() ? CANONICAL : `${location.origin}${location.pathname}`).replace(/index\.html$/, '').replace(/\/?$/, '/');
+  const publicLink = (hash) => `${publicPage()}${hash.startsWith('#') ? hash : '#' + hash}`;
+  function dareURL() { return publicLink('#t=' + cur.ids.join('.')); }
   $('dare-btn').addEventListener('click', async () => {
     const url = dareURL(), text = 'Bet you get this wrong: which two are closer in time?';
     const msg = $('share-msg');
