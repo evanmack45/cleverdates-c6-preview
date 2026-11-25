@@ -226,7 +226,10 @@
       y += h + 22;
     });
     g.fillStyle = '#e3d9bf'; g.font = `400 30px ${sans}`;
-    g.fillText('Closer in time, a game from Clever Dates.', 80, H - 50);
+    g.fillText('Closer in time, a game from Clever Dates.', 80, H - 88);
+    const foot = publicLink(cur && cur.ids ? '#t=' + cur.ids.join('.') : '').replace(/^https?:\/\//, '');
+    if (g.measureText(foot).width > W - 160) g.font = `400 26px ${sans}`;
+    g.fillText(foot, 80, H - 46);
     return c;
   }
   let artP = null, sealP = {};

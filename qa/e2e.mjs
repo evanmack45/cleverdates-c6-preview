@@ -122,7 +122,9 @@ for (const w of [390, 1280]) {
     ok(!seal.hidden && seal.ok && (win ? /seal-right-/.test(seal.src) : /seal-not-quite-/.test(seal.src)), `${tag}: the ${win ? 'right' : 'not-quite'} seal sits beside the verdict`);
     ok((win ? /seal-right-512\.webp/ : /seal-not-quite-512\.webp/).test(im), `${tag}: the matching seal is drawn into the canvas next to the result line`);
     ok(!txt.includes(t.hook) && t.e.every((id) => txt.includes(data.events[id].name.split(' ')[0])) && txt.includes(win ? 'I got this one right.' : 'This one got me.'), `${tag}: type is the three events and the result line; the hook (the answer) stays off the card`);
-    ok(!/localhost|127\.0\.0\.1/.test(txt) && p.errs.length === 0 && p.reqs.length === 0, `${tag}: no localhost on the card, no errors, no third-party requests ${p.errs.join(';')}`);
+    const host = (/^https?:\/\/(localhost|127\.0\.0\.1)[:/]/.test(base) ? 'https://evanmack45.github.io/cleverdates-c6-preview/' : base).replace(/^https?:\/\//, '').replace(/\/?$/, '');
+    ok(txt.includes('Closer in time, a game from Clever Dates.') && txt.includes(host) && !/localhost|127\.0\.0\.1/.test(txt), `${tag}: footer names the canonical host (${host})`);
+    ok(p.errs.length === 0 && p.reqs.length === 0, `${tag}: no errors, no third-party requests ${p.errs.join(';')}`);
     await dl.saveAs(`r3/card-trio${t.n}-${win ? 'right' : 'wrong'}.png`);
     await p.context().close();
   }
