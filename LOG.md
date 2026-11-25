@@ -60,3 +60,10 @@
 - 5 weak trios dropped (basketball, Nokia, fax, Uranus, Salem) to bring Europe plus North America to 48.8% of event slots.
 - Source fixes after reading the articles: Lascaux 17,000 to 22,000 years, Ishango 18,000 to 20,000 BC, Jomon 14,500 BC, Caral 2600 to 2000 BC, Edison's 13.5 hour test (22 Oct 1879), Cook sighting Australia (19 Apr 1770), Hannibal setting out 218 BC, Hokusai 1831, Ashoka 268 to 232 BC, cockroach ancestors.
 - QA live: gate PASS 390 and 1280, Lighthouse 100/100/100 (SEO 63, noindex), page weight 164 KiB, impeccable 0, e2e ALL PASS. Fold shots refreshed.
+
+## 2026-11-25 8:10 AM CT: DONE, surprise pass
+- Added tools/feel.py (era feel tags), tools/events3.py (20 new events with checked sources, the DROP list and 22 NEW trios) and a surprise score in build_trios.py.
+- 22 swaps: 21 plain same-year trios and the old Oxford trio replaced. Examples: the fall of Constantinople is closer to the Wright brothers than to the fall of Rome; Korea's Hangul is closer to the Titanic than to the Tang dynasty; Oxford was teaching closer to the founding of Tenochtitlan than to Charlemagne's coronation.
+- Kept 15 plain same-decade trios (down from 36) rather than add filler. 50 of 101 are flagged low-surprise by the score; both are capped in the validator so they cannot grow.
+- Weakest new trios (lure only 1, margin under 100 years): Genji/Bastille/Pompeii, Oxford/Tenochtitlan/Charlemagne, Machu Picchu/Oreo, Inca/sliced bread, Zheng He/Great Wave.
+- Gate on live: PASS 390 and 1280, Lighthouse 100/100/100 (SEO 63, noindex), weight 163 KiB, impeccable 0, e2e ALL PASS. Folds refreshed.
