@@ -69,3 +69,7 @@
 - Kept 15 plain same-decade trios (down from 36) rather than add filler. 50 of 101 are flagged low-surprise by the score; both are capped in the validator so they cannot grow.
 - Weakest new trios (lure only 1, margin under 100 years): Genji/Bastille/Pompeii, Oxford/Tenochtitlan/Charlemagne, Machu Picchu/Oreo, Inca/sliced bread, Zheng He/Great Wave.
 - Gate on live: PASS 390 and 1280, Lighthouse 100/100/100 (SEO 63, noindex), weight 163 KiB, impeccable 0, e2e ALL PASS. Folds refreshed.
+
+## 2026-11-25 10:05 AM CT: r3 art (C6)
+
+Commit 016ce90 (pushed). Share card ground wired from card-r3.webp; the on-page reveal strip was cut (a static trio picture would mislead on most rounds); the hook stays off the card. Card art is generic across trios (question open in STATUS.md). Live e2e ALL PASS (159), live gate PASS, Lighthouse 100, impeccable 0.

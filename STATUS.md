@@ -1,4 +1,16 @@
 # C6 Closer In Time: STATUS (Gizmo)
+
+## r3 art wired, live preview, 2026-11-25 10:05 AM CT
+
+C6 (cleverdates-c6-preview). Commit 016ce90 (pushed, noindex kept, no DNS or go-live).
+
+- Wired: the share card is drawn on `card-r3.webp` (pyramid, amphora and phone on turquoise, hieroglyph-free) with a source crop; the old `card-1080.webp` is removed from src and docs. The hook (the answer) is NOT drawn on the card, so the dare still hides the answer.
+- CUT: the on-page reveal strip. A static picture of one trio would mislead on most of the 101 rounds. The on-page art set stays hero, ruler, triptych.
+- Caveat and question: the card art is the same pyramid/amphora/phone for every trio, so a card for the Domesday Book trio shows a pyramid and a phone. Same trade-off as the old card. Decision for Evan or Dash: keep generic, or add a spoiler variant that shows the hook (needs trio-specific art or a typographic hook band).
+- Test fix: the stale dare-link e2e line now expects the canonical URL on localhost.
+- Live e2e (qa/art-folds/r3/e2e-live.log): ALL PASS (159), trios 1 (right), 13 (wrong), 19 (right) and 41 (wrong, longest names): 1080x1350, ground drawn, hook off the card, no localhost.
+- Live gate (qa/art-folds/r3/gate-live/, PASS): Lighthouse 100 / 100 / 100 / SEO 63, CLS 0, LCP 1.2 s, impeccable 0 at 390, 1280, static. Local gate: qa/r3/gate-local (99).
+- Live captures (viewed): qa/art-folds/r3/live-reveal-{right,wrong}-{390,1280}.png and the live card PNGs card-trio{1-right,13-wrong,19-right,41-wrong}.png.
 Updated 2026-11-25 8:10 AM CT
 - [x] Step 1: day-1 gate PASS, 43 sourced and validated trios (trios.json)
 - [x] Step 2: prior art logged, noindex preview live at https://evanmack45.github.io/cleverdates-c6-preview/, gate PASS 390/1280, impeccable 0, e2e all pass
