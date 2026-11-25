@@ -194,7 +194,7 @@
     const serif = 'Gloock, Georgia, serif', sans = 'Schibsted, Arial, sans-serif';
     g.fillStyle = '#0f3b2c'; g.fillRect(0, 0, W, H);
     const art = await loadArt();
-    if (art) g.drawImage(art, 0, 0, W, 470);
+    if (art) g.drawImage(art, 0, 12, art.width, Math.round((art.width * 470) / W), 0, 0, W, 470);
     const fade = g.createLinearGradient(0, 380, 0, 470); fade.addColorStop(0, 'rgba(15,59,44,0)'); fade.addColorStop(1, '#0f3b2c');
     g.fillStyle = fade; g.fillRect(0, 380, W, 90);
     g.fillStyle = '#ff7a59'; g.font = `700 34px ${sans}`;
@@ -216,7 +216,7 @@
     return c;
   }
   let artP = null;
-  function loadArt() { return artP || (artP = new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.onerror = () => r(null); i.src = 'art/card-1080.webp'; })); }
+  function loadArt() { return artP || (artP = new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.onerror = () => r(null); i.src = 'art/card-r3.webp'; })); }
   function rr(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
   function lines2(g, text, max) {
     const words = text.split(' '), out = []; let line = '';

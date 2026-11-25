@@ -80,7 +80,8 @@ for (const w of [390, 1280]) {
   await play(p, data.trios[4].answer);
   await p.click('#dare-btn'); await p.waitForTimeout(200);
   const clip = await p.evaluate(() => navigator.clipboard.readText());
-  ok(clip === `${base}#t=${data.trios[4].e.join('.')}`, `dare link copies this exact round: ${clip}`);
+  const CANON = 'https://evanmack45.github.io/cleverdates-c6-preview/', pub = /^https?:\/\/(localhost|127\.0\.0\.1)[:/]/.test(base) ? CANON : base;
+  ok(clip === `${pub}#t=${data.trios[4].e.join('.')}` && !/localhost|127\.0\.0\.1/.test(clip), `dare link copies this exact round, canonical URL on localhost: ${clip}`);
   const png = await p.evaluate(() => window.__c6card());
   const dims = await p.evaluate((u) => new Promise((r) => { const i = new Image(); i.onload = () => r([i.width, i.height]); i.src = u; }), png);
   ok(png.length > 30000 && dims[0] === 1080 && dims[1] === 1350, `share card PNG 1080x1350 (${Math.round(png.length / 1024)} KB)`);
@@ -100,6 +101,31 @@ for (const w of [390, 1280]) {
   await nj.goto(base);
   ok(await nj.isHidden('.picks') && (await nj.$$('.sp li')).length === data.trios.length, 'no JS: game hidden, all answers with sources listed');
   await nj.context().close();
+}
+// r3 art: share-card ground drawn into the canvas; three real trios, right and wrong, plus an odd one (longest event names)
+{
+  const longest = data.trios.map((t) => [t, Math.max(...t.e.map((id) => data.events[id].name.length))]).sort((a, c) => c[1] - a[1])[0][0];
+  const cases = [[data.trios[0], true, false], [data.trios[12], false, false], [data.trios[18], true, false], [longest, false, true]];
+  for (const [t, win, odd] of cases) {
+    const p = await page(1280, { acceptDownloads: true });
+    await p.addInitScript(() => { window.__t = []; window.__img = []; const f = CanvasRenderingContext2D.prototype.fillText, di = CanvasRenderingContext2D.prototype.drawImage; CanvasRenderingContext2D.prototype.fillText = function (x, ...r) { window.__t.push(String(x)); return f.call(this, x, ...r); }; CanvasRenderingContext2D.prototype.drawImage = function (im, ...r) { window.__img.push(im && im.src ? im.src : 'canvas'); return di.call(this, im, ...r); }; });
+    await p.goto(`${base}#t=${t.e.join('.')}`);
+    const odds = t.e.find((id) => !t.answer.includes(id));
+    await play(p, win ? t.answer : [odds, t.answer[0]]);
+    const [dl] = await Promise.all([p.waitForEvent('download'), p.click('#card-btn')]);
+    const buf = readFileSync(await dl.path());
+    const txt = await p.evaluate(() => window.__t.join('\n')), im = await p.evaluate(() => window.__img.join('\n'));
+    const tag = `r3 card trio ${t.n}${win ? ' right' : ' wrong'}${odd ? ' (odd: longest names)' : ''}`;
+    ok(buf.slice(1, 4).toString() === 'PNG' && buf.readUInt32BE(16) === 1080 && buf.readUInt32BE(20) === 1350, `${tag}: PNG is 1080x1350`);
+    ok(/card-r3\.webp/.test(im) && !/card-1080/.test(im), `${tag}: the hieroglyph-free ground is drawn into the canvas`);
+    ok(!txt.includes(t.hook) && t.e.every((id) => txt.includes(data.events[id].name.split(' ')[0])) && txt.includes(win ? 'I got this one right.' : 'This one got me.'), `${tag}: type is the three events and the result line; the hook (the answer) stays off the card`);
+    ok(!/localhost|127\.0\.0\.1/.test(txt) && p.errs.length === 0 && p.reqs.length === 0, `${tag}: no localhost on the card, no errors, no third-party requests ${p.errs.join(';')}`);
+    await dl.saveAs(`r3/card-trio${t.n}-${win ? 'right' : 'wrong'}.png`);
+    await p.context().close();
+  }
+  const p = await page(390); await p.goto(base);
+  ok(await p.$$eval('img', (is) => is.length === 3 && is.every((i) => /^art\/(hero|ruler|triptych)-/.test(i.getAttribute('src')))), 'r3: the on-page art set is unchanged (hero, ruler, triptych); the card art lives only in the canvas');
+  await p.context().close();
 }
 console.log(fails ? `${fails} FAILED` : 'ALL PASS');
 await b.close();
