@@ -1,17 +1,78 @@
 {
  "meta": {
-  "count": 43,
-  "note": "Years are astronomical (1 BC = 0). lo/hi bound each date; every answer holds at the worst case inside those bounds (margin = smallest other-pair gap minus largest answer-pair gap, in years). Built by tools/build_trios.py from tools/events.py; every source page was fetched on 2026-11-25 and checked to contain the stated date.",
-  "checked": "2026-11-25"
+  "count": 101,
+  "note": "Years are astronomical (1 BC = 0). lo/hi bound each date; every answer holds at the worst case inside those bounds (margin = smallest other-pair gap minus largest answer-pair gap, in years). Built by tools/build_trios.py from tools/events.py and events2.py; every source page was fetched on 2026-11-25 and checked to contain the stated date. Rules enforced: 100+ trios, no event in more than 4 trios, every region and era covered.",
+  "checked": "2026-11-25",
+  "coverage": {
+   "maxAnchorRepeat": 4,
+   "eraSlots": {
+    "1900 to now": 68,
+    "500 BC to AD 500": 32,
+    "10,000 BC to 500 BC": 39,
+    "Deep prehistory (before 10,000 BC)": 25,
+    "1800 to 1899": 41,
+    "AD 500 to 1500": 61,
+    "1500 to 1799": 37
+   },
+   "eraTrios": {
+    "Deep prehistory (before 10,000 BC)": 11,
+    "10,000 BC to 500 BC": 22,
+    "500 BC to AD 500": 22,
+    "AD 500 to 1500": 25,
+    "1500 to 1799": 24,
+    "1800 to 1899": 23,
+    "1900 to now": 34
+   },
+   "regionSlots": {
+    "North America": 48,
+    "Africa": 34,
+    "Global": 28,
+    "Europe": 100,
+    "Asia": 44,
+    "Middle East": 21,
+    "Latin America": 16,
+    "Oceania": 12
+   },
+   "regionTrios": {
+    "Africa": 30,
+    "Asia": 39,
+    "Middle East": 19,
+    "Latin America": 14,
+    "Oceania": 12,
+    "Europe": 70,
+    "North America": 38,
+    "Global": 18
+   },
+   "westShare": 0.488
+  }
  },
  "events": {
+  "abusimbel": {
+   "name": "The Abu Simbel temples are built for Ramesses II",
+   "when": "c. 1264–1244 BC",
+   "lo": -1263,
+   "hi": -1243,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Abu_Simbel_temples",
+   "region": "Africa"
+  },
+  "adwa": {
+   "name": "Ethiopia beats Italy at the Battle of Adwa",
+   "when": "1896",
+   "lo": 1896,
+   "hi": 1896.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Battle_of_Adwa",
+   "region": "Africa"
+  },
   "alamo": {
    "name": "The Battle of the Alamo",
    "when": "1836",
    "lo": 1836,
    "hi": 1836.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Battle_of_the_Alamo"
+   "src": "https://en.wikipedia.org/wiki/Battle_of_the_Alamo",
+   "region": "North America"
   },
   "alaska": {
    "name": "The US buys Alaska from Russia",
@@ -19,7 +80,17 @@
    "lo": 1867,
    "hi": 1867.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Alaska_Purchase"
+   "src": "https://en.wikipedia.org/wiki/Alaska_Purchase",
+   "region": "North America"
+  },
+  "angkor": {
+   "name": "Angkor Wat is built in Cambodia",
+   "when": "c. 1113–1150",
+   "lo": 1113,
+   "hi": 1150.999,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Angkor_Wat",
+   "region": "Asia"
   },
   "antarctica": {
    "name": "People first see Antarctica",
@@ -27,7 +98,8 @@
    "lo": 1820,
    "hi": 1820.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Antarctica"
+   "src": "https://en.wikipedia.org/wiki/Antarctica",
+   "region": "Global"
   },
   "antikythera": {
    "name": "The Antikythera mechanism (an ancient Greek analog computer) is made",
@@ -35,7 +107,8 @@
    "lo": -204,
    "hi": -59,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Antikythera_mechanism"
+   "src": "https://en.wikipedia.org/wiki/Antikythera_mechanism",
+   "region": "Europe"
   },
   "armada": {
    "name": "The Spanish Armada sails against England",
@@ -43,7 +116,17 @@
    "lo": 1588,
    "hi": 1588.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Spanish_Armada"
+   "src": "https://en.wikipedia.org/wiki/Spanish_Armada",
+   "region": "Europe"
+  },
+  "ashoka": {
+   "name": "Ashoka rules India and carves his edicts",
+   "when": "c. 268–232 BC",
+   "lo": -267,
+   "hi": -231,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Edicts_of_Ashoka",
+   "region": "Asia"
   },
   "barbie": {
    "name": "Barbie goes on sale",
@@ -51,15 +134,8 @@
    "lo": 1959,
    "hi": 1959.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Barbie"
-  },
-  "basketball": {
-   "name": "Basketball is invented",
-   "when": "1891",
-   "lo": 1891,
-   "hi": 1891.999,
-   "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Basketball"
+   "src": "https://en.wikipedia.org/wiki/Barbie",
+   "region": "North America"
   },
   "bastille": {
    "name": "The storming of the Bastille",
@@ -67,7 +143,8 @@
    "lo": 1789,
    "hi": 1789.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Storming_of_the_Bastille"
+   "src": "https://en.wikipedia.org/wiki/Storming_of_the_Bastille",
+   "region": "Europe"
   },
   "battery": {
    "name": "Volta builds the first battery",
@@ -75,7 +152,17 @@
    "lo": 1799,
    "hi": 1800.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Voltaic_pile"
+   "src": "https://en.wikipedia.org/wiki/Voltaic_pile",
+   "region": "Europe"
+  },
+  "beagle": {
+   "name": "HMS Beagle sails with Darwin aboard",
+   "when": "1831",
+   "lo": 1831,
+   "hi": 1831.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/HMS_Beagle",
+   "region": "Europe"
   },
   "benz": {
    "name": "Benz builds the first car",
@@ -83,7 +170,17 @@
    "lo": 1885,
    "hi": 1886.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Benz_Patent-Motorwagen"
+   "src": "https://en.wikipedia.org/wiki/Benz_Patent-Motorwagen",
+   "region": "Europe"
+  },
+  "bigbang": {
+   "name": "The Big Bang",
+   "when": "13.8 billion years ago",
+   "lo": -13899997974.0,
+   "hi": -13699997974.0,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Big_Bang",
+   "region": "Global"
   },
   "boe": {
    "name": "The Bank of England opens",
@@ -91,7 +188,35 @@
    "lo": 1694,
    "hi": 1694.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Bank_of_England"
+   "src": "https://en.wikipedia.org/wiki/Bank_of_England",
+   "region": "Europe"
+  },
+  "borobudur": {
+   "name": "Borobudur is built on Java",
+   "when": "8th–9th century",
+   "lo": 750,
+   "hi": 850,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Borobudur",
+   "region": "Asia"
+  },
+  "brasilia": {
+   "name": "Brasília is inaugurated as Brazil's capital",
+   "when": "1960",
+   "lo": 1960,
+   "hi": 1960.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Bras%C3%ADlia",
+   "region": "Latin America"
+  },
+  "bulb": {
+   "name": "Edison's carbon-filament bulb first burns for 13.5 hours",
+   "when": "1879",
+   "lo": 1879,
+   "hi": 1879.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Incandescent_light_bulb",
+   "region": "North America"
   },
   "caesar": {
    "name": "Julius Caesar is assassinated",
@@ -99,7 +224,62 @@
    "lo": -43,
    "hi": -42.001,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Assassination_of_Julius_Caesar"
+   "src": "https://en.wikipedia.org/wiki/Assassination_of_Julius_Caesar",
+   "region": "Europe"
+  },
+  "cailun": {
+   "name": "Cai Lun reports the invention of paper to the Chinese emperor",
+   "when": "105",
+   "lo": 105,
+   "hi": 105.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Cai_Lun",
+   "region": "Asia"
+  },
+  "canon": {
+   "name": "Avicenna finishes The Canon of Medicine",
+   "when": "1025",
+   "lo": 1025,
+   "hi": 1025.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/The_Canon_of_Medicine",
+   "region": "Middle East"
+  },
+  "caral": {
+   "name": "Caral, Peru, is a thriving city",
+   "when": "c. 2600–2000 BC",
+   "lo": -2599,
+   "hi": -1999,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Caral",
+   "region": "Latin America"
+  },
+  "charl": {
+   "name": "Charlemagne is crowned emperor in Rome",
+   "when": "800",
+   "lo": 800,
+   "hi": 800.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Charlemagne",
+   "region": "Europe"
+  },
+  "chauvet": {
+   "name": "Painters decorate Chauvet Cave in France",
+   "when": "c. 36,000 years ago",
+   "lo": -34974,
+   "hi": -25974,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Chauvet_Cave",
+   "region": "Europe"
+  },
+  "christ": {
+   "name": "The Christ the Redeemer statue is dedicated in Rio",
+   "when": "1931",
+   "lo": 1931,
+   "hi": 1931.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)",
+   "region": "Latin America"
   },
   "civilwar": {
    "name": "The American Civil War ends",
@@ -107,7 +287,8 @@
    "lo": 1865,
    "hi": 1865.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/American_Civil_War"
+   "src": "https://en.wikipedia.org/wiki/American_Civil_War",
+   "region": "North America"
   },
   "cleo": {
    "name": "Cleopatra is born",
@@ -115,7 +296,17 @@
    "lo": -69,
    "hi": -67.001,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Cleopatra"
+   "src": "https://en.wikipedia.org/wiki/Cleopatra",
+   "region": "Africa"
+  },
+  "cockroach": {
+   "name": "The ancestors of cockroaches appear",
+   "when": "c. 320 million years ago",
+   "lo": -358997974.0,
+   "hi": -298997974.0,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Cockroach",
+   "region": "Global"
   },
   "colosseum": {
    "name": "The Colosseum opens in Rome",
@@ -123,7 +314,8 @@
    "lo": 80,
    "hi": 80.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Colosseum"
+   "src": "https://en.wikipedia.org/wiki/Colosseum",
+   "region": "Europe"
   },
   "columbus": {
    "name": "Columbus reaches the Americas",
@@ -131,7 +323,8 @@
    "lo": 1492,
    "hi": 1492.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus"
+   "src": "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus",
+   "region": "Latin America"
   },
   "concorde": {
    "name": "Concorde starts carrying passengers",
@@ -139,7 +332,17 @@
    "lo": 1976,
    "hi": 1976.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Concorde"
+   "src": "https://en.wikipedia.org/wiki/Concorde",
+   "region": "Europe"
+  },
+  "confucius": {
+   "name": "Confucius is born",
+   "when": "551 BC",
+   "lo": -551,
+   "hi": -549.001,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Confucius",
+   "region": "Asia"
   },
   "constantinople": {
    "name": "Constantinople falls to the Ottomans",
@@ -147,7 +350,17 @@
    "lo": 1453,
    "hi": 1453.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Fall_of_Constantinople"
+   "src": "https://en.wikipedia.org/wiki/Fall_of_Constantinople",
+   "region": "Middle East"
+  },
+  "cook": {
+   "name": "James Cook's ship reaches the coast of Australia",
+   "when": "1770",
+   "lo": 1770,
+   "hi": 1770.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/James_Cook",
+   "region": "Oceania"
   },
   "cun_first": {
    "name": "Cuneiform writing begins in Sumer",
@@ -155,7 +368,8 @@
    "lo": -3499,
    "hi": -3099,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Cuneiform"
+   "src": "https://en.wikipedia.org/wiki/Cuneiform",
+   "region": "Middle East"
   },
   "cun_last": {
    "name": "The last known cuneiform tablet is written",
@@ -163,7 +377,17 @@
    "lo": 75,
    "hi": 80.999,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Cuneiform"
+   "src": "https://en.wikipedia.org/wiki/Cuneiform",
+   "region": "Middle East"
+  },
+  "cyrus": {
+   "name": "Cyrus the Great takes Babylon",
+   "when": "539 BC",
+   "lo": -538,
+   "hi": -537.001,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Cyrus_the_Great",
+   "region": "Middle East"
   },
   "declaration": {
    "name": "The US Declaration of Independence is signed",
@@ -171,7 +395,8 @@
    "lo": 1776,
    "hi": 1776.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence"
+   "src": "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence",
+   "region": "North America"
   },
   "dna": {
    "name": "The shape of DNA (the double helix) is published",
@@ -179,7 +404,8 @@
    "lo": 1953,
    "hi": 1953.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Nucleic_acid_double_helix"
+   "src": "https://en.wikipedia.org/wiki/Nucleic_acid_double_helix",
+   "region": "Europe"
   },
   "dodo": {
    "name": "The last confirmed dodo sighting",
@@ -187,15 +413,53 @@
    "lo": 1662,
    "hi": 1662.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Dodo"
+   "src": "https://en.wikipedia.org/wiki/Dodo",
+   "region": "Africa"
   },
-  "email": {
-   "name": "The first network email is sent",
-   "when": "1971",
-   "lo": 1971,
-   "hi": 1971.999,
+  "domesday": {
+   "name": "The Domesday Book is compiled in England",
+   "when": "1086",
+   "lo": 1086,
+   "hi": 1086.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Email"
+   "src": "https://en.wikipedia.org/wiki/Domesday_Book",
+   "region": "Europe"
+  },
+  "dss": {
+   "name": "The Dead Sea Scrolls are first found",
+   "when": "1946–1947",
+   "lo": 1946,
+   "hi": 1947.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Dead_Sea_Scrolls",
+   "region": "Middle East"
+  },
+  "earth": {
+   "name": "Earth forms",
+   "when": "4.54 billion years ago",
+   "lo": -4569997974.0,
+   "hi": -4529997974.0,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Age_of_Earth",
+   "region": "Global"
+  },
+  "elephantbird": {
+   "name": "The last elephant birds die out in Madagascar",
+   "when": "c. 1000",
+   "lo": 900,
+   "hi": 1200,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Elephant_bird",
+   "region": "Africa"
+  },
+  "empire": {
+   "name": "The Empire State Building opens",
+   "when": "1931",
+   "lo": 1931,
+   "hi": 1931.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Empire_State_Building",
+   "region": "North America"
   },
   "eniac": {
    "name": "ENIAC, the first general-purpose electronic computer, is finished",
@@ -203,7 +467,8 @@
    "lo": 1945,
    "hi": 1946.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/ENIAC"
+   "src": "https://en.wikipedia.org/wiki/ENIAC",
+   "region": "North America"
   },
   "everest": {
    "name": "First people on top of Everest",
@@ -211,15 +476,26 @@
    "lo": 1953,
    "hi": 1953.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/1953_British_Mount_Everest_expedition"
+   "src": "https://en.wikipedia.org/wiki/1953_British_Mount_Everest_expedition",
+   "region": "Asia"
   },
-  "fax": {
-   "name": "The fax machine is patented",
-   "when": "1843",
-   "lo": 1843,
-   "hi": 1843.999,
+  "firstfleet": {
+   "name": "The First Fleet reaches Australia",
+   "when": "1788",
+   "lo": 1788,
+   "hi": 1788.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Fax"
+   "src": "https://en.wikipedia.org/wiki/First_Fleet",
+   "region": "Oceania"
+  },
+  "forbidden": {
+   "name": "The Forbidden City is completed in Beijing",
+   "when": "1420",
+   "lo": 1420,
+   "hi": 1420.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Forbidden_City",
+   "region": "Asia"
   },
   "galileo": {
    "name": "Galileo is put on trial by the Inquisition",
@@ -227,7 +503,26 @@
    "lo": 1633,
    "hi": 1633.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Galileo_affair"
+   "src": "https://en.wikipedia.org/wiki/Galileo_affair",
+   "region": "Europe"
+  },
+  "genghis": {
+   "name": "Genghis Khan is proclaimed ruler of the Mongols",
+   "when": "1206",
+   "lo": 1206,
+   "hi": 1206.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Genghis_Khan",
+   "region": "Asia"
+  },
+  "genji": {
+   "name": "Murasaki Shikibu writes The Tale of Genji",
+   "when": "early 11th century",
+   "lo": 1000,
+   "hi": 1021,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/The_Tale_of_Genji",
+   "region": "Asia"
   },
   "gettysburg": {
    "name": "The Battle of Gettysburg",
@@ -235,7 +530,26 @@
    "lo": 1863,
    "hi": 1863.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg"
+   "src": "https://en.wikipedia.org/wiki/Battle_of_Gettysburg",
+   "region": "North America"
+  },
+  "ghana": {
+   "name": "Ghana becomes independent",
+   "when": "1957",
+   "lo": 1957,
+   "hi": 1957.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Ghana",
+   "region": "Africa"
+  },
+  "glacier": {
+   "name": "The last ice age ends",
+   "when": "c. 11,700 years ago",
+   "lo": -9974,
+   "hi": -9474,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Holocene",
+   "region": "Global"
   },
   "glasses": {
    "name": "Eyeglasses are invented in Italy",
@@ -243,7 +557,8 @@
    "lo": 1280,
    "hi": 1300,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Glasses"
+   "src": "https://en.wikipedia.org/wiki/Glasses",
+   "region": "Europe"
   },
   "gobekli": {
    "name": "Göbekli Tepe, the oldest known temple, is built",
@@ -251,7 +566,17 @@
    "lo": -9499,
    "hi": -7999,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe"
+   "src": "https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe",
+   "region": "Middle East"
+  },
+  "greatwave": {
+   "name": "Hokusai makes The Great Wave off Kanagawa",
+   "when": "1831",
+   "lo": 1831,
+   "hi": 1831.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa",
+   "region": "Asia"
   },
   "guillotine": {
    "name": "France's last execution by guillotine",
@@ -259,7 +584,8 @@
    "lo": 1977,
    "hi": 1977.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Guillotine"
+   "src": "https://en.wikipedia.org/wiki/Guillotine",
+   "region": "Europe"
   },
   "gutenberg": {
    "name": "The Gutenberg Bible is printed",
@@ -267,7 +593,17 @@
    "lo": 1454,
    "hi": 1455.999,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Gutenberg_Bible"
+   "src": "https://en.wikipedia.org/wiki/Gutenberg_Bible",
+   "region": "Europe"
+  },
+  "haiti": {
+   "name": "Haiti declares independence",
+   "when": "1804",
+   "lo": 1804,
+   "hi": 1804.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Haitian_Declaration_of_Independence",
+   "region": "Latin America"
   },
   "hamlet": {
    "name": "Shakespeare writes Hamlet",
@@ -275,7 +611,26 @@
    "lo": 1599,
    "hi": 1601.999,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Hamlet"
+   "src": "https://en.wikipedia.org/wiki/Hamlet",
+   "region": "Europe"
+  },
+  "hangul": {
+   "name": "King Sejong creates Hangul, the Korean alphabet",
+   "when": "1443–1446",
+   "lo": 1443,
+   "hi": 1446.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Hangul",
+   "region": "Asia"
+  },
+  "hannibal": {
+   "name": "Hannibal sets out from Spain to invade Italy",
+   "when": "218 BC",
+   "lo": -217,
+   "hi": -216.001,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Hannibal",
+   "region": "Europe"
   },
   "harvard": {
    "name": "Harvard is founded",
@@ -283,7 +638,8 @@
    "lo": 1636,
    "hi": 1636.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Harvard_University"
+   "src": "https://en.wikipedia.org/wiki/Harvard_University",
+   "region": "North America"
   },
   "hastings": {
    "name": "The Battle of Hastings",
@@ -291,7 +647,8 @@
    "lo": 1066,
    "hi": 1066.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Battle_of_Hastings"
+   "src": "https://en.wikipedia.org/wiki/Battle_of_Hastings",
+   "region": "Europe"
   },
   "hawaii": {
    "name": "Hawaii becomes the 50th US state",
@@ -299,7 +656,8 @@
    "lo": 1959,
    "hi": 1959.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Hawaii_Admission_Act"
+   "src": "https://en.wikipedia.org/wiki/Hawaii_Admission_Act",
+   "region": "North America"
   },
   "hero": {
    "name": "Hero of Alexandria describes a coin-operated vending machine",
@@ -307,7 +665,35 @@
    "lo": 10,
    "hi": 85,
    "prec": "century",
-   "src": "https://en.wikipedia.org/wiki/Vending_machine"
+   "src": "https://en.wikipedia.org/wiki/Vending_machine",
+   "region": "Africa"
+  },
+  "hokulea": {
+   "name": "The canoe Hōkūle'a sails from Hawaii to Tahiti with no instruments",
+   "when": "1976",
+   "lo": 1976,
+   "hi": 1976.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/H%C5%8Dk%C5%ABle%CA%BBa",
+   "region": "Oceania"
+  },
+  "inca": {
+   "name": "The Inca Empire begins to expand",
+   "when": "1438",
+   "lo": 1438,
+   "hi": 1438.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Inca_Empire",
+   "region": "Latin America"
+  },
+  "india": {
+   "name": "India becomes independent",
+   "when": "1947",
+   "lo": 1947,
+   "hi": 1947.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Indian_independence_movement",
+   "region": "Asia"
   },
   "iphone": {
    "name": "The first iPhone goes on sale",
@@ -315,7 +701,71 @@
    "lo": 2007,
    "hi": 2007.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
+   "src": "https://en.wikipedia.org/wiki/IPhone_(1st_generation)",
+   "region": "North America"
+  },
+  "irhoud": {
+   "name": "The oldest known Homo sapiens fossils (Jebel Irhoud, Morocco)",
+   "when": "c. 300,000 years ago",
+   "lo": -312974,
+   "hi": -282974,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Jebel_Irhoud",
+   "region": "Africa"
+  },
+  "isandlwana": {
+   "name": "The Zulu army wins the Battle of Isandlwana",
+   "when": "1879",
+   "lo": 1879,
+   "hi": 1879.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Battle_of_Isandlwana",
+   "region": "Africa"
+  },
+  "ishango": {
+   "name": "The Ishango bone, a tally stick, is carved in Central Africa",
+   "when": "c. 20,000–18,000 BC",
+   "lo": -19999,
+   "hi": -17999,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Ishango_bone",
+   "region": "Africa"
+  },
+  "jikji": {
+   "name": "Korea prints Jikji, the oldest surviving book printed with movable metal type",
+   "when": "1377",
+   "lo": 1377,
+   "hi": 1377.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Jikji",
+   "region": "Asia"
+  },
+  "jomon": {
+   "name": "Jōmon potters in Japan make some of the oldest pottery",
+   "when": "c. 14,500 BC",
+   "lo": -15499,
+   "hi": -13499,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/J%C5%8Dmon_pottery",
+   "region": "Asia"
+  },
+  "khwarizmi": {
+   "name": "Al-Khwarizmi writes the book that gives us the word \"algebra\"",
+   "when": "c. 820",
+   "lo": 813,
+   "hi": 833,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/The_Compendious_Book_on_Calculation_by_Completion_and_Balancing",
+   "region": "Middle East"
+  },
+  "kili": {
+   "name": "The first recorded climb of Mount Kilimanjaro",
+   "when": "1889",
+   "lo": 1889,
+   "hi": 1889.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Mount_Kilimanjaro",
+   "region": "Africa"
   },
   "kongo": {
    "name": "Kongo Gumi, a Japanese temple-building firm, is founded",
@@ -323,15 +773,53 @@
    "lo": 500,
    "hi": 600.999,
    "prec": "century",
-   "src": "https://en.wikipedia.org/wiki/Kong%C5%8D_Gumi"
+   "src": "https://en.wikipedia.org/wiki/Kong%C5%8D_Gumi",
+   "region": "Asia"
   },
-  "lincoln": {
-   "name": "Abraham Lincoln is assassinated",
-   "when": "1865",
-   "lo": 1865,
-   "hi": 1865.999,
+  "krakatoa": {
+   "name": "Krakatoa erupts",
+   "when": "1883",
+   "lo": 1883,
+   "hi": 1883.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Assassination_of_Abraham_Lincoln"
+   "src": "https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa",
+   "region": "Asia"
+  },
+  "kush": {
+   "name": "Kings from Kush (Sudan) begin ruling Egypt",
+   "when": "744 BC",
+   "lo": -749,
+   "hi": -737,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Twenty-fifth_Dynasty_of_Egypt",
+   "region": "Africa"
+  },
+  "lalibela": {
+   "name": "The rock-hewn churches of Lalibela are carved",
+   "when": "during the reign of King Lalibela, c. 1181–1221",
+   "lo": 1181,
+   "hi": 1221,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Lalibela",
+   "region": "Africa"
+  },
+  "lascaux": {
+   "name": "Lascaux Cave is painted",
+   "when": "c. 22,000–17,000 years ago",
+   "lo": -19974,
+   "hi": -14974,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Lascaux",
+   "region": "Europe"
+  },
+  "literature": {
+   "name": "The Temple of Literature is founded in Hanoi",
+   "when": "1070",
+   "lo": 1070,
+   "hi": 1070.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Temple_of_Literature,_Hanoi",
+   "region": "Asia"
   },
   "loco": {
    "name": "The first steam railway locomotive runs",
@@ -339,7 +827,8 @@
    "lo": 1804,
    "hi": 1804.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Steam_locomotive"
+   "src": "https://en.wikipedia.org/wiki/Steam_locomotive",
+   "region": "Europe"
   },
   "lucy": {
    "name": "Lucy, an early human ancestor, lives in Ethiopia",
@@ -347,7 +836,8 @@
    "lo": -3247974.0,
    "hi": -3147974.0,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Lucy_(Australopithecus)"
+   "src": "https://en.wikipedia.org/wiki/Lucy_(Australopithecus)",
+   "region": "Africa"
   },
   "machu": {
    "name": "Machu Picchu is built",
@@ -355,7 +845,26 @@
    "lo": 1420,
    "hi": 1470,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Machu_Picchu"
+   "src": "https://en.wikipedia.org/wiki/Machu_Picchu",
+   "region": "Latin America"
+  },
+  "mactan": {
+   "name": "Magellan is killed in the Philippines",
+   "when": "1521",
+   "lo": 1521,
+   "hi": 1521.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Battle_of_Mactan",
+   "region": "Asia"
+  },
+  "madj": {
+   "name": "People are already living at Madjedbebe, Australia",
+   "when": "c. 65,000 years ago",
+   "lo": -67974,
+   "hi": -56974,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Madjedbebe",
+   "region": "Oceania"
   },
   "magellan": {
    "name": "Magellan's crew finishes the first trip around the world",
@@ -363,7 +872,8 @@
    "lo": 1522,
    "hi": 1522.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Magellan_expedition"
+   "src": "https://en.wikipedia.org/wiki/Magellan_expedition",
+   "region": "Global"
   },
   "magna": {
    "name": "Magna Carta is sealed",
@@ -371,7 +881,8 @@
    "lo": 1215,
    "hi": 1215.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Magna_Carta"
+   "src": "https://en.wikipedia.org/wiki/Magna_Carta",
+   "region": "Europe"
   },
   "mammoth": {
    "name": "The last woolly mammoths die out",
@@ -379,7 +890,17 @@
    "lo": -2299,
    "hi": -1649,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Woolly_mammoth"
+   "src": "https://en.wikipedia.org/wiki/Woolly_mammoth",
+   "region": "Global"
+  },
+  "mansa": {
+   "name": "Mansa Musa of Mali makes his pilgrimage to Mecca",
+   "when": "1324",
+   "lo": 1324,
+   "hi": 1325.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Mansa_Musa",
+   "region": "Africa"
   },
   "mario": {
    "name": "Super Mario Bros. comes out",
@@ -387,7 +908,8 @@
    "lo": 1985,
    "hi": 1985.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Super_Mario_Bros."
+   "src": "https://en.wikipedia.org/wiki/Super_Mario_Bros.",
+   "region": "Asia"
   },
   "mayflower": {
    "name": "The Mayflower lands at Plymouth",
@@ -395,7 +917,8 @@
    "lo": 1620,
    "hi": 1620.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Mayflower"
+   "src": "https://en.wikipedia.org/wiki/Mayflower",
+   "region": "North America"
   },
   "megalodon": {
    "name": "Megalodon goes extinct",
@@ -403,7 +926,17 @@
    "lo": -3697974.0,
    "hi": -2597974.0,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Megalodon"
+   "src": "https://en.wikipedia.org/wiki/Megalodon",
+   "region": "Global"
+  },
+  "meiji": {
+   "name": "The Meiji Restoration ends the shogunate in Japan",
+   "when": "1868",
+   "lo": 1868,
+   "hi": 1868.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Meiji_Restoration",
+   "region": "Asia"
   },
   "methuselah": {
    "name": "Methuselah, a bristlecone pine still alive today, sprouts",
@@ -411,7 +944,17 @@
    "lo": -2899,
    "hi": -2799,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Methuselah_(pine_tree)"
+   "src": "https://en.wikipedia.org/wiki/Methuselah_(pine_tree)",
+   "region": "North America"
+  },
+  "moa": {
+   "name": "The last moa die out in New Zealand",
+   "when": "by 1445",
+   "lo": 1300,
+   "hi": 1445.999,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Moa",
+   "region": "Oceania"
   },
   "moai": {
    "name": "The Easter Island statues (moai) are carved",
@@ -419,7 +962,8 @@
    "lo": 1250,
    "hi": 1500,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Moai"
+   "src": "https://en.wikipedia.org/wiki/Moai",
+   "region": "Oceania"
   },
   "mobile": {
    "name": "The first handheld mobile phone call",
@@ -427,7 +971,17 @@
    "lo": 1973,
    "hi": 1973.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Mobile_phone"
+   "src": "https://en.wikipedia.org/wiki/Mobile_phone",
+   "region": "North America"
+  },
+  "mohenjo": {
+   "name": "Mohenjo-daro is a thriving city in the Indus Valley",
+   "when": "c. 2500 BC",
+   "lo": -2599,
+   "hi": -2449,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Mohenjo-daro",
+   "region": "Asia"
   },
   "moon": {
    "name": "Apollo 11 lands on the Moon",
@@ -435,23 +989,8 @@
    "lo": 1969,
    "hi": 1969.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Apollo_11"
-  },
-  "nba": {
-   "name": "The first season of what became the NBA",
-   "when": "1946",
-   "lo": 1946,
-   "hi": 1946.999,
-   "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/1946%E2%80%9347_BAA_season"
-  },
-  "neptune": {
-   "name": "Neptune is discovered",
-   "when": "1846",
-   "lo": 1846,
-   "hi": 1846.999,
-   "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Discovery_of_Neptune"
+   "src": "https://en.wikipedia.org/wiki/Apollo_11",
+   "region": "North America"
   },
   "nintendo": {
    "name": "Nintendo is founded (as a playing-card maker)",
@@ -459,15 +998,17 @@
    "lo": 1889,
    "hi": 1889.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Nintendo"
+   "src": "https://en.wikipedia.org/wiki/Nintendo",
+   "region": "Asia"
   },
-  "nokia": {
-   "name": "Nokia starts out as a paper mill",
-   "when": "1865",
-   "lo": 1865,
-   "hi": 1865.999,
+  "noodles": {
+   "name": "Instant noodles are invented in Japan",
+   "when": "1958",
+   "lo": 1958,
+   "hi": 1958.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Nokia"
+   "src": "https://en.wikipedia.org/wiki/Instant_noodle",
+   "region": "Asia"
   },
   "notredame": {
    "name": "The first stone of Notre-Dame de Paris is laid",
@@ -475,15 +1016,62 @@
    "lo": 1163,
    "hi": 1163.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris"
+   "src": "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris",
+   "region": "Europe"
   },
-  "okcorral": {
-   "name": "The Gunfight at the O.K. Corral",
-   "when": "1881",
-   "lo": 1881,
-   "hi": 1881.999,
+  "nz": {
+   "name": "Polynesians settle New Zealand",
+   "when": "between 1250 and 1300",
+   "lo": 1250,
+   "hi": 1300,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/History_of_New_Zealand",
+   "region": "Oceania"
+  },
+  "nzvote": {
+   "name": "New Zealand women win the right to vote",
+   "when": "1893",
+   "lo": 1893,
+   "hi": 1893.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Gunfight_at_the_O.K._Corral"
+   "src": "https://en.wikipedia.org/wiki/Women%27s_suffrage_in_New_Zealand",
+   "region": "Oceania"
+  },
+  "olmec": {
+   "name": "The Olmec city of San Lorenzo is at its height",
+   "when": "c. 1200–900 BC",
+   "lo": -1199,
+   "hi": -899,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/San_Lorenzo_Tenochtitl%C3%A1n",
+   "region": "Latin America"
+  },
+  "olympics96": {
+   "name": "The first modern Olympic Games open in Athens",
+   "when": "1896",
+   "lo": 1896,
+   "hi": 1896.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/1896_Summer_Olympics",
+   "region": "Europe"
+  },
+  "operahouse": {
+   "name": "The Sydney Opera House opens",
+   "when": "1973",
+   "lo": 1973,
+   "hi": 1973.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Sydney_Opera_House",
+   "region": "Oceania"
+  },
+  "oracle": {
+   "name": "The earliest Chinese writing, on oracle bones",
+   "when": "c. 1254–1197 BC",
+   "lo": -1253,
+   "hi": -1196,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Oracle_bone_script",
+   "region": "Asia"
   },
   "oreo": {
    "name": "The first Oreo cookie is sold",
@@ -491,7 +1079,8 @@
    "lo": 1912,
    "hi": 1912.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Oreo"
+   "src": "https://en.wikipedia.org/wiki/Oreo",
+   "region": "North America"
   },
   "origin": {
    "name": "Darwin publishes On the Origin of Species",
@@ -499,7 +1088,8 @@
    "lo": 1859,
    "hi": 1859.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/On_the_Origin_of_Species"
+   "src": "https://en.wikipedia.org/wiki/On_the_Origin_of_Species",
+   "region": "Europe"
   },
   "ott_end": {
    "name": "The Ottoman sultanate is abolished",
@@ -507,7 +1097,8 @@
    "lo": 1922,
    "hi": 1922.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Abolition_of_the_Ottoman_sultanate"
+   "src": "https://en.wikipedia.org/wiki/Abolition_of_the_Ottoman_sultanate",
+   "region": "Middle East"
   },
   "ott_start": {
    "name": "The Ottoman Empire is founded",
@@ -515,7 +1106,17 @@
    "lo": 1290,
    "hi": 1310,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Ottoman_Empire"
+   "src": "https://en.wikipedia.org/wiki/Ottoman_Empire",
+   "region": "Middle East"
+  },
+  "otzi": {
+   "name": "Ötzi the Iceman dies in the Alps",
+   "when": "c. 3300 BC",
+   "lo": -3358,
+   "hi": -3104,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/%C3%96tzi",
+   "region": "Europe"
   },
   "oxford": {
    "name": "Teaching begins at Oxford",
@@ -523,7 +1124,8 @@
    "lo": 1096,
    "hi": 1167,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/University_of_Oxford"
+   "src": "https://en.wikipedia.org/wiki/University_of_Oxford",
+   "region": "Europe"
   },
   "pacman": {
    "name": "Pac-Man comes out",
@@ -531,7 +1133,62 @@
    "lo": 1980,
    "hi": 1980.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Pac-Man"
+   "src": "https://en.wikipedia.org/wiki/Pac-Man",
+   "region": "Asia"
+  },
+  "panama": {
+   "name": "The Panama Canal opens",
+   "when": "1914",
+   "lo": 1914,
+   "hi": 1914.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Panama_Canal",
+   "region": "Latin America"
+  },
+  "panipat": {
+   "name": "Babur wins at Panipat and founds the Mughal Empire",
+   "when": "1526",
+   "lo": 1526,
+   "hi": 1526.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/First_Battle_of_Panipat",
+   "region": "Asia"
+  },
+  "parthenon": {
+   "name": "Work begins on the Parthenon",
+   "when": "447 BC",
+   "lo": -446,
+   "hi": -445.001,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Parthenon",
+   "region": "Europe"
+  },
+  "pennyblack": {
+   "name": "The Penny Black, the first postage stamp, goes on sale",
+   "when": "1840",
+   "lo": 1840,
+   "hi": 1840.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Penny_Black",
+   "region": "Europe"
+  },
+  "periodic": {
+   "name": "Mendeleev publishes his periodic table",
+   "when": "1869",
+   "lo": 1869,
+   "hi": 1869.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Periodic_table",
+   "region": "Europe"
+  },
+  "persepolis": {
+   "name": "Darius I begins building Persepolis",
+   "when": "c. 518 BC",
+   "lo": -519,
+   "hi": -514,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Persepolis",
+   "region": "Middle East"
   },
   "phone": {
    "name": "Bell patents the telephone",
@@ -539,15 +1196,8 @@
    "lo": 1876,
    "hi": 1876.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Invention_of_the_telephone"
-  },
-  "pluto": {
-   "name": "Pluto is discovered",
-   "when": "1930",
-   "lo": 1930,
-   "hi": 1930.999,
-   "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Pluto"
+   "src": "https://en.wikipedia.org/wiki/Invention_of_the_telephone",
+   "region": "North America"
   },
   "pompeii": {
    "name": "Vesuvius buries Pompeii",
@@ -555,7 +1205,8 @@
    "lo": 79,
    "hi": 79.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Eruption_of_Mount_Vesuvius_in_79_AD"
+   "src": "https://en.wikipedia.org/wiki/Eruption_of_Mount_Vesuvius_in_79_AD",
+   "region": "Europe"
   },
   "pyramid": {
    "name": "The Great Pyramid of Giza is built",
@@ -563,7 +1214,53 @@
    "lo": -2699,
    "hi": -2499,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+   "src": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza",
+   "region": "Africa"
+  },
+  "qaraw": {
+   "name": "The University of al-Qarawiyyin opens in Fez",
+   "when": "859",
+   "lo": 859,
+   "hi": 859.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/University_of_al-Qarawiyyin",
+   "region": "Africa"
+  },
+  "qin": {
+   "name": "Qin Shi Huang unifies China",
+   "when": "221 BC",
+   "lo": -220,
+   "hi": -219.001,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Qin_Shi_Huang",
+   "region": "Asia"
+  },
+  "qing": {
+   "name": "The last emperor of China abdicates",
+   "when": "1912",
+   "lo": 1912,
+   "hi": 1912.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Xinhai_Revolution",
+   "region": "Asia"
+  },
+  "quagga": {
+   "name": "The last quagga dies in a zoo in Amsterdam",
+   "when": "1883",
+   "lo": 1883,
+   "hi": 1883.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Quagga",
+   "region": "Africa"
+  },
+  "republic": {
+   "name": "Rome becomes a republic",
+   "when": "509 BC",
+   "lo": -509,
+   "hi": -506.001,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Roman_Republic",
+   "region": "Europe"
   },
   "rome": {
    "name": "Rome is founded (by tradition)",
@@ -571,7 +1268,8 @@
    "lo": -799,
    "hi": -699,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Founding_of_Rome"
+   "src": "https://en.wikipedia.org/wiki/Founding_of_Rome",
+   "region": "Europe"
   },
   "romefall": {
    "name": "The last Western Roman emperor is deposed",
@@ -579,7 +1277,17 @@
    "lo": 476,
    "hi": 476.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire"
+   "src": "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire",
+   "region": "Europe"
+  },
+  "rosetta": {
+   "name": "The Rosetta Stone is carved in Egypt",
+   "when": "196 BC",
+   "lo": -195,
+   "hi": -194.001,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+   "region": "Africa"
   },
   "safety": {
    "name": "The modern-shape bicycle (the Rover) appears",
@@ -587,15 +1295,17 @@
    "lo": 1885,
    "hi": 1885.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Safety_bicycle"
+   "src": "https://en.wikipedia.org/wiki/Safety_bicycle",
+   "region": "Europe"
   },
-  "salem": {
-   "name": "The Salem witch trials",
-   "when": "1692",
-   "lo": 1692,
-   "hi": 1693.4,
-   "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Salem_witch_trials"
+  "sahel": {
+   "name": "Sahelanthropus, the oldest known fossil on the human line, lives in Chad",
+   "when": "c. 7 million years ago",
+   "lo": -7497974.0,
+   "hi": -6497974.0,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Sahelanthropus",
+   "region": "Africa"
   },
   "satsuma": {
    "name": "The last samurai revolt (Satsuma Rebellion)",
@@ -603,7 +1313,8 @@
    "lo": 1877,
    "hi": 1877.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Satsuma_Rebellion"
+   "src": "https://en.wikipedia.org/wiki/Satsuma_Rebellion",
+   "region": "Asia"
   },
   "sekigahara": {
    "name": "The Battle of Sekigahara",
@@ -611,7 +1322,8 @@
    "lo": 1600,
    "hi": 1600.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Battle_of_Sekigahara"
+   "src": "https://en.wikipedia.org/wiki/Battle_of_Sekigahara",
+   "region": "Asia"
   },
   "sharks": {
    "name": "The earliest shark relatives swim the seas",
@@ -619,7 +1331,17 @@
    "lo": -457997974.0,
    "hi": -418997974.0,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Shark"
+   "src": "https://en.wikipedia.org/wiki/Shark",
+   "region": "Global"
+  },
+  "shinkansen": {
+   "name": "Japan's first bullet train starts running",
+   "when": "1964",
+   "lo": 1964,
+   "hi": 1964.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Shinkansen",
+   "region": "Asia"
   },
   "sliced": {
    "name": "Sliced bread is first sold",
@@ -627,7 +1349,8 @@
    "lo": 1928,
    "hi": 1928.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Sliced_bread"
+   "src": "https://en.wikipedia.org/wiki/Sliced_bread",
+   "region": "North America"
   },
   "smallpox": {
    "name": "Smallpox is declared wiped out",
@@ -635,7 +1358,26 @@
    "lo": 1980,
    "hi": 1980.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Smallpox"
+   "src": "https://en.wikipedia.org/wiki/Smallpox",
+   "region": "Global"
+  },
+  "smilodon": {
+   "name": "The last saber-toothed cats die out",
+   "when": "c. 10,000 years ago",
+   "lo": -9974,
+   "hi": -6974,
+   "prec": "approx",
+   "src": "https://en.wikipedia.org/wiki/Smilodon",
+   "region": "North America"
+  },
+  "sputnik": {
+   "name": "Sputnik 1 is launched",
+   "when": "1957",
+   "lo": 1957,
+   "hi": 1957.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Sputnik_1",
+   "region": "Global"
   },
   "starry": {
    "name": "Van Gogh paints The Starry Night",
@@ -643,7 +1385,8 @@
    "lo": 1889,
    "hi": 1889.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/The_Starry_Night"
+   "src": "https://en.wikipedia.org/wiki/The_Starry_Night",
+   "region": "Europe"
   },
   "starwars": {
    "name": "Star Wars opens in cinemas",
@@ -651,7 +1394,8 @@
    "lo": 1977,
    "hi": 1977.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Star_Wars_(film)"
+   "src": "https://en.wikipedia.org/wiki/Star_Wars_(film)",
+   "region": "North America"
   },
   "steg": {
    "name": "Stegosaurus walks the Earth",
@@ -659,7 +1403,8 @@
    "lo": -154997974.0,
    "hi": -144997974.0,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Stegosaurus"
+   "src": "https://en.wikipedia.org/wiki/Stegosaurus",
+   "region": "Global"
   },
   "stonehenge": {
    "name": "Stonehenge's big sarsen circle goes up",
@@ -667,7 +1412,17 @@
    "lo": -2599,
    "hi": -2399,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Stonehenge"
+   "src": "https://en.wikipedia.org/wiki/Stonehenge",
+   "region": "Europe"
+  },
+  "suez": {
+   "name": "The Suez Canal opens",
+   "when": "1869",
+   "lo": 1869,
+   "hi": 1869.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Suez_Canal",
+   "region": "Africa"
   },
   "taj": {
    "name": "Work begins on the Taj Mahal",
@@ -675,7 +1430,17 @@
    "lo": 1632,
    "hi": 1632.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Taj_Mahal"
+   "src": "https://en.wikipedia.org/wiki/Taj_Mahal",
+   "region": "Asia"
+  },
+  "tambora": {
+   "name": "Mount Tambora erupts in Indonesia",
+   "when": "1815",
+   "lo": 1815,
+   "hi": 1815.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
+   "region": "Asia"
   },
   "tenoch": {
    "name": "The Aztecs found their capital, Tenochtitlan",
@@ -683,7 +1448,17 @@
    "lo": 1325,
    "hi": 1325.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Tenochtitlan"
+   "src": "https://en.wikipedia.org/wiki/Tenochtitlan",
+   "region": "Latin America"
+  },
+  "tenochfall": {
+   "name": "Tenochtitlan falls to the Spanish",
+   "when": "1521",
+   "lo": 1521,
+   "hi": 1521.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Fall_of_Tenochtitlan",
+   "region": "Latin America"
   },
   "terracotta": {
    "name": "China's Terracotta Army is made",
@@ -691,7 +1466,8 @@
    "lo": -245,
    "hi": -207,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Terracotta_Army"
+   "src": "https://en.wikipedia.org/wiki/Terracotta_Army",
+   "region": "Asia"
   },
   "thylacine": {
    "name": "The last known Tasmanian tiger dies",
@@ -699,7 +1475,8 @@
    "lo": 1936,
    "hi": 1936.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Thylacine"
+   "src": "https://en.wikipedia.org/wiki/Thylacine",
+   "region": "Oceania"
   },
   "titanic": {
    "name": "The Titanic sinks",
@@ -707,7 +1484,8 @@
    "lo": 1912,
    "hi": 1912.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Titanic"
+   "src": "https://en.wikipedia.org/wiki/Titanic",
+   "region": "Europe"
   },
   "today": {
    "name": "You, reading this",
@@ -715,7 +1493,8 @@
    "lo": 2026,
    "hi": 2026.999,
    "prec": "year",
-   "src": null
+   "src": null,
+   "region": "Global"
   },
   "toilet": {
    "name": "The first flush toilet is built in England",
@@ -723,7 +1502,17 @@
    "lo": 1596,
    "hi": 1596.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Flush_toilet"
+   "src": "https://en.wikipedia.org/wiki/Flush_toilet",
+   "region": "Europe"
+  },
+  "tomb": {
+   "name": "Tutankhamun's tomb is found",
+   "when": "1922",
+   "lo": 1922,
+   "hi": 1922.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Tutankhamun",
+   "region": "Africa"
   },
   "trees": {
    "name": "The first trees",
@@ -731,7 +1520,8 @@
    "lo": -394997974.0,
    "hi": -379997974.0,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Wattieza"
+   "src": "https://en.wikipedia.org/wiki/Wattieza",
+   "region": "Global"
   },
   "trex": {
    "name": "Tyrannosaurus rex walks the Earth",
@@ -739,7 +1529,8 @@
    "lo": -69997974.0,
    "hi": -65997974.0,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Tyrannosaurus"
+   "src": "https://en.wikipedia.org/wiki/Tyrannosaurus",
+   "region": "Global"
   },
   "tv": {
    "name": "Television is first shown to the public",
@@ -747,15 +1538,17 @@
    "lo": 1926,
    "hi": 1926.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/John_Logie_Baird"
+   "src": "https://en.wikipedia.org/wiki/John_Logie_Baird",
+   "region": "Europe"
   },
-  "uranus": {
-   "name": "Uranus is discovered",
-   "when": "1781",
-   "lo": 1781,
-   "hi": 1781.999,
+  "uluru": {
+   "name": "Uluru is handed back to its Aboriginal owners",
+   "when": "1985",
+   "lo": 1985,
+   "hi": 1985.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Uranus"
+   "src": "https://en.wikipedia.org/wiki/Uluru",
+   "region": "Oceania"
   },
   "vaccine": {
    "name": "The first vaccine (for smallpox)",
@@ -763,15 +1556,17 @@
    "lo": 1796,
    "hi": 1796.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Smallpox_vaccine"
+   "src": "https://en.wikipedia.org/wiki/Smallpox_vaccine",
+   "region": "Europe"
   },
   "vending": {
-   "name": "The first modern coin vending machines appear in London",
+   "name": "The first modern coin vending machines appear in England",
    "when": "early 1880s",
    "lo": 1880,
    "hi": 1885,
    "prec": "approx",
-   "src": "https://en.wikipedia.org/wiki/Vending_machine"
+   "src": "https://en.wikipedia.org/wiki/Vending_machine",
+   "region": "Europe"
   },
   "viking1": {
    "name": "Viking 1 lands on Mars",
@@ -779,7 +1574,8 @@
    "lo": 1976,
    "hi": 1976.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Viking_1"
+   "src": "https://en.wikipedia.org/wiki/Viking_1",
+   "region": "Global"
   },
   "vikings": {
    "name": "Vikings are cutting wood in Newfoundland",
@@ -787,7 +1583,26 @@
    "lo": 1021,
    "hi": 1021.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/L%27Anse_aux_Meadows"
+   "src": "https://en.wikipedia.org/wiki/L%27Anse_aux_Meadows",
+   "region": "North America"
+  },
+  "waitangi": {
+   "name": "The Treaty of Waitangi is signed in New Zealand",
+   "when": "1840",
+   "lo": 1840,
+   "hi": 1840.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Treaty_of_Waitangi",
+   "region": "Oceania"
+  },
+  "waterloo": {
+   "name": "The Battle of Waterloo",
+   "when": "1815",
+   "lo": 1815,
+   "hi": 1815.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Battle_of_Waterloo",
+   "region": "Europe"
   },
   "willie": {
    "name": "Mickey Mouse debuts in Steamboat Willie",
@@ -795,7 +1610,8 @@
    "lo": 1928,
    "hi": 1928.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Steamboat_Willie"
+   "src": "https://en.wikipedia.org/wiki/Steamboat_Willie",
+   "region": "North America"
   },
   "wright": {
    "name": "The Wright brothers make the first powered flight",
@@ -803,7 +1619,26 @@
    "lo": 1903,
    "hi": 1903.999,
    "prec": "year",
-   "src": "https://en.wikipedia.org/wiki/Wright_Flyer"
+   "src": "https://en.wikipedia.org/wiki/Wright_Flyer",
+   "region": "North America"
+  },
+  "zhenghe": {
+   "name": "Zheng He's first treasure fleet sails",
+   "when": "1405",
+   "lo": 1405,
+   "hi": 1405.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Zheng_He",
+   "region": "Asia"
+  },
+  "zimbabwe": {
+   "name": "Zimbabwe becomes independent",
+   "when": "1980",
+   "lo": 1980,
+   "hi": 1980.999,
+   "prec": "year",
+   "src": "https://en.wikipedia.org/wiki/Zimbabwe",
+   "region": "Africa"
   }
  },
  "trios": [
@@ -1006,41 +1841,13 @@
   {
    "n": 8,
    "e": [
-    "alamo",
-    "email",
-    "fax"
-   ],
-   "answer": [
-    "alamo",
-    "fax"
-   ],
-   "hook": "The fax machine is 7 years younger than the Alamo.",
-   "gaps": {
-    "fax-alamo": [
-     6,
-     8
-    ],
-    "fax-email": [
-     127,
-     129
-    ],
-    "alamo-email": [
-     134,
-     136
-    ]
-   },
-   "margin": 119
-  },
-  {
-   "n": 9,
-   "e": [
-    "constantinople",
     "gutenberg",
-    "romefall"
+    "romefall",
+    "constantinople"
    ],
    "answer": [
-    "constantinople",
-    "gutenberg"
+    "gutenberg",
+    "constantinople"
    ],
    "hook": "The Roman Empire (its eastern half) lasted until the age of the printing press.",
    "gaps": {
@@ -1060,15 +1867,15 @@
    "margin": 973
   },
   {
-   "n": 10,
+   "n": 9,
    "e": [
+    "machu",
     "columbus",
-    "colosseum",
-    "machu"
+    "colosseum"
    ],
    "answer": [
-    "columbus",
-    "machu"
+    "machu",
+    "columbus"
    ],
    "hook": "Machu Picchu was only about 40 years old when Columbus sailed.",
    "gaps": {
@@ -1088,11 +1895,11 @@
    "margin": 1266
   },
   {
-   "n": 11,
+   "n": 10,
    "e": [
     "colosseum",
-    "pompeii",
-    "caesar"
+    "caesar",
+    "pompeii"
    ],
    "answer": [
     "colosseum",
@@ -1116,15 +1923,15 @@
    "margin": 119
   },
   {
-   "n": 12,
+   "n": 11,
    "e": [
+    "hastings",
     "vikings",
-    "columbus",
-    "hastings"
+    "columbus"
    ],
    "answer": [
-    "vikings",
-    "hastings"
+    "hastings",
+    "vikings"
    ],
    "hook": "Vikings were in America 471 years before Columbus.",
    "gaps": {
@@ -1144,10 +1951,10 @@
    "margin": 379
   },
   {
-   "n": 13,
+   "n": 12,
    "e": [
-    "bastille",
     "guillotine",
+    "bastille",
     "starwars"
    ],
    "answer": [
@@ -1172,10 +1979,10 @@
    "margin": 186
   },
   {
-   "n": 14,
+   "n": 13,
    "e": [
-    "antarctica",
     "magellan",
+    "antarctica",
     "battery"
    ],
    "answer": [
@@ -1200,15 +2007,15 @@
    "margin": 254
   },
   {
-   "n": 15,
+   "n": 14,
    "e": [
-    "mayflower",
     "taj",
-    "machu"
+    "machu",
+    "mayflower"
    ],
    "answer": [
-    "mayflower",
-    "taj"
+    "taj",
+    "mayflower"
    ],
    "hook": "The Taj Mahal is younger than the Mayflower landing.",
    "gaps": {
@@ -1228,11 +2035,11 @@
    "margin": 137
   },
   {
-   "n": 16,
+   "n": 15,
    "e": [
-    "trex",
     "trees",
-    "sharks"
+    "sharks",
+    "trex"
    ],
    "answer": [
     "trees",
@@ -1256,15 +2063,15 @@
    "margin": 232000000
   },
   {
-   "n": 17,
+   "n": 16,
    "e": [
-    "stonehenge",
     "rome",
-    "pyramid"
+    "pyramid",
+    "stonehenge"
    ],
    "answer": [
-    "stonehenge",
-    "pyramid"
+    "pyramid",
+    "stonehenge"
    ],
    "hook": "Stonehenge and the Great Pyramid went up at about the same time.",
    "gaps": {
@@ -1284,7 +2091,7 @@
    "margin": 1300
   },
   {
-   "n": 18,
+   "n": 17,
    "e": [
     "wright",
     "civilwar",
@@ -1312,43 +2119,43 @@
    "margin": 26
   },
   {
-   "n": 19,
+   "n": 18,
    "e": [
     "gobekli",
     "today",
-    "pyramid"
+    "stonehenge"
    ],
    "answer": [
     "today",
-    "pyramid"
+    "stonehenge"
    ],
-   "hook": "The Great Pyramid is closer to us than to Göbekli Tepe.",
+   "hook": "Stonehenge is closer in time to us than to Göbekli Tepe.",
    "gaps": {
-    "gobekli-pyramid": [
-     5300,
-     7000
+    "gobekli-stonehenge": [
+     5400,
+     7100
     ],
     "gobekli-today": [
      10025,
      11526
     ],
-    "pyramid-today": [
-     4525,
-     4726
+    "stonehenge-today": [
+     4425,
+     4626
     ]
    },
-   "margin": 574
+   "margin": 774
   },
   {
-   "n": 20,
+   "n": 19,
    "e": [
+    "titanic",
     "gettysburg",
-    "oreo",
-    "titanic"
+    "oreo"
    ],
    "answer": [
-    "oreo",
-    "titanic"
+    "titanic",
+    "oreo"
    ],
    "hook": "Oreos and the Titanic are the same age.",
    "gaps": {
@@ -1368,10 +2175,10 @@
    "margin": 47
   },
   {
-   "n": 21,
+   "n": 20,
    "e": [
-    "benz",
     "loco",
+    "benz",
     "safety"
    ],
    "answer": [
@@ -1396,38 +2203,10 @@
    "margin": 78
   },
   {
-   "n": 22,
+   "n": 21,
    "e": [
-    "neptune",
-    "uranus",
-    "pluto"
-   ],
-   "answer": [
-    "neptune",
-    "uranus"
-   ],
-   "hook": "Neptune was found closer to Uranus than to Pluto.",
-   "gaps": {
-    "uranus-neptune": [
-     64,
-     66
-    ],
-    "uranus-pluto": [
-     148,
-     150
-    ],
-    "neptune-pluto": [
-     83,
-     85
-    ]
-   },
-   "margin": 17
-  },
-  {
-   "n": 23,
-   "e": [
-    "wright",
     "sliced",
+    "wright",
     "tv"
    ],
    "answer": [
@@ -1452,37 +2231,37 @@
    "margin": 19
   },
   {
-   "n": 24,
+   "n": 22,
    "e": [
+    "vending",
     "hero",
-    "pyramid",
-    "vending"
+    "gobekli"
    ],
    "answer": [
-    "hero",
-    "vending"
+    "vending",
+    "hero"
    ],
-   "hook": "There was a coin-operated vending machine in Roman Egypt.",
+   "hook": "Roman Egypt had a coin-operated vending machine about 1,800 years before the first modern ones in England.",
    "gaps": {
     "hero-vending": [
      1795,
      1875
     ],
-    "hero-pyramid": [
-     2509,
-     2784
+    "hero-gobekli": [
+     8009,
+     9584
     ],
-    "vending-pyramid": [
-     4379,
-     4584
+    "vending-gobekli": [
+     9879,
+     11384
     ]
    },
-   "margin": 634
+   "margin": 6134
   },
   {
-   "n": 25,
+   "n": 23,
    "e": [
-    "pyramid",
+    "otzi",
     "eniac",
     "antikythera"
    ],
@@ -1490,33 +2269,33 @@
     "eniac",
     "antikythera"
    ],
-   "hook": "An ancient Greek computer is closer to ENIAC than to the Great Pyramid.",
+   "hook": "An ancient Greek computer is closer in time to ENIAC than to the Iceman.",
    "gaps": {
     "antikythera-eniac": [
      2004,
      2151
     ],
-    "antikythera-pyramid": [
-     2295,
-     2640
+    "antikythera-otzi": [
+     2900,
+     3299
     ],
-    "eniac-pyramid": [
-     4444,
-     4646
+    "eniac-otzi": [
+     5049,
+     5305
     ]
    },
-   "margin": 144
+   "margin": 749
   },
   {
-   "n": 26,
+   "n": 24,
    "e": [
-    "notredame",
-    "stonehenge",
-    "moai"
+    "moai",
+    "otzi",
+    "notredame"
    ],
    "answer": [
-    "notredame",
-    "moai"
+    "moai",
+    "notredame"
    ],
    "hook": "The Easter Island statues were carved after work began on Notre-Dame.",
    "gaps": {
@@ -1524,83 +2303,55 @@
      86,
      337
     ],
-    "moai-stonehenge": [
-     3649,
-     4099
+    "moai-otzi": [
+     4354,
+     4858
     ],
-    "notredame-stonehenge": [
-     3562,
-     3763
+    "notredame-otzi": [
+     4267,
+     4522
     ]
    },
-   "margin": 3225
+   "margin": 3930
   },
   {
-   "n": 27,
+   "n": 25,
    "e": [
     "moon",
-    "pyramid",
+    "cun_first",
     "terracotta"
    ],
    "answer": [
     "moon",
     "terracotta"
    ],
-   "hook": "China's Terracotta Army is closer in time to the Moon landing than to the Great Pyramid.",
+   "hook": "China's Terracotta Army is closer in time to the Moon landing than to the invention of writing.",
    "gaps": {
-    "terracotta-pyramid": [
-     2254,
-     2492
+    "terracotta-cun_first": [
+     2854,
+     3292
     ],
     "terracotta-moon": [
      2176,
      2215
     ],
-    "pyramid-moon": [
-     4468,
-     4669
+    "cun_first-moon": [
+     5068,
+     5469
     ]
    },
-   "margin": 39
+   "margin": 639
   },
   {
-   "n": 28,
+   "n": 26,
    "e": [
-    "lincoln",
-    "mobile",
-    "nokia"
-   ],
-   "answer": [
-    "lincoln",
-    "nokia"
-   ],
-   "hook": "Nokia started out the year Lincoln was shot.",
-   "gaps": {
-    "nokia-lincoln": [
-     0,
-     1
-    ],
-    "nokia-mobile": [
-     107,
-     109
-    ],
-    "lincoln-mobile": [
-     107,
-     109
-    ]
-   },
-   "margin": 106
-  },
-  {
-   "n": 29,
-   "e": [
-    "kongo",
+    "romefall",
     "oxford",
-    "romefall"
+    "kongo"
    ],
    "answer": [
-    "kongo",
-    "romefall"
+    "romefall",
+    "kongo"
    ],
    "hook": "A Japanese building firm was founded in the century after the fall of Rome, five centuries before Oxford.",
    "gaps": {
@@ -1620,35 +2371,7 @@
    "margin": 370
   },
   {
-   "n": 30,
-   "e": [
-    "salem",
-    "boe",
-    "armada"
-   ],
-   "answer": [
-    "salem",
-    "boe"
-   ],
-   "hook": "The Salem witch trials ended a year before the Bank of England opened.",
-   "gaps": {
-    "salem-boe": [
-     1,
-     3
-    ],
-    "salem-armada": [
-     103,
-     105
-    ],
-    "boe-armada": [
-     105,
-     107
-    ]
-   },
-   "margin": 100
-  },
-  {
-   "n": 31,
+   "n": 27,
    "e": [
     "trex",
     "lucy",
@@ -1676,11 +2399,11 @@
    "margin": 61650000
   },
   {
-   "n": 32,
+   "n": 28,
    "e": [
     "magna",
-    "glasses",
-    "gutenberg"
+    "gutenberg",
+    "glasses"
    ],
    "answer": [
     "magna",
@@ -1704,7 +2427,7 @@
    "margin": 69
   },
   {
-   "n": 33,
+   "n": 29,
    "e": [
     "toilet",
     "constantinople",
@@ -1732,15 +2455,15 @@
    "margin": 136
   },
   {
-   "n": 34,
+   "n": 30,
    "e": [
-    "moon",
     "dodo",
+    "moon",
     "mammoth"
    ],
    "answer": [
-    "moon",
-    "dodo"
+    "dodo",
+    "moon"
    ],
    "hook": "The dodo is closer in time to the Moon landing than to the woolly mammoth.",
    "gaps": {
@@ -1760,43 +2483,15 @@
    "margin": 3003
   },
   {
-   "n": 35,
+   "n": 31,
    "e": [
-    "okcorral",
-    "nba",
-    "basketball"
-   ],
-   "answer": [
-    "okcorral",
-    "basketball"
-   ],
-   "hook": "Basketball was invented 10 years after the O.K. Corral gunfight.",
-   "gaps": {
-    "basketball-okcorral": [
-     9,
-     11
-    ],
-    "basketball-nba": [
-     54,
-     56
-    ],
-    "okcorral-nba": [
-     64,
-     66
-    ]
-   },
-   "margin": 43
-  },
-  {
-   "n": 36,
-   "e": [
-    "oxford",
+    "tenoch",
     "hastings",
-    "tenoch"
+    "oxford"
    ],
    "answer": [
-    "oxford",
-    "hastings"
+    "hastings",
+    "oxford"
    ],
    "hook": "Oxford was teaching more than 150 years before the Aztecs founded Tenochtitlan.",
    "gaps": {
@@ -1816,15 +2511,15 @@
    "margin": 57
   },
   {
-   "n": 37,
+   "n": 32,
    "e": [
-    "wright",
+    "viking1",
     "concorde",
-    "viking1"
+    "wright"
    ],
    "answer": [
-    "concorde",
-    "viking1"
+    "viking1",
+    "concorde"
    ],
    "hook": "Concorde started flying passengers the year a probe first landed on Mars.",
    "gaps": {
@@ -1844,15 +2539,15 @@
    "margin": 71
   },
   {
-   "n": 38,
+   "n": 33,
    "e": [
+    "smallpox",
     "vaccine",
-    "pacman",
-    "smallpox"
+    "pacman"
    ],
    "answer": [
-    "pacman",
-    "smallpox"
+    "smallpox",
+    "pacman"
    ],
    "hook": "Smallpox was wiped out the year Pac-Man came out.",
    "gaps": {
@@ -1872,15 +2567,15 @@
    "margin": 182
   },
   {
-   "n": 39,
+   "n": 34,
    "e": [
     "cun_first",
-    "today",
-    "cun_last"
+    "cun_last",
+    "today"
    ],
    "answer": [
-    "today",
-    "cun_last"
+    "cun_last",
+    "today"
    ],
    "hook": "The last cuneiform tablet is closer to us than to the first.",
    "gaps": {
@@ -1900,11 +2595,11 @@
    "margin": 1222
   },
   {
-   "n": 40,
+   "n": 35,
    "e": [
     "pyramid",
-    "methuselah",
-    "rome"
+    "rome",
+    "methuselah"
    ],
    "answer": [
     "pyramid",
@@ -1928,11 +2623,11 @@
    "margin": 1300
   },
   {
-   "n": 41,
+   "n": 36,
    "e": [
-    "alaska",
     "hawaii",
-    "barbie"
+    "barbie",
+    "alaska"
    ],
    "answer": [
     "hawaii",
@@ -1956,7 +2651,7 @@
    "margin": 90
   },
   {
-   "n": 42,
+   "n": 37,
    "e": [
     "dodo",
     "thylacine",
@@ -1984,10 +2679,10 @@
    "margin": 239
   },
   {
-   "n": 43,
+   "n": 38,
    "e": [
-    "dna",
     "origin",
+    "dna",
     "everest"
    ],
    "answer": [
@@ -2010,6 +2705,1770 @@
     ]
    },
    "margin": 92
+  },
+  {
+   "n": 39,
+   "e": [
+    "tenoch",
+    "columbus",
+    "mansa"
+   ],
+   "answer": [
+    "tenoch",
+    "mansa"
+   ],
+   "hook": "Mansa Musa of Mali made his pilgrimage to Mecca within a year of the Aztecs founding Tenochtitlan.",
+   "gaps": {
+    "mansa-tenoch": [
+     0,
+     2
+    ],
+    "mansa-columbus": [
+     166,
+     169
+    ],
+    "tenoch-columbus": [
+     166,
+     168
+    ]
+   },
+   "margin": 164
+  },
+  {
+   "n": 40,
+   "e": [
+    "genghis",
+    "lalibela",
+    "hastings"
+   ],
+   "answer": [
+    "genghis",
+    "lalibela"
+   ],
+   "hook": "The rock churches of Lalibela in Ethiopia were being carved in Genghis Khan's day.",
+   "gaps": {
+    "lalibela-genghis": [
+     0,
+     26
+    ],
+    "lalibela-hastings": [
+     114,
+     155
+    ],
+    "genghis-hastings": [
+     139,
+     141
+    ]
+   },
+   "margin": 88
+  },
+  {
+   "n": 41,
+   "e": [
+    "oxford",
+    "qaraw",
+    "charl"
+   ],
+   "answer": [
+    "qaraw",
+    "charl"
+   ],
+   "hook": "A university opened in Fez, Morocco, about 60 years after Charlemagne became emperor.",
+   "gaps": {
+    "qaraw-charl": [
+     58,
+     60
+    ],
+    "qaraw-oxford": [
+     236,
+     308
+    ],
+    "charl-oxford": [
+     295,
+     367
+    ]
+   },
+   "margin": 176
+  },
+  {
+   "n": 42,
+   "e": [
+    "nintendo",
+    "tomb",
+    "ott_end"
+   ],
+   "answer": [
+    "tomb",
+    "ott_end"
+   ],
+   "hook": "Tutankhamun's tomb was found the same year the Ottoman sultanate ended.",
+   "gaps": {
+    "tomb-ott_end": [
+     0,
+     1
+    ],
+    "tomb-nintendo": [
+     32,
+     34
+    ],
+    "ott_end-nintendo": [
+     32,
+     34
+    ]
+   },
+   "margin": 31
+  },
+  {
+   "n": 43,
+   "e": [
+    "periodic",
+    "hawaii",
+    "suez"
+   ],
+   "answer": [
+    "periodic",
+    "suez"
+   ],
+   "hook": "The Suez Canal opened the same year Mendeleev published the periodic table.",
+   "gaps": {
+    "suez-periodic": [
+     0,
+     1
+    ],
+    "suez-hawaii": [
+     89,
+     91
+    ],
+    "periodic-hawaii": [
+     89,
+     91
+    ]
+   },
+   "margin": 88
+  },
+  {
+   "n": 44,
+   "e": [
+    "adwa",
+    "olympics96",
+    "dodo"
+   ],
+   "answer": [
+    "adwa",
+    "olympics96"
+   ],
+   "hook": "Ethiopia beat Italy at Adwa the same year the modern Olympics began.",
+   "gaps": {
+    "adwa-olympics96": [
+     0,
+     1
+    ],
+    "adwa-dodo": [
+     233,
+     235
+    ],
+    "olympics96-dodo": [
+     233,
+     235
+    ]
+   },
+   "margin": 232
+  },
+  {
+   "n": 45,
+   "e": [
+    "pacman",
+    "sputnik",
+    "ghana"
+   ],
+   "answer": [
+    "sputnik",
+    "ghana"
+   ],
+   "hook": "Ghana became independent the same year Sputnik went up.",
+   "gaps": {
+    "ghana-sputnik": [
+     0,
+     1
+    ],
+    "ghana-pacman": [
+     22,
+     24
+    ],
+    "sputnik-pacman": [
+     22,
+     24
+    ]
+   },
+   "margin": 21
+  },
+  {
+   "n": 46,
+   "e": [
+    "starry",
+    "kili",
+    "barbie"
+   ],
+   "answer": [
+    "starry",
+    "kili"
+   ],
+   "hook": "Kilimanjaro was first climbed the same year Van Gogh painted The Starry Night.",
+   "gaps": {
+    "kili-starry": [
+     0,
+     1
+    ],
+    "kili-barbie": [
+     69,
+     71
+    ],
+    "starry-barbie": [
+     69,
+     71
+    ]
+   },
+   "margin": 68
+  },
+  {
+   "n": 47,
+   "e": [
+    "kush",
+    "cun_last",
+    "rome"
+   ],
+   "answer": [
+    "kush",
+    "rome"
+   ],
+   "hook": "Kings from Kush ruled Egypt about when Rome was supposedly founded.",
+   "gaps": {
+    "kush-rome": [
+     0,
+     62
+    ],
+    "kush-cun_last": [
+     812,
+     830
+    ],
+    "rome-cun_last": [
+     774,
+     880
+    ]
+   },
+   "margin": 712
+  },
+  {
+   "n": 48,
+   "e": [
+    "cun_first",
+    "lascaux",
+    "ishango"
+   ],
+   "answer": [
+    "lascaux",
+    "ishango"
+   ],
+   "hook": "The Ishango bone, a tally stick from Central Africa, is closer in time to the Lascaux paintings than to the first writing.",
+   "gaps": {
+    "ishango-lascaux": [
+     0,
+     5025
+    ],
+    "ishango-cun_first": [
+     14500,
+     16900
+    ],
+    "lascaux-cun_first": [
+     11475,
+     16875
+    ]
+   },
+   "margin": 6450
+  },
+  {
+   "n": 49,
+   "e": [
+    "madj",
+    "irhoud",
+    "chauvet"
+   ],
+   "answer": [
+    "madj",
+    "chauvet"
+   ],
+   "hook": "People reached Australia closer in time to the Chauvet cave painters than to the oldest known Homo sapiens fossils.",
+   "gaps": {
+    "madj-chauvet": [
+     22000,
+     42000
+    ],
+    "madj-irhoud": [
+     215000,
+     256000
+    ],
+    "chauvet-irhoud": [
+     248000,
+     287000
+    ]
+   },
+   "margin": 173000
+  },
+  {
+   "n": 50,
+   "e": [
+    "glacier",
+    "gobekli",
+    "lascaux"
+   ],
+   "answer": [
+    "glacier",
+    "gobekli"
+   ],
+   "hook": "Göbekli Tepe was built as the last ice age was ending, thousands of years after Lascaux.",
+   "gaps": {
+    "glacier-gobekli": [
+     0,
+     1975
+    ],
+    "glacier-lascaux": [
+     5000,
+     10500
+    ],
+    "gobekli-lascaux": [
+     5475,
+     11975
+    ]
+   },
+   "margin": 3025
+  },
+  {
+   "n": 51,
+   "e": [
+    "bigbang",
+    "today",
+    "earth"
+   ],
+   "answer": [
+    "today",
+    "earth"
+   ],
+   "hook": "Earth is closer in time to today than to the Big Bang.",
+   "gaps": {
+    "bigbang-earth": [
+     9130000000,
+     9370000000
+    ],
+    "bigbang-today": [
+     13700000000,
+     13900000001
+    ],
+    "earth-today": [
+     4530000000,
+     4570000001
+    ]
+   },
+   "margin": 4559999999
+  },
+  {
+   "n": 52,
+   "e": [
+    "cun_first",
+    "rome",
+    "otzi"
+   ],
+   "answer": [
+    "cun_first",
+    "otzi"
+   ],
+   "hook": "The Iceman died around the time writing was invented in Sumer.",
+   "gaps": {
+    "otzi-cun_first": [
+     0,
+     395
+    ],
+    "otzi-rome": [
+     2305,
+     2659
+    ],
+    "cun_first-rome": [
+     2300,
+     2800
+    ]
+   },
+   "margin": 1905
+  },
+  {
+   "n": 53,
+   "e": [
+    "trees",
+    "steg",
+    "cockroach"
+   ],
+   "answer": [
+    "trees",
+    "cockroach"
+   ],
+   "hook": "Cockroaches are closer in time to the first trees than to Stegosaurus.",
+   "gaps": {
+    "cockroach-trees": [
+     21000000,
+     96000000
+    ],
+    "cockroach-steg": [
+     144000000,
+     214000000
+    ],
+    "trees-steg": [
+     225000000,
+     250000000
+    ]
+   },
+   "margin": 48000000
+  },
+  {
+   "n": 54,
+   "e": [
+    "jikji",
+    "domesday",
+    "gutenberg"
+   ],
+   "answer": [
+    "jikji",
+    "gutenberg"
+   ],
+   "hook": "Korea printed a book with movable metal type 78 years before Gutenberg's Bible.",
+   "gaps": {
+    "jikji-gutenberg": [
+     76,
+     79
+    ],
+    "jikji-domesday": [
+     290,
+     292
+    ],
+    "gutenberg-domesday": [
+     367,
+     370
+    ]
+   },
+   "margin": 211
+  },
+  {
+   "n": 55,
+   "e": [
+    "inca",
+    "notredame",
+    "hangul"
+   ],
+   "answer": [
+    "inca",
+    "hangul"
+   ],
+   "hook": "The Inca Empire began expanding in the same decade King Sejong gave Korea its alphabet.",
+   "gaps": {
+    "hangul-inca": [
+     4,
+     9
+    ],
+    "hangul-notredame": [
+     279,
+     284
+    ],
+    "inca-notredame": [
+     274,
+     276
+    ]
+   },
+   "margin": 265
+  },
+  {
+   "n": 56,
+   "e": [
+    "magna",
+    "constantinople",
+    "genghis"
+   ],
+   "answer": [
+    "magna",
+    "genghis"
+   ],
+   "hook": "Genghis Khan became ruler of the Mongols 9 years before Magna Carta.",
+   "gaps": {
+    "genghis-magna": [
+     8,
+     10
+    ],
+    "genghis-constantinople": [
+     246,
+     248
+    ],
+    "magna-constantinople": [
+     237,
+     239
+    ]
+   },
+   "margin": 227
+  },
+  {
+   "n": 57,
+   "e": [
+    "forbidden",
+    "magellan",
+    "zhenghe"
+   ],
+   "answer": [
+    "forbidden",
+    "zhenghe"
+   ],
+   "hook": "Zheng He's first treasure fleet sailed 15 years before the Forbidden City was finished.",
+   "gaps": {
+    "zhenghe-forbidden": [
+     14,
+     16
+    ],
+    "zhenghe-magellan": [
+     116,
+     118
+    ],
+    "forbidden-magellan": [
+     101,
+     103
+    ]
+   },
+   "margin": 85
+  },
+  {
+   "n": 58,
+   "e": [
+    "notredame",
+    "angkor",
+    "hamlet"
+   ],
+   "answer": [
+    "notredame",
+    "angkor"
+   ],
+   "hook": "Angkor Wat and Notre-Dame were built within decades of each other.",
+   "gaps": {
+    "angkor-notredame": [
+     12,
+     51
+    ],
+    "angkor-hamlet": [
+     448,
+     489
+    ],
+    "notredame-hamlet": [
+     435,
+     439
+    ]
+   },
+   "margin": 384
+  },
+  {
+   "n": 59,
+   "e": [
+    "domesday",
+    "canon",
+    "genji"
+   ],
+   "answer": [
+    "canon",
+    "genji"
+   ],
+   "hook": "Avicenna finished The Canon of Medicine within about 25 years of the writing of The Tale of Genji.",
+   "gaps": {
+    "canon-genji": [
+     4,
+     26
+    ],
+    "canon-domesday": [
+     60,
+     62
+    ],
+    "genji-domesday": [
+     65,
+     87
+    ]
+   },
+   "margin": 34
+  },
+  {
+   "n": 60,
+   "e": [
+    "charl",
+    "magna",
+    "khwarizmi"
+   ],
+   "answer": [
+    "charl",
+    "khwarizmi"
+   ],
+   "hook": "The book that gave us the word \"algebra\" came about 20 years after Charlemagne became emperor.",
+   "gaps": {
+    "khwarizmi-charl": [
+     12,
+     33
+    ],
+    "khwarizmi-magna": [
+     382,
+     403
+    ],
+    "charl-magna": [
+     414,
+     416
+    ]
+   },
+   "margin": 349
+  },
+  {
+   "n": 61,
+   "e": [
+    "republic",
+    "caesar",
+    "persepolis"
+   ],
+   "answer": [
+    "republic",
+    "persepolis"
+   ],
+   "hook": "Persepolis was begun about nine years before Rome became a republic.",
+   "gaps": {
+    "persepolis-republic": [
+     5,
+     13
+    ],
+    "persepolis-caesar": [
+     471,
+     477
+    ],
+    "republic-caesar": [
+     463,
+     467
+    ]
+   },
+   "margin": 450
+  },
+  {
+   "n": 62,
+   "e": [
+    "confucius",
+    "cyrus",
+    "parthenon"
+   ],
+   "answer": [
+    "confucius",
+    "cyrus"
+   ],
+   "hook": "Confucius was born 12 years before Cyrus took Babylon.",
+   "gaps": {
+    "confucius-cyrus": [
+     11,
+     14
+    ],
+    "confucius-parthenon": [
+     103,
+     106
+    ],
+    "cyrus-parthenon": [
+     91,
+     93
+    ]
+   },
+   "margin": 77
+  },
+  {
+   "n": 63,
+   "e": [
+    "hannibal",
+    "cleo",
+    "qin"
+   ],
+   "answer": [
+    "hannibal",
+    "qin"
+   ],
+   "hook": "China was unified three years before Hannibal set out to invade Italy.",
+   "gaps": {
+    "qin-hannibal": [
+     2,
+     4
+    ],
+    "qin-cleo": [
+     150,
+     153
+    ],
+    "hannibal-cleo": [
+     147,
+     150
+    ]
+   },
+   "margin": 143
+  },
+  {
+   "n": 64,
+   "e": [
+    "colosseum",
+    "romefall",
+    "cailun"
+   ],
+   "answer": [
+    "colosseum",
+    "cailun"
+   ],
+   "hook": "Paper was reported to the Chinese emperor 25 years after the Colosseum opened.",
+   "gaps": {
+    "cailun-colosseum": [
+     24,
+     26
+    ],
+    "cailun-romefall": [
+     370,
+     372
+    ],
+    "colosseum-romefall": [
+     395,
+     397
+    ]
+   },
+   "margin": 344
+  },
+  {
+   "n": 65,
+   "e": [
+    "stonehenge",
+    "parthenon",
+    "mohenjo"
+   ],
+   "answer": [
+    "stonehenge",
+    "mohenjo"
+   ],
+   "hook": "Mohenjo-daro's streets and Stonehenge's big stone circle date from the same few centuries.",
+   "gaps": {
+    "mohenjo-stonehenge": [
+     0,
+     200
+    ],
+    "mohenjo-parthenon": [
+     2003,
+     2154
+    ],
+    "stonehenge-parthenon": [
+     1953,
+     2154
+    ]
+   },
+   "margin": 1753
+  },
+  {
+   "n": 66,
+   "e": [
+    "stonehenge",
+    "caral",
+    "caesar"
+   ],
+   "answer": [
+    "stonehenge",
+    "caral"
+   ],
+   "hook": "Caral in Peru was a thriving city in the era when Stonehenge's big stones went up.",
+   "gaps": {
+    "caral-stonehenge": [
+     0,
+     600
+    ],
+    "caral-caesar": [
+     1956,
+     2557
+    ],
+    "stonehenge-caesar": [
+     2356,
+     2557
+    ]
+   },
+   "margin": 1356
+  },
+  {
+   "n": 67,
+   "e": [
+    "tenochfall",
+    "hamlet",
+    "mactan"
+   ],
+   "answer": [
+    "tenochfall",
+    "mactan"
+   ],
+   "hook": "Magellan was killed in the Philippines the same year Tenochtitlan fell.",
+   "gaps": {
+    "tenochfall-mactan": [
+     0,
+     1
+    ],
+    "tenochfall-hamlet": [
+     77,
+     81
+    ],
+    "mactan-hamlet": [
+     77,
+     81
+    ]
+   },
+   "margin": 76
+  },
+  {
+   "n": 68,
+   "e": [
+    "bastille",
+    "loco",
+    "haiti"
+   ],
+   "answer": [
+    "loco",
+    "haiti"
+   ],
+   "hook": "Haiti became independent the same year the first steam locomotive ran.",
+   "gaps": {
+    "haiti-loco": [
+     0,
+     1
+    ],
+    "haiti-bastille": [
+     14,
+     16
+    ],
+    "loco-bastille": [
+     14,
+     16
+    ]
+   },
+   "margin": 13
+  },
+  {
+   "n": 69,
+   "e": [
+    "panama",
+    "gettysburg",
+    "titanic"
+   ],
+   "answer": [
+    "panama",
+    "titanic"
+   ],
+   "hook": "The Panama Canal opened two years after the Titanic sank.",
+   "gaps": {
+    "panama-titanic": [
+     1,
+     3
+    ],
+    "panama-gettysburg": [
+     50,
+     52
+    ],
+    "titanic-gettysburg": [
+     48,
+     50
+    ]
+   },
+   "margin": 45
+  },
+  {
+   "n": 70,
+   "e": [
+    "sliced",
+    "brasilia",
+    "hawaii"
+   ],
+   "answer": [
+    "brasilia",
+    "hawaii"
+   ],
+   "hook": "Brazil inaugurated Brasília one year after Hawaii became a state.",
+   "gaps": {
+    "brasilia-hawaii": [
+     0,
+     2
+    ],
+    "brasilia-sliced": [
+     31,
+     33
+    ],
+    "hawaii-sliced": [
+     30,
+     32
+    ]
+   },
+   "margin": 28
+  },
+  {
+   "n": 71,
+   "e": [
+    "galileo",
+    "meiji",
+    "alaska"
+   ],
+   "answer": [
+    "meiji",
+    "alaska"
+   ],
+   "hook": "Japan's shogunate fell the year after the US bought Alaska.",
+   "gaps": {
+    "meiji-alaska": [
+     0,
+     2
+    ],
+    "meiji-galileo": [
+     234,
+     236
+    ],
+    "alaska-galileo": [
+     233,
+     235
+    ]
+   },
+   "margin": 231
+  },
+  {
+   "n": 72,
+   "e": [
+    "tv",
+    "barbie",
+    "noodles"
+   ],
+   "answer": [
+    "barbie",
+    "noodles"
+   ],
+   "hook": "Instant noodles were invented one year before Barbie went on sale.",
+   "gaps": {
+    "noodles-barbie": [
+     0,
+     2
+    ],
+    "noodles-tv": [
+     31,
+     33
+    ],
+    "barbie-tv": [
+     32,
+     34
+    ]
+   },
+   "margin": 29
+  },
+  {
+   "n": 73,
+   "e": [
+    "greatwave",
+    "civilwar",
+    "beagle"
+   ],
+   "answer": [
+    "greatwave",
+    "beagle"
+   ],
+   "hook": "Hokusai made The Great Wave the same year Darwin's Beagle set sail.",
+   "gaps": {
+    "greatwave-beagle": [
+     0,
+     1
+    ],
+    "greatwave-civilwar": [
+     33,
+     35
+    ],
+    "beagle-civilwar": [
+     33,
+     35
+    ]
+   },
+   "margin": 32
+  },
+  {
+   "n": 74,
+   "e": [
+    "oreo",
+    "operahouse",
+    "mobile"
+   ],
+   "answer": [
+    "operahouse",
+    "mobile"
+   ],
+   "hook": "The Sydney Opera House opened the same year as the first handheld mobile phone call.",
+   "gaps": {
+    "operahouse-mobile": [
+     0,
+     1
+    ],
+    "operahouse-oreo": [
+     60,
+     62
+    ],
+    "mobile-oreo": [
+     60,
+     62
+    ]
+   },
+   "margin": 59
+  },
+  {
+   "n": 75,
+   "e": [
+    "waitangi",
+    "pennyblack",
+    "magellan"
+   ],
+   "answer": [
+    "waitangi",
+    "pennyblack"
+   ],
+   "hook": "New Zealand's founding treaty was signed the same year the first postage stamp went on sale.",
+   "gaps": {
+    "waitangi-pennyblack": [
+     0,
+     1
+    ],
+    "waitangi-magellan": [
+     317,
+     319
+    ],
+    "pennyblack-magellan": [
+     317,
+     319
+    ]
+   },
+   "margin": 316
+  },
+  {
+   "n": 76,
+   "e": [
+    "declaration",
+    "firstfleet",
+    "bastille"
+   ],
+   "answer": [
+    "firstfleet",
+    "bastille"
+   ],
+   "hook": "The First Fleet reached Australia the year before the Bastille fell.",
+   "gaps": {
+    "firstfleet-bastille": [
+     0,
+     2
+    ],
+    "firstfleet-declaration": [
+     11,
+     13
+    ],
+    "bastille-declaration": [
+     12,
+     14
+    ]
+   },
+   "margin": 9
+  },
+  {
+   "n": 77,
+   "e": [
+    "hastings",
+    "nz",
+    "glasses"
+   ],
+   "answer": [
+    "nz",
+    "glasses"
+   ],
+   "hook": "People reached New Zealand about when eyeglasses were invented.",
+   "gaps": {
+    "nz-glasses": [
+     0,
+     50
+    ],
+    "nz-hastings": [
+     183,
+     234
+    ],
+    "glasses-hastings": [
+     213,
+     234
+    ]
+   },
+   "margin": 133
+  },
+  {
+   "n": 78,
+   "e": [
+    "gutenberg",
+    "moa",
+    "taj"
+   ],
+   "answer": [
+    "gutenberg",
+    "moa"
+   ],
+   "hook": "The last moa were gone by about the time Gutenberg printed his Bible.",
+   "gaps": {
+    "moa-gutenberg": [
+     8,
+     156
+    ],
+    "moa-taj": [
+     186,
+     333
+    ],
+    "gutenberg-taj": [
+     176,
+     179
+    ]
+   },
+   "margin": 20
+  },
+  {
+   "n": 79,
+   "e": [
+    "mario",
+    "eniac",
+    "uluru"
+   ],
+   "answer": [
+    "mario",
+    "uluru"
+   ],
+   "hook": "Uluru was handed back to its Aboriginal owners the year Super Mario Bros. came out.",
+   "gaps": {
+    "uluru-mario": [
+     0,
+     1
+    ],
+    "uluru-eniac": [
+     38,
+     41
+    ],
+    "mario-eniac": [
+     38,
+     41
+    ]
+   },
+   "margin": 37
+  },
+  {
+   "n": 80,
+   "e": [
+    "smilodon",
+    "gobekli",
+    "chauvet"
+   ],
+   "answer": [
+    "smilodon",
+    "gobekli"
+   ],
+   "hook": "Saber-toothed cats were still around when Göbekli Tepe was built.",
+   "gaps": {
+    "smilodon-gobekli": [
+     0,
+     2525
+    ],
+    "smilodon-chauvet": [
+     16000,
+     28000
+    ],
+    "gobekli-chauvet": [
+     16475,
+     26975
+    ]
+   },
+   "margin": 13475
+  },
+  {
+   "n": 81,
+   "e": [
+    "elephantbird",
+    "galileo",
+    "vikings"
+   ],
+   "answer": [
+    "elephantbird",
+    "vikings"
+   ],
+   "hook": "Elephant birds were dying out in Madagascar about when Vikings reached Newfoundland.",
+   "gaps": {
+    "elephantbird-vikings": [
+     0,
+     179
+    ],
+    "elephantbird-galileo": [
+     433,
+     734
+    ],
+    "vikings-galileo": [
+     611,
+     613
+    ]
+   },
+   "margin": 254
+  },
+  {
+   "n": 82,
+   "e": [
+    "quagga",
+    "harvard",
+    "krakatoa"
+   ],
+   "answer": [
+    "quagga",
+    "krakatoa"
+   ],
+   "hook": "The last quagga died the year Krakatoa erupted.",
+   "gaps": {
+    "quagga-krakatoa": [
+     0,
+     1
+    ],
+    "quagga-harvard": [
+     246,
+     248
+    ],
+    "krakatoa-harvard": [
+     246,
+     248
+    ]
+   },
+   "margin": 245
+  },
+  {
+   "n": 83,
+   "e": [
+    "charl",
+    "magna",
+    "borobudur"
+   ],
+   "answer": [
+    "charl",
+    "borobudur"
+   ],
+   "hook": "Borobudur was built about when Charlemagne became emperor.",
+   "gaps": {
+    "borobudur-charl": [
+     0,
+     51
+    ],
+    "borobudur-magna": [
+     365,
+     466
+    ],
+    "charl-magna": [
+     414,
+     416
+    ]
+   },
+   "margin": 314
+  },
+  {
+   "n": 84,
+   "e": [
+    "civilwar",
+    "titanic",
+    "qing"
+   ],
+   "answer": [
+    "titanic",
+    "qing"
+   ],
+   "hook": "The last emperor of China abdicated the year the Titanic sank.",
+   "gaps": {
+    "qing-titanic": [
+     0,
+     1
+    ],
+    "qing-civilwar": [
+     46,
+     48
+    ],
+    "titanic-civilwar": [
+     46,
+     48
+    ]
+   },
+   "margin": 45
+  },
+  {
+   "n": 85,
+   "e": [
+    "lascaux",
+    "jomon",
+    "cleo"
+   ],
+   "answer": [
+    "lascaux",
+    "jomon"
+   ],
+   "hook": "Japanese potters were firing pots about when Lascaux was painted, long before Cleopatra's time.",
+   "gaps": {
+    "jomon-lascaux": [
+     0,
+     6475
+    ],
+    "jomon-cleo": [
+     13430,
+     15432
+    ],
+    "lascaux-cleo": [
+     14905,
+     19907
+    ]
+   },
+   "margin": 6955
+  },
+  {
+   "n": 86,
+   "e": [
+    "hokulea",
+    "concorde",
+    "boe"
+   ],
+   "answer": [
+    "hokulea",
+    "concorde"
+   ],
+   "hook": "A canoe sailed from Hawaii to Tahiti with no instruments the year Concorde began carrying passengers.",
+   "gaps": {
+    "hokulea-concorde": [
+     0,
+     1
+    ],
+    "hokulea-boe": [
+     281,
+     283
+    ],
+    "concorde-boe": [
+     281,
+     283
+    ]
+   },
+   "margin": 280
+  },
+  {
+   "n": 87,
+   "e": [
+    "christ",
+    "empire",
+    "smallpox"
+   ],
+   "answer": [
+    "christ",
+    "empire"
+   ],
+   "hook": "Christ the Redeemer in Rio was dedicated the same year the Empire State Building opened.",
+   "gaps": {
+    "christ-empire": [
+     0,
+     1
+    ],
+    "christ-smallpox": [
+     48,
+     50
+    ],
+    "empire-smallpox": [
+     48,
+     50
+    ]
+   },
+   "margin": 47
+  },
+  {
+   "n": 88,
+   "e": [
+    "domesday",
+    "notredame",
+    "literature"
+   ],
+   "answer": [
+    "domesday",
+    "literature"
+   ],
+   "hook": "Hanoi's Temple of Literature was founded 16 years before the Domesday Book.",
+   "gaps": {
+    "literature-domesday": [
+     15,
+     17
+    ],
+    "literature-notredame": [
+     92,
+     94
+    ],
+    "domesday-notredame": [
+     76,
+     78
+    ]
+   },
+   "margin": 59
+  },
+  {
+   "n": 89,
+   "e": [
+    "abusimbel",
+    "oracle",
+    "caesar"
+   ],
+   "answer": [
+    "abusimbel",
+    "oracle"
+   ],
+   "hook": "The Abu Simbel temples were built about when the first Chinese writing appeared on oracle bones.",
+   "gaps": {
+    "abusimbel-oracle": [
+     0,
+     67
+    ],
+    "abusimbel-caesar": [
+     1200,
+     1221
+    ],
+    "oracle-caesar": [
+     1153,
+     1211
+    ]
+   },
+   "margin": 1086
+  },
+  {
+   "n": 90,
+   "e": [
+    "tambora",
+    "alamo",
+    "waterloo"
+   ],
+   "answer": [
+    "tambora",
+    "waterloo"
+   ],
+   "hook": "Mount Tambora erupted the same year as the Battle of Waterloo.",
+   "gaps": {
+    "tambora-waterloo": [
+     0,
+     1
+    ],
+    "tambora-alamo": [
+     20,
+     22
+    ],
+    "waterloo-alamo": [
+     20,
+     22
+    ]
+   },
+   "margin": 19
+  },
+  {
+   "n": 91,
+   "e": [
+    "armada",
+    "isandlwana",
+    "bulb"
+   ],
+   "answer": [
+    "isandlwana",
+    "bulb"
+   ],
+   "hook": "The Zulu army won at Isandlwana the year Edison's bulb first burned for 13 hours.",
+   "gaps": {
+    "isandlwana-bulb": [
+     0,
+     1
+    ],
+    "isandlwana-armada": [
+     290,
+     292
+    ],
+    "bulb-armada": [
+     290,
+     292
+    ]
+   },
+   "margin": 289
+  },
+  {
+   "n": 92,
+   "e": [
+    "tv",
+    "zimbabwe",
+    "smallpox"
+   ],
+   "answer": [
+    "zimbabwe",
+    "smallpox"
+   ],
+   "hook": "Zimbabwe became independent the year smallpox was declared wiped out.",
+   "gaps": {
+    "zimbabwe-smallpox": [
+     0,
+     1
+    ],
+    "zimbabwe-tv": [
+     53,
+     55
+    ],
+    "smallpox-tv": [
+     53,
+     55
+    ]
+   },
+   "margin": 52
+  },
+  {
+   "n": 93,
+   "e": [
+    "india",
+    "dss",
+    "mobile"
+   ],
+   "answer": [
+    "india",
+    "dss"
+   ],
+   "hook": "The Dead Sea Scrolls were first found about the time India won independence.",
+   "gaps": {
+    "india-dss": [
+     0,
+     2
+    ],
+    "india-mobile": [
+     25,
+     27
+    ],
+    "dss-mobile": [
+     25,
+     28
+    ]
+   },
+   "margin": 23
+  },
+  {
+   "n": 94,
+   "e": [
+    "nzvote",
+    "phone",
+    "nintendo"
+   ],
+   "answer": [
+    "nzvote",
+    "nintendo"
+   ],
+   "hook": "New Zealand women won the vote four years after Nintendo was founded.",
+   "gaps": {
+    "nzvote-nintendo": [
+     3,
+     5
+    ],
+    "nzvote-phone": [
+     16,
+     18
+    ],
+    "nintendo-phone": [
+     12,
+     14
+    ]
+   },
+   "margin": 7
+  },
+  {
+   "n": 95,
+   "e": [
+    "cook",
+    "declaration",
+    "harvard"
+   ],
+   "answer": [
+    "cook",
+    "declaration"
+   ],
+   "hook": "James Cook's ship reached Australia six years before the US Declaration of Independence.",
+   "gaps": {
+    "cook-declaration": [
+     5,
+     7
+    ],
+    "cook-harvard": [
+     133,
+     135
+    ],
+    "declaration-harvard": [
+     139,
+     141
+    ]
+   },
+   "margin": 126
+  },
+  {
+   "n": 96,
+   "e": [
+    "abusimbel",
+    "parthenon",
+    "olmec"
+   ],
+   "answer": [
+    "abusimbel",
+    "olmec"
+   ],
+   "hook": "The Olmec city of San Lorenzo was rising while Abu Simbel was being built.",
+   "gaps": {
+    "olmec-abusimbel": [
+     44,
+     364
+    ],
+    "olmec-parthenon": [
+     453,
+     754
+    ],
+    "abusimbel-parthenon": [
+     797,
+     818
+    ]
+   },
+   "margin": 89
+  },
+  {
+   "n": 97,
+   "e": [
+    "sahel",
+    "lucy",
+    "irhoud"
+   ],
+   "answer": [
+    "lucy",
+    "irhoud"
+   ],
+   "hook": "Lucy lived closer in time to the oldest Homo sapiens than to Sahelanthropus.",
+   "gaps": {
+    "sahel-lucy": [
+     3250000,
+     4350000
+    ],
+    "sahel-irhoud": [
+     6185000,
+     7215000
+    ],
+    "lucy-irhoud": [
+     2835000,
+     2965000
+    ]
+   },
+   "margin": 285000
+  },
+  {
+   "n": 98,
+   "e": [
+    "qin",
+    "ashoka",
+    "cleo"
+   ],
+   "answer": [
+    "qin",
+    "ashoka"
+   ],
+   "hook": "Ashoka carved his edicts in India a few decades before China was unified.",
+   "gaps": {
+    "ashoka-qin": [
+     11,
+     48
+    ],
+    "ashoka-cleo": [
+     162,
+     200
+    ],
+    "qin-cleo": [
+     150,
+     153
+    ]
+   },
+   "margin": 102
+  },
+  {
+   "n": 99,
+   "e": [
+    "cailun",
+    "qin",
+    "rosetta"
+   ],
+   "answer": [
+    "qin",
+    "rosetta"
+   ],
+   "hook": "The Rosetta Stone was carved a generation after China was unified.",
+   "gaps": {
+    "rosetta-qin": [
+     24,
+     26
+    ],
+    "rosetta-cailun": [
+     299,
+     301
+    ],
+    "qin-cailun": [
+     324,
+     326
+    ]
+   },
+   "margin": 273
+  },
+  {
+   "n": 100,
+   "e": [
+    "titanic",
+    "shinkansen",
+    "concorde"
+   ],
+   "answer": [
+    "shinkansen",
+    "concorde"
+   ],
+   "hook": "Japan's bullet train began 12 years before Concorde carried passengers.",
+   "gaps": {
+    "shinkansen-concorde": [
+     11,
+     13
+    ],
+    "shinkansen-titanic": [
+     51,
+     53
+    ],
+    "concorde-titanic": [
+     63,
+     65
+    ]
+   },
+   "margin": 38
+  },
+  {
+   "n": 101,
+   "e": [
+    "tenochfall",
+    "mayflower",
+    "panipat"
+   ],
+   "answer": [
+    "tenochfall",
+    "panipat"
+   ],
+   "hook": "The Mughal Empire began five years after Tenochtitlan fell.",
+   "gaps": {
+    "panipat-tenochfall": [
+     4,
+     6
+    ],
+    "panipat-mayflower": [
+     93,
+     95
+    ],
+    "tenochfall-mayflower": [
+     98,
+     100
+    ]
+   },
+   "margin": 87
   }
  ]
 }

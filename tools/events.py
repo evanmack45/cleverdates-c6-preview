@@ -5,8 +5,8 @@ def bc(y): return 1-y
 NOW=2026
 def ma(m): return NOW-m*1e6
 E={}
-def ev(k,name,when,lo,hi,prec,page,check):
-    E[k]=dict(id=k,name=name,when=when,lo=lo,hi=hi,prec=prec,src=(W+page if page else None),check=check)
+def ev(k,name,when,lo,hi,prec,page,check,region=None):
+    E[k]=dict(id=k,name=name,when=when,lo=lo,hi=hi,prec=prec,src=(W+page if page else None),check=check,region=region)
 ev('pyramid','The Great Pyramid of Giza is built','c. 2600 BC',bc(2700),bc(2500),'approx','Great_Pyramid_of_Giza','between 2700 and 2500 BC')
 ev('cleo','Cleopatra is born','70 or 69 BC',bc(70),bc(69)+.999,'year','Cleopatra','70/69 BC')
 ev('iphone','The first iPhone goes on sale','2007',2007,2007.999,'year','IPhone_(1st_generation)','2007')
@@ -67,7 +67,7 @@ ev('pluto','Pluto is discovered','1930',1930,1930.999,'year','Pluto','1930')
 ev('tv','Television is first shown to the public','1926',1926,1926.999,'year','John_Logie_Baird','1926')
 ev('sliced','Sliced bread is first sold','1928',1928,1928.999,'year','Sliced_bread','1928')
 ev('hero','Hero of Alexandria describes a coin-operated vending machine','1st century AD',10,85,'century','Vending_machine','1st century AD')
-ev('vending','The first modern coin vending machines appear in London','early 1880s',1880,1885,'approx','Vending_machine','1880s')
+ev('vending','The first modern coin vending machines appear in England','early 1880s',1880,1885,'approx','Vending_machine','1880s')
 ev('antikythera','The Antikythera mechanism (an ancient Greek analog computer) is made','c. 150–100 BC',bc(205),bc(60),'approx','Antikythera_mechanism','BC')
 ev('eniac','ENIAC, the first general-purpose electronic computer, is finished','1945',1945,1946.999,'year','ENIAC','1945')
 ev('moai','The Easter Island statues (moai) are carved','c. 1250–1500',1250,1500,'approx','Moai','1250')
@@ -117,7 +117,6 @@ T=[
 ('ott_end','ott_start','willie','The Ottoman Empire was still around 6 years before Mickey Mouse.'),
 ('harvard','galileo','declaration','Harvard was founded 3 years after Galileo was put on trial.'),
 ('satsuma','phone','sekigahara','Samurai were still fighting a year after the telephone was patented.'),
-('fax','alamo','email','The fax machine is 7 years younger than the Alamo.'),
 ('constantinople','gutenberg','romefall','The Roman Empire (its eastern half) lasted until the age of the printing press.'),
 ('machu','columbus','colosseum','Machu Picchu was only about 40 years old when Columbus sailed.'),
 ('pompeii','colosseum','caesar','The Colosseum opened one year after Pompeii was buried.'),
@@ -128,23 +127,19 @@ T=[
 ('sharks','trees','trex','The shark family tree is older than trees.'),
 ('stonehenge','pyramid','rome','Stonehenge and the Great Pyramid went up at about the same time.'),
 ('wright','moon','civilwar','The first powered flight is closer to the Civil War than to the Moon landing.'),
-('gobekli','pyramid','today','The Great Pyramid is closer to us than to Göbekli Tepe.'),
+('gobekli','stonehenge','today','Stonehenge is closer in time to us than to Göbekli Tepe.'),
 ('titanic','oreo','gettysburg','Oreos and the Titanic are the same age.'),
 ('safety','benz','loco','The modern bicycle and the car showed up within a year of each other.'),
-('uranus','neptune','pluto','Neptune was found closer to Uranus than to Pluto.'),
 ('tv','sliced','wright','Television is older than sliced bread.'),
-('hero','vending','pyramid','There was a coin-operated vending machine in Roman Egypt.'),
-('antikythera','eniac','pyramid','An ancient Greek computer is closer to ENIAC than to the Great Pyramid.'),
-('moai','notredame','stonehenge','The Easter Island statues were carved after work began on Notre-Dame.'),
-('terracotta','pyramid','moon',"China's Terracotta Army is closer in time to the Moon landing than to the Great Pyramid."),
-('nokia','lincoln','mobile','Nokia started out the year Lincoln was shot.'),
+('hero','vending','gobekli','Roman Egypt had a coin-operated vending machine about 1,800 years before the first modern ones in England.'),
+('antikythera','eniac','otzi','An ancient Greek computer is closer in time to ENIAC than to the Iceman.'),
+('moai','notredame','otzi','The Easter Island statues were carved after work began on Notre-Dame.'),
+('terracotta','cun_first','moon',"China's Terracotta Army is closer in time to the Moon landing than to the invention of writing."),
 ('kongo','romefall','oxford','A Japanese building firm was founded in the century after the fall of Rome, five centuries before Oxford.'),
-('salem','boe','armada','The Salem witch trials ended a year before the Bank of England opened.'),
 ('megalodon','lucy','trex','Megalodon and our ancestor Lucy are close in time.'),
 ('glasses','magna','gutenberg','Eyeglasses are more than 150 years older than the printing press.'),
 ('toilet','hamlet','constantinople','The flush toilet is a few years older than Hamlet.'),
 ('dodo','moon','mammoth','The dodo is closer in time to the Moon landing than to the woolly mammoth.'),
-('basketball','okcorral','nba','Basketball was invented 10 years after the O.K. Corral gunfight.'),
 ('oxford','hastings','tenoch','Oxford was teaching more than 150 years before the Aztecs founded Tenochtitlan.'),
 ('concorde','viking1','wright','Concorde started flying passengers the year a probe first landed on Mars.'),
 ('smallpox','pacman','vaccine','Smallpox was wiped out the year Pac-Man came out.'),
