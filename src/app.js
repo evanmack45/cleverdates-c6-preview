@@ -173,7 +173,7 @@
   });
 
   // Switch to https://cleverdates.com/ at go-live.
-  const CANONICAL = 'https://evanmack45.github.io/cleverdates-c6-preview/';
+  const CANONICAL = 'https://closer.cleverdates.com/';
   const isLocalPage = () => location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
   const publicPage = () => (isLocalPage() ? CANONICAL : `${location.origin}${location.pathname}`).replace(/index\.html$/, '').replace(/\/?$/, '/');
   const publicLink = (hash) => `${publicPage()}${hash.startsWith('#') ? hash : '#' + hash}`;

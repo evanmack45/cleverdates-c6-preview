@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const here = dirname(fileURLToPath(import.meta.url));
 const out = join(here, 'docs');
 const data = JSON.parse(readFileSync(join(here, 'trios.json'), 'utf8'));
-const SITE = 'https://evanmack45.github.io/cleverdates-c6-preview/';
+const SITE = 'https://closer.cleverdates.com/';
 const AFTERNIC = 'https://www.afternic.com/domain/cleverdates.com';
 
 // Boundary checks: the client trusts this shape.
@@ -35,7 +35,8 @@ const html = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="${SITE}">
+<meta property="og:url" content="${SITE}">
 <title>Closer in time | Clever Dates</title>
 <meta name="description" content="Three moments in history. Pick the two that happened closest together, then see all three to scale.">
 <meta property="og:title" content="Bet you get this wrong: which two are closer in time?">
@@ -114,6 +115,8 @@ for (const f of ['app.js', 'style.css', 'og.jpg']) copyFileSync(join(here, 'src'
 mkdirSync(join(out, 'art'), { recursive: true });
 for (const f of readdirSync(join(here, 'src/art'))) copyFileSync(join(here, 'src/art', f), join(out, 'art', f));
 for (const f of readdirSync(join(here, 'src/fonts'))) copyFileSync(join(here, 'src/fonts', f), join(out, 'fonts', f));
-writeFileSync(join(out, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+writeFileSync(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}sitemap.xml\n`);
+writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${SITE}</loc></url></urlset>\n`);
+writeFileSync(join(out, 'CNAME'), 'closer.cleverdates.com\n');
 writeFileSync(join(out, '.nojekyll'), '');
 console.log('built', data.trios.length, 'trios');
