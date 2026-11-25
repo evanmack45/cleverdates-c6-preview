@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch({ channel: 'chrome' });
+const p = await b.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+const base='http://localhost:8766/', key='bastille.guillotine.starwars';
+const ids=()=>p.$$eval('.ev', (bs) => bs.map((x) => x.dataset.id));
+await p.goto(base+'#t='+key); console.log(1, await ids());
+for (const id of ['guillotine','starwars']) await p.click(`.ev[data-id="${id}"]`);
+await p.click('#lock');
+await p.goto(`${base}#t=${key}x`); console.log(2, await p.evaluate(()=>location.href), await ids());
+await p.goto(`${base}#t=${key}`); console.log(3, await p.evaluate(()=>location.href), await ids());
+await p.reload(); console.log(4, await p.evaluate(()=>location.href), await ids());
+await b.close();
