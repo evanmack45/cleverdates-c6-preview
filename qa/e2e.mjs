@@ -56,7 +56,7 @@ for (const w of [390, 1280]) {
     ok(!(await p.isHidden('#note')) && (await p.textContent('#note')).includes('broken'), `odd hash ${h}: clear message (${w})`);
     ok((await shown(p)).length === 3 && await p.isHidden('#dare'), `odd hash ${h}: plays a fresh round, no dare banner (${w})`);
     ok(!(await p.evaluate(() => location.hash)), `odd hash ${h}: hash cleared (${w})`);
-    ok((await p.$$('img')).length === 0 && p.errs.length === 0, `odd hash ${h}: nothing injected, no errors (${w})`);
+    ok((await p.$$eval('img', (is) => is.every((i) => i.getAttribute('src').startsWith('art/')) && is.length === 3)) && p.errs.length === 0, `odd hash ${h}: nothing injected, no errors (${w})`);
     await p.context().close();
   }
 }
