@@ -1,0 +1,168 @@
+PASS  #t=iphone.cleo.pyramid: dare banner shows (390)
+PASS  #t=iphone.cleo.pyramid: cards in link order (390)
+PASS  dates hidden before answering (390)
+PASS  trio 1 right pair iphone+cleo gives "Right." (390)
+PASS  trio 1 hook shows (390)
+PASS  trio 1 timeline: 3 dots, 1 answer bracket (390)
+PASS  trio 1 gap list marks the answer pair (390)
+PASS  trio 1 lists a source link per dated event (390)
+PASS  trio 1 reveal has no horizontal overflow (390)
+PASS  bad link then good link loads the good round (390): iphone.cleo.pyramid
+PASS  trio 1 wrong pair gives "Not quite." (390)
+PASS  trio 1 wrong pick is marked (390)
+PASS  trio 1: no errors, no third-party requests (390)  
+PASS  #t=rome.stonehenge.pyramid: dare banner shows (390)
+PASS  #t=rome.stonehenge.pyramid: cards in link order (390)
+PASS  dates hidden before answering (390)
+PASS  trio 13 right pair stonehenge+pyramid gives "Right." (390)
+PASS  trio 13 hook shows (390)
+PASS  trio 13 timeline: 3 dots, 1 answer bracket (390)
+PASS  trio 13 gap list marks the answer pair (390)
+PASS  trio 13 lists a source link per dated event (390)
+PASS  trio 13 reveal has no horizontal overflow (390)
+PASS  bad link then good link loads the good round (390): rome.stonehenge.pyramid
+PASS  trio 13 wrong pair gives "Not quite." (390)
+PASS  trio 13 wrong pick is marked (390)
+PASS  trio 13: no errors, no third-party requests (390)  
+PASS  #t=terracotta.moon.cun_first: dare banner shows (390)
+PASS  #t=terracotta.moon.cun_first: cards in link order (390)
+PASS  dates hidden before answering (390)
+PASS  trio 19 right pair terracotta+moon gives "Right." (390)
+PASS  trio 19 hook shows (390)
+PASS  trio 19 timeline: 3 dots, 1 answer bracket (390)
+PASS  trio 19 gap list marks the answer pair (390)
+PASS  trio 19 lists a source link per dated event (390)
+PASS  trio 19 reveal has no horizontal overflow (390)
+PASS  bad link then good link loads the good round (390): terracotta.moon.cun_first
+PASS  trio 19 wrong pair gives "Not quite." (390)
+PASS  trio 19 wrong pick is marked (390)
+PASS  trio 19: no errors, no third-party requests (390)  
+PASS  odd hash #t=garbled%%%: clear message (390)
+PASS  odd hash #t=garbled%%%: plays a fresh round, no dare banner (390)
+PASS  odd hash #t=garbled%%%: hash cleared (390)
+PASS  odd hash #t=garbled%%%: nothing injected, no errors (390)
+PASS  odd hash #t=cleo.pyramid: clear message (390)
+PASS  odd hash #t=cleo.pyramid: plays a fresh round, no dare banner (390)
+PASS  odd hash #t=cleo.pyramid: hash cleared (390)
+PASS  odd hash #t=cleo.pyramid: nothing injected, no errors (390)
+PASS  odd hash #t=%3Cimg%20src=x%20onerror=alert(1)%3E: clear message (390)
+PASS  odd hash #t=%3Cimg%20src=x%20onerror=alert(1)%3E: plays a fresh round, no dare banner (390)
+PASS  odd hash #t=%3Cimg%20src=x%20onerror=alert(1)%3E: hash cleared (390)
+PASS  odd hash #t=%3Cimg%20src=x%20onerror=alert(1)%3E: nothing injected, no errors (390)
+PASS  odd hash #t=cleo.cleo.cleo: clear message (390)
+PASS  odd hash #t=cleo.cleo.cleo: plays a fresh round, no dare banner (390)
+PASS  odd hash #t=cleo.cleo.cleo: hash cleared (390)
+PASS  odd hash #t=cleo.cleo.cleo: nothing injected, no errors (390)
+PASS  odd hash #t=cleo.pyramid.moon: clear message (390)
+PASS  odd hash #t=cleo.pyramid.moon: plays a fresh round, no dare banner (390)
+PASS  odd hash #t=cleo.pyramid.moon: hash cleared (390)
+PASS  odd hash #t=cleo.pyramid.moon: nothing injected, no errors (390)
+PASS  odd hash #t=CLEO.PYRAMID.IPHONE: clear message (390)
+PASS  odd hash #t=CLEO.PYRAMID.IPHONE: plays a fresh round, no dare banner (390)
+PASS  odd hash #t=CLEO.PYRAMID.IPHONE: hash cleared (390)
+PASS  odd hash #t=CLEO.PYRAMID.IPHONE: nothing injected, no errors (390)
+PASS  odd hash #zzz: clear message (390)
+PASS  odd hash #zzz: plays a fresh round, no dare banner (390)
+PASS  odd hash #zzz: hash cleared (390)
+PASS  odd hash #zzz: nothing injected, no errors (390)
+PASS  #t=iphone.cleo.pyramid: dare banner shows (1280)
+PASS  #t=iphone.cleo.pyramid: cards in link order (1280)
+PASS  dates hidden before answering (1280)
+PASS  trio 1 right pair iphone+cleo gives "Right." (1280)
+PASS  trio 1 hook shows (1280)
+PASS  trio 1 timeline: 3 dots, 1 answer bracket (1280)
+PASS  trio 1 gap list marks the answer pair (1280)
+PASS  trio 1 lists a source link per dated event (1280)
+PASS  trio 1 reveal has no horizontal overflow (1280)
+PASS  bad link then good link loads the good round (1280): iphone.cleo.pyramid
+PASS  trio 1 wrong pair gives "Not quite." (1280)
+PASS  trio 1 wrong pick is marked (1280)
+PASS  trio 1: no errors, no third-party requests (1280)  
+PASS  #t=rome.stonehenge.pyramid: dare banner shows (1280)
+PASS  #t=rome.stonehenge.pyramid: cards in link order (1280)
+PASS  dates hidden before answering (1280)
+PASS  trio 13 right pair stonehenge+pyramid gives "Right." (1280)
+PASS  trio 13 hook shows (1280)
+PASS  trio 13 timeline: 3 dots, 1 answer bracket (1280)
+PASS  trio 13 gap list marks the answer pair (1280)
+PASS  trio 13 lists a source link per dated event (1280)
+PASS  trio 13 reveal has no horizontal overflow (1280)
+PASS  bad link then good link loads the good round (1280): rome.stonehenge.pyramid
+PASS  trio 13 wrong pair gives "Not quite." (1280)
+PASS  trio 13 wrong pick is marked (1280)
+PASS  trio 13: no errors, no third-party requests (1280)  
+PASS  #t=terracotta.moon.cun_first: dare banner shows (1280)
+PASS  #t=terracotta.moon.cun_first: cards in link order (1280)
+PASS  dates hidden before answering (1280)
+PASS  trio 19 right pair terracotta+moon gives "Right." (1280)
+PASS  trio 19 hook shows (1280)
+PASS  trio 19 timeline: 3 dots, 1 answer bracket (1280)
+PASS  trio 19 gap list marks the answer pair (1280)
+PASS  trio 19 lists a source link per dated event (1280)
+PASS  trio 19 reveal has no horizontal overflow (1280)
+PASS  bad link then good link loads the good round (1280): terracotta.moon.cun_first
+PASS  trio 19 wrong pair gives "Not quite." (1280)
+PASS  trio 19 wrong pick is marked (1280)
+PASS  trio 19: no errors, no third-party requests (1280)  
+PASS  odd hash #t=garbled%%%: clear message (1280)
+PASS  odd hash #t=garbled%%%: plays a fresh round, no dare banner (1280)
+PASS  odd hash #t=garbled%%%: hash cleared (1280)
+PASS  odd hash #t=garbled%%%: nothing injected, no errors (1280)
+PASS  odd hash #t=cleo.pyramid: clear message (1280)
+PASS  odd hash #t=cleo.pyramid: plays a fresh round, no dare banner (1280)
+PASS  odd hash #t=cleo.pyramid: hash cleared (1280)
+PASS  odd hash #t=cleo.pyramid: nothing injected, no errors (1280)
+PASS  odd hash #t=%3Cimg%20src=x%20onerror=alert(1)%3E: clear message (1280)
+PASS  odd hash #t=%3Cimg%20src=x%20onerror=alert(1)%3E: plays a fresh round, no dare banner (1280)
+PASS  odd hash #t=%3Cimg%20src=x%20onerror=alert(1)%3E: hash cleared (1280)
+PASS  odd hash #t=%3Cimg%20src=x%20onerror=alert(1)%3E: nothing injected, no errors (1280)
+PASS  odd hash #t=cleo.cleo.cleo: clear message (1280)
+PASS  odd hash #t=cleo.cleo.cleo: plays a fresh round, no dare banner (1280)
+PASS  odd hash #t=cleo.cleo.cleo: hash cleared (1280)
+PASS  odd hash #t=cleo.cleo.cleo: nothing injected, no errors (1280)
+PASS  odd hash #t=cleo.pyramid.moon: clear message (1280)
+PASS  odd hash #t=cleo.pyramid.moon: plays a fresh round, no dare banner (1280)
+PASS  odd hash #t=cleo.pyramid.moon: hash cleared (1280)
+PASS  odd hash #t=cleo.pyramid.moon: nothing injected, no errors (1280)
+PASS  odd hash #t=CLEO.PYRAMID.IPHONE: clear message (1280)
+PASS  odd hash #t=CLEO.PYRAMID.IPHONE: plays a fresh round, no dare banner (1280)
+PASS  odd hash #t=CLEO.PYRAMID.IPHONE: hash cleared (1280)
+PASS  odd hash #t=CLEO.PYRAMID.IPHONE: nothing injected, no errors (1280)
+PASS  odd hash #zzz: clear message (1280)
+PASS  odd hash #zzz: plays a fresh round, no dare banner (1280)
+PASS  odd hash #zzz: hash cleared (1280)
+PASS  odd hash #zzz: nothing injected, no errors (1280)
+PASS  all 101 trios: right answer accepted, no overflow, labels inside the plot (390) 
+PASS  dare link copies this exact round, canonical URL on localhost: https://evanmack45.github.io/cleverdates-c6-preview/#t=sekigahara.satsuma.phone
+PASS  share card PNG 1080x1350 (786 KB)
+PASS  Save card image downloads closer-in-time.png
+PASS  Next round clears the dare and the reveal
+PASS  round counter: Round 2 · 1 right
+PASS  reduced motion: no reveal or dot animation (none,none)
+PASS  no JS: game hidden, all answers with sources listed
+PASS  r3 card trio 1 right: PNG is 1080x1350
+PASS  r3 card trio 1 right: the hieroglyph-free ground is drawn into the canvas
+PASS  r3 card trio 1 right: the right seal sits beside the verdict
+PASS  r3 card trio 1 right: the matching seal is drawn into the canvas next to the result line
+PASS  r3 card trio 1 right: type is the three events and the result line; the hook (the answer) stays off the card
+PASS  r3 card trio 1 right: no localhost on the card, no errors, no third-party requests 
+PASS  r3 card trio 13 wrong: PNG is 1080x1350
+PASS  r3 card trio 13 wrong: the hieroglyph-free ground is drawn into the canvas
+PASS  r3 card trio 13 wrong: the not-quite seal sits beside the verdict
+PASS  r3 card trio 13 wrong: the matching seal is drawn into the canvas next to the result line
+PASS  r3 card trio 13 wrong: type is the three events and the result line; the hook (the answer) stays off the card
+PASS  r3 card trio 13 wrong: no localhost on the card, no errors, no third-party requests 
+PASS  r3 card trio 19 right: PNG is 1080x1350
+PASS  r3 card trio 19 right: the hieroglyph-free ground is drawn into the canvas
+PASS  r3 card trio 19 right: the right seal sits beside the verdict
+PASS  r3 card trio 19 right: the matching seal is drawn into the canvas next to the result line
+PASS  r3 card trio 19 right: type is the three events and the result line; the hook (the answer) stays off the card
+PASS  r3 card trio 19 right: no localhost on the card, no errors, no third-party requests 
+PASS  r3 card trio 41 wrong (odd: longest names): PNG is 1080x1350
+PASS  r3 card trio 41 wrong (odd: longest names): the hieroglyph-free ground is drawn into the canvas
+PASS  r3 card trio 41 wrong (odd: longest names): the not-quite seal sits beside the verdict
+PASS  r3 card trio 41 wrong (odd: longest names): the matching seal is drawn into the canvas next to the result line
+PASS  r3 card trio 41 wrong (odd: longest names): type is the three events and the result line; the hook (the answer) stays off the card
+PASS  r3 card trio 41 wrong (odd: longest names): no localhost on the card, no errors, no third-party requests 
+PASS  r4: on-page art is hero, ruler, triptych and the result seal
+ALL PASS

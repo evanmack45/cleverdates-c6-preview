@@ -4,7 +4,10 @@ Right and not-quite seals sit beside `#verdict` after a reveal (srcset 256/512, 
 
 - Local e2e (qa/e2e.mjs): **ALL PASS**, including right and wrong seals on the page and in the canvas, hook off the card, img count 4 (hero, ruler, triptych, seal).
 - Local gate (qa/local-r4/): Lighthouse **98 / 100 / 100 / SEO 66** (noindex), CLS 0, LCP 2.3 s. Impeccable 0 at 390, 1280 and static. Folds viewed (seals appear only after a reveal, not on the first-screen fold).
-- Live e2e / live gate / live share samples: pending a GitHub Pages deploy (Actions still a partial outage at 10:45 AM CT). noindex kept; no DNS or go-live.
+- Live on c246198.
+- Live e2e (qa/art-folds/r4/e2e-live.log): **ALL PASS**. Right and not-quite seals on the page and in the canvas; hook off the card.
+- Live gate (qa/art-folds/r4/gate-live/): Lighthouse **100 / 100 / 100 / SEO 63**, CLS 0, LCP 1.4 s. Impeccable 0 at 390, 1280 and static.
+- Live captures (viewed): qa/art-folds/r4/live-reveal-{right,wrong}-{390,1280}.png and share-trio1-{right,wrong}.png. noindex kept; no DNS or go-live.
 
 # C6 Closer In Time: STATUS (Gizmo)
 

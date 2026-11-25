@@ -1,4 +1,4 @@
-# DONE 2026-11-25 10:45 AM CT (Gizmo): r4 right / not-quite seals wired beside the verdict and drawn on the share card. Hook stays off the card. Local e2e ALL PASS, local gate 98 / CLS 0 / impeccable 0. Live deploy pending Pages.
+# DONE 2026-11-25 10:45 AM CT (Gizmo): r4 right / not-quite seals wired beside the verdict and drawn on the share card. Hook stays off the card. Local e2e ALL PASS, local gate 98 / CLS 0 / impeccable 0. Live on c246198: e2e ALL PASS, gate 100 / CLS 0 / impeccable 0, LCP 1.4 s. Seals captured in qa/art-folds/r4/.
 
 Cream chroma-key, no text on the medals. Local gate: qa/local-r4/.
 
