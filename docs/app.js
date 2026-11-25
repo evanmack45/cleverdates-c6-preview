@@ -213,25 +213,40 @@
         g.drawImage(seal, sx, sy, sw, sw);
       }
     }
+    const layout = { boxes: [], texts: [] };
+    const rec = (s, x, y) => {
+      const m = g.measureText(s);
+      const t = { s, x, y, w: m.width, top: y - (m.actualBoundingBoxAscent || 0), bottom: y + (m.actualBoundingBoxDescent || 0) };
+      layout.texts.push(t);
+      g.fillText(s, x, y);
+      return t;
+    };
     g.fillStyle = '#f4eedf'; g.font = `400 76px ${serif}`;
     wrap(g, 'Which two are closer in time?', 80, 630, W - 160, 82);
-    let y = 760;
+    // The title is two lines (baselines 630 and 712). Fit the three option
+    // boxes under it, leaving a reserved footer band so the last box cannot
+    // cover the credit line (it used to end at 1254, 15px into that line).
+    const boxH = 150, boxGap = 16, startY = 736;
+    let y = startY;
     cur.ids.forEach((id, k) => {
-      const h = 150;
-      g.fillStyle = '#f6efe0'; rr(g, 80, y, W - 160, h, 28); g.fill();
-      g.fillStyle = '#b83a18'; g.font = `400 60px ${serif}`; g.fillText('ABC'[k], 120, y + 96);
+      g.fillStyle = '#f6efe0'; rr(g, 80, y, W - 160, boxH, 28); g.fill();
+      layout.boxes.push({ x: 80, y, w: W - 160, h: boxH });
+      g.fillStyle = '#b83a18'; g.font = `400 60px ${serif}`; rec('ABC'[k], 120, y + 96);
       g.fillStyle = '#0f3b2c'; g.font = `700 40px ${sans}`;
       const lines = lines2(g, EV[id].name, W - 160 - 160);
-      lines.forEach((ln, j) => g.fillText(ln, 210, y + h / 2 + 14 - (lines.length - 1) * 23 + j * 46));
-      y += h + 22;
+      lines.forEach((ln, j) => rec(ln, 210, y + boxH / 2 + 14 - (lines.length - 1) * 23 + j * 46));
+      y += boxH + boxGap;
     });
+    const lastBottom = layout.boxes.at(-1).y + layout.boxes.at(-1).h;
     g.fillStyle = '#e3d9bf'; g.font = `400 30px ${sans}`;
-    g.fillText('Closer in time, a game from Clever Dates.', 80, H - 88);
+    const credit = rec('Closer in time, a game from Clever Dates.', 80, lastBottom + 28 + 23);
     const foot = publicLink(cur && cur.ids ? '#t=' + cur.ids.join('.') : '').replace(/^https?:\/\//, '');
     if (g.measureText(foot).width > W - 160) g.font = `400 26px ${sans}`;
-    g.fillText(foot, 80, H - 46);
+    rec(foot, 80, credit.y + 42);
+    lastLayout = layout;
     return c;
   }
+  let lastLayout = null;
   let artP = null, sealP = {};
   function loadArt() { return artP || (artP = new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.onerror = () => r(null); i.src = 'art/card-r3.webp'; })); }
   function loadSeal(ok) {
@@ -246,6 +261,7 @@
   }
   function wrap(g, text, x, y, max, lh) { lines2(g, text, max).forEach((ln, i) => g.fillText(ln, x, y + i * lh)); }
   window.__c6card = async () => (await card()).toDataURL('image/png');
+  window.__c6cardLayout = async () => { const c = await card(); return lastLayout; };
   $('card-btn').addEventListener('click', async () => {
     const c = await card();
     c.toBlob((blob) => {

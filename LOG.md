@@ -86,3 +86,9 @@ Cream chroma-key, no text on the medals. Local gate: qa/local-r4/.
 ## 2026-11-25 10:05 AM CT: r3 art (C6)
 
 Commit 016ce90 (pushed). Share card ground wired from card-r3.webp; the on-page reveal strip was cut (a static trio picture would mislead on most rounds); the hook stays off the card. Card art is generic across trios (question open in STATUS.md). Live e2e ALL PASS (159), live gate PASS, Lighthouse 100, impeccable 0.
+
+## 2026-11-25 ~4:50 PM CT: share-card footer no longer under the last option box
+
+Barker's live check (launch-venues-2026-11-25.md §3): the third answer box covered half of "Closer in time, a game from Clever Dates." Reproduced on https://closer.cleverdates.com (pinned Chrome, default trio iphone.cleo.pyramid): the last box ended at y=1254 and the credit line's top was at y=1239 (15px overlap). The boxes started at a fixed y=760 with 150px height and 22px gaps, and the footer was pinned to H-88, so three boxes always ran into it.
+
+Fix: start the stack at y=736, 16px gaps, and place the footer 28px under the last box (plus a layout object for tests). e2e now asserts a >=16px gap and that the footer stays on the card, on the teaser, after a right answer, a short-name trio, and the longest names. Local e2e ALL PASS. The e2e localhost canonical expectation was also updated from the old github.io preview URL to closer.cleverdates.com, matching the go-live publicLink fallback.

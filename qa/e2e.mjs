@@ -80,7 +80,7 @@ for (const w of [390, 1280]) {
   await play(p, data.trios[4].answer);
   await p.click('#dare-btn'); await p.waitForTimeout(200);
   const clip = await p.evaluate(() => navigator.clipboard.readText());
-  const CANON = 'https://evanmack45.github.io/cleverdates-c6-preview/', pub = /^https?:\/\/(localhost|127\.0\.0\.1)[:/]/.test(base) ? CANON : base;
+  const CANON = 'https://closer.cleverdates.com/', pub = /^https?:\/\/(localhost|127\.0\.0\.1)[:/]/.test(base) ? CANON : base;
   ok(clip === `${pub}#t=${data.trios[4].e.join('.')}` && !/localhost|127\.0\.0\.1/.test(clip), `dare link copies this exact round, canonical URL on localhost: ${clip}`);
   const png = await p.evaluate(() => window.__c6card());
   const dims = await p.evaluate((u) => new Promise((r) => { const i = new Image(); i.onload = () => r([i.width, i.height]); i.src = u; }), png);
@@ -122,8 +122,13 @@ for (const w of [390, 1280]) {
     ok(!seal.hidden && seal.ok && (win ? /seal-right-/.test(seal.src) : /seal-not-quite-/.test(seal.src)), `${tag}: the ${win ? 'right' : 'not-quite'} seal sits beside the verdict`);
     ok((win ? /seal-right-512\.webp/ : /seal-not-quite-512\.webp/).test(im), `${tag}: the matching seal is drawn into the canvas next to the result line`);
     ok(!txt.includes(t.hook) && t.e.every((id) => txt.includes(data.events[id].name.split(' ')[0])) && txt.includes(win ? 'I got this one right.' : 'This one got me.'), `${tag}: type is the three events and the result line; the hook (the answer) stays off the card`);
-    const host = (/^https?:\/\/(localhost|127\.0\.0\.1)[:/]/.test(base) ? 'https://evanmack45.github.io/cleverdates-c6-preview/' : base).replace(/^https?:\/\//, '').replace(/\/?$/, '');
+    const host = (/^https?:\/\/(localhost|127\.0\.0\.1)[:/]/.test(base) ? 'https://closer.cleverdates.com/' : base).replace(/^https?:\/\//, '').replace(/\/?$/, '');
     ok(txt.includes('Closer in time, a game from Clever Dates.') && txt.includes(host) && !/localhost|127\.0\.0\.1/.test(txt), `${tag}: footer names the canonical host (${host})`);
+    const lay = await p.evaluate(async () => window.__c6cardLayout());
+    const footer = (lay.texts || []).filter((t) => /Closer in time, a game from|cleverdates\.com/.test(t.s));
+    const gap = Math.min(...footer.map((t) => t.top)) - Math.max(...lay.boxes.map((b) => b.y + b.h));
+    ok(lay.boxes.length === 3 && footer.length >= 2 && gap >= 16, `${tag}: footer sits ${gap}px below the last option box`);
+    ok(footer.every((t) => t.bottom <= 1350 - 8), `${tag}: footer stays inside the card (bottom ${Math.max(...footer.map((t) => t.bottom))})`);
     ok(p.errs.length === 0 && p.reqs.length === 0, `${tag}: no errors, no third-party requests ${p.errs.join(';')}`);
     await dl.saveAs(`r3/card-trio${t.n}-${win ? 'right' : 'wrong'}.png`);
     await p.context().close();
@@ -131,6 +136,25 @@ for (const w of [390, 1280]) {
   const p = await page(390); await p.goto(base);
   ok(await p.$$eval('img', (is) => is.length === 4 && is.every((i) => /^art\/(hero|ruler|triptych|seal-right|seal-not-quite)-/.test(i.getAttribute('src')))), 'r4: on-page art is hero, ruler, triptych and the result seal');
   await p.context().close();
+}
+
+// footer must clear the last option box: teaser (the live bug), a short-name trio, and the longest names
+{
+  const shortest = data.trios.map((t) => [t, Math.max(...t.e.map((id) => data.events[id].name.length))]).sort((a, c) => a[1] - c[1])[0][0];
+  const longest = data.trios.map((t) => [t, Math.max(...t.e.map((id) => data.events[id].name.length))]).sort((a, c) => c[1] - a[1])[0][0];
+  const cases = [[data.trios[0], 'teaser (no play)', null], [data.trios[0], 'after a right answer', true], [shortest, 'short names', true], [longest, 'odd: longest names', false]];
+  for (const [t, label, win] of cases) {
+    const p = await page(390);
+    await p.goto(`${base}#t=${t.e.join('.')}`);
+    if (win === true) await play(p, t.answer);
+    else if (win === false) await play(p, [t.e.find((id) => !t.answer.includes(id)), t.answer[0]]);
+    const lay = await p.evaluate(async () => window.__c6cardLayout());
+    const footer = (lay.texts || []).filter((t) => /Closer in time, a game from|cleverdates\.com/.test(t.s));
+    const gap = Math.min(...footer.map((t) => t.top)) - Math.max(...lay.boxes.map((b) => b.y + b.h));
+    ok(lay.boxes.length === 3 && footer.length >= 2 && gap >= 16, `footer gap, ${label} (trio ${t.n}): ${gap}px`);
+    ok(footer.every((t) => t.bottom <= 1350 - 8), `footer in bounds, ${label} (trio ${t.n})`);
+    await p.context().close();
+  }
 }
 console.log(fails ? `${fails} FAILED` : 'ALL PASS');
 await b.close();
