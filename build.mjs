@@ -72,7 +72,10 @@ const html = `<!doctype html>
  <div class="go"><button type="button" id="lock" class="primary" disabled>Pick two</button><p class="hint" id="hint">Tap two cards.</p></div>
  <section class="reveal" id="reveal" hidden aria-labelledby="verdict" tabindex="-1">
   <img class="ruler" src="art/ruler-800.webp" srcset="art/ruler-800.webp 800w, art/ruler-1584.webp 1584w" sizes="(min-width: 1180px) 1116px, 100vw" width="1584" height="672" loading="lazy" decoding="async" alt="">
+  <div class="verdict-row">
   <h2 id="verdict"></h2>
+  <img id="seal" src="art/seal-right-256.webp" srcset="art/seal-right-256.webp 256w, art/seal-right-512.webp 512w" sizes="96px" width="512" height="512" alt="" decoding="async" hidden>
+  </div>
   <p class="hook" id="hook"></p>
   <figure class="tl" id="tl" aria-describedby="gaps"><figcaption class="tl-cap">To scale. Bars show how sure we are of each date.</figcaption><div class="tl-plot" id="plot"></div></figure>
   <ul class="gaps" id="gaps"></ul>

@@ -1,3 +1,7 @@
+# DONE 2026-11-25 10:45 AM CT (Gizmo): r4 right / not-quite seals wired beside the verdict and drawn on the share card. Hook stays off the card. Local e2e ALL PASS, local gate 98 / CLS 0 / impeccable 0. Live deploy pending Pages.
+
+Cream chroma-key, no text on the medals. Local gate: qa/local-r4/.
+
 # DONE 2026-11-25 8:29 AM CT (Gizmo): C6 dare/copy links use a canonical preview URL on localhost (https://evanmack45.github.io/cleverdates-c6-preview/; switch to https://cleverdates.com/ at go-live). The share-card canvas has no URL in the footer.
 
 # DONE 2026-11-25 7:12 AM CT (Gizmo): C6 live at https://evanmack45.github.io/cleverdates-c6-preview/ (43 trios, art wired, gate PASS 390/1280, impeccable 0, e2e 142/142 live)

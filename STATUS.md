@@ -1,3 +1,11 @@
+## r4 art wired (local), 2026-11-25 10:45 AM CT
+
+Right and not-quite seals sit beside `#verdict` after a reveal (srcset 256/512, 96px, no fetchpriority). The matching seal is drawn on the share canvas next to "I got this one right." / "This one got me." The hook (the answer) stays off the card. Ground stays the r3 generic card-r3.webp.
+
+- Local e2e (qa/e2e.mjs): **ALL PASS**, including right and wrong seals on the page and in the canvas, hook off the card, img count 4 (hero, ruler, triptych, seal).
+- Local gate (qa/local-r4/): Lighthouse **98 / 100 / 100 / SEO 66** (noindex), CLS 0, LCP 2.3 s. Impeccable 0 at 390, 1280 and static. Folds viewed (seals appear only after a reveal, not on the first-screen fold).
+- Live e2e / live gate / live share samples: pending a GitHub Pages deploy (Actions still a partial outage at 10:45 AM CT). noindex kept; no DNS or go-live.
+
 # C6 Closer In Time: STATUS (Gizmo)
 
 ## r3 art wired, live preview, 2026-11-25 10:05 AM CT

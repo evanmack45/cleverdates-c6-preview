@@ -56,7 +56,7 @@ for (const w of [390, 1280]) {
     ok(!(await p.isHidden('#note')) && (await p.textContent('#note')).includes('broken'), `odd hash ${h}: clear message (${w})`);
     ok((await shown(p)).length === 3 && await p.isHidden('#dare'), `odd hash ${h}: plays a fresh round, no dare banner (${w})`);
     ok(!(await p.evaluate(() => location.hash)), `odd hash ${h}: hash cleared (${w})`);
-    ok((await p.$$eval('img', (is) => is.every((i) => i.getAttribute('src').startsWith('art/')) && is.length === 3)) && p.errs.length === 0, `odd hash ${h}: nothing injected, no errors (${w})`);
+    ok((await p.$$eval('img', (is) => is.every((i) => i.getAttribute('src').startsWith('art/')) && is.length === 4)) && p.errs.length === 0, `odd hash ${h}: nothing injected, no errors (${w})`);
     await p.context().close();
   }
 }
@@ -118,13 +118,16 @@ for (const w of [390, 1280]) {
     const tag = `r3 card trio ${t.n}${win ? ' right' : ' wrong'}${odd ? ' (odd: longest names)' : ''}`;
     ok(buf.slice(1, 4).toString() === 'PNG' && buf.readUInt32BE(16) === 1080 && buf.readUInt32BE(20) === 1350, `${tag}: PNG is 1080x1350`);
     ok(/card-r3\.webp/.test(im) && !/card-1080/.test(im), `${tag}: the hieroglyph-free ground is drawn into the canvas`);
+    const seal = await p.$eval('#seal', (e) => ({ src: e.getAttribute('src'), hidden: e.hidden, ok: e.complete && e.naturalWidth > 0 }));
+    ok(!seal.hidden && seal.ok && (win ? /seal-right-/.test(seal.src) : /seal-not-quite-/.test(seal.src)), `${tag}: the ${win ? 'right' : 'not-quite'} seal sits beside the verdict`);
+    ok((win ? /seal-right-512\.webp/ : /seal-not-quite-512\.webp/).test(im), `${tag}: the matching seal is drawn into the canvas next to the result line`);
     ok(!txt.includes(t.hook) && t.e.every((id) => txt.includes(data.events[id].name.split(' ')[0])) && txt.includes(win ? 'I got this one right.' : 'This one got me.'), `${tag}: type is the three events and the result line; the hook (the answer) stays off the card`);
     ok(!/localhost|127\.0\.0\.1/.test(txt) && p.errs.length === 0 && p.reqs.length === 0, `${tag}: no localhost on the card, no errors, no third-party requests ${p.errs.join(';')}`);
     await dl.saveAs(`r3/card-trio${t.n}-${win ? 'right' : 'wrong'}.png`);
     await p.context().close();
   }
   const p = await page(390); await p.goto(base);
-  ok(await p.$$eval('img', (is) => is.length === 3 && is.every((i) => /^art\/(hero|ruler|triptych)-/.test(i.getAttribute('src')))), 'r3: the on-page art set is unchanged (hero, ruler, triptych); the card art lives only in the canvas');
+  ok(await p.$$eval('img', (is) => is.length === 4 && is.every((i) => /^art\/(hero|ruler|triptych|seal-right|seal-not-quite)-/.test(i.getAttribute('src')))), 'r4: on-page art is hero, ruler, triptych and the result seal');
   await p.context().close();
 }
 console.log(fails ? `${fails} FAILED` : 'ALL PASS');

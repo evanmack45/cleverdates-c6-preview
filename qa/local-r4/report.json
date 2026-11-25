@@ -1,0 +1,97 @@
+[
+  {
+    "url": "http://127.0.0.1:8947/",
+    "viewport": "phone",
+    "issues": [],
+    "shots": [
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__phone__fold.png",
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__phone__scroll025.png",
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__phone__scroll050.png",
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__phone__scroll075.png",
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__phone__scroll100.png",
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__phone__full.png",
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__phone__reduced-motion.png"
+    ],
+    "loadMs": 827,
+    "framePacing": {
+      "frames": 256,
+      "p50": 16.699999999999818,
+      "p95": 16.700000000000728,
+      "over50ms": 0
+    },
+    "dom": {
+      "overflowX": 0,
+      "wide": [],
+      "tinyText": 0,
+      "imgsNoAlt": 0,
+      "brokenImgs": 0,
+      "smallTapTargets": 0,
+      "h1": 1,
+      "ogImage": true,
+      "canvases": 0,
+      "fonts": [
+        "Schibsted",
+        "Gloock"
+      ],
+      "title": "Closer in time | Clever Dates"
+    },
+    "axe": [],
+    "consoleErrors": [],
+    "badRequests": []
+  },
+  {
+    "url": "http://127.0.0.1:8947/",
+    "viewport": "desktop",
+    "issues": [],
+    "shots": [
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__desktop__fold.png",
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__desktop__scroll025.png",
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__desktop__scroll050.png",
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__desktop__scroll075.png",
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__desktop__scroll100.png",
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__desktop__full.png",
+      "/workspace/sites/cleverdates.com/c6/qa/local-r4/127-0-0-1-8947__desktop__reduced-motion.png"
+    ],
+    "loadMs": 545,
+    "framePacing": {
+      "frames": 240,
+      "p50": 16.699999999999818,
+      "p95": 16.799999999999727,
+      "over50ms": 0
+    },
+    "dom": {
+      "overflowX": 0,
+      "wide": [],
+      "tinyText": 0,
+      "imgsNoAlt": 0,
+      "brokenImgs": 0,
+      "smallTapTargets": 0,
+      "h1": 1,
+      "ogImage": true,
+      "canvases": 0,
+      "fonts": [
+        "Schibsted",
+        "Gloock"
+      ],
+      "title": "Closer in time | Clever Dates"
+    },
+    "axe": [],
+    "consoleErrors": [],
+    "badRequests": []
+  },
+  {
+    "url": "http://127.0.0.1:8947/",
+    "viewport": "lighthouse-mobile",
+    "scores": {
+      "performance": 98,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    },
+    "LCP": "2.3 s",
+    "CLS": "0",
+    "TBT": "0 ms",
+    "weight": "Total size was 278 KiB",
+    "issues": []
+  }
+]

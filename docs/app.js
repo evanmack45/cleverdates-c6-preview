@@ -106,6 +106,12 @@
     });
     $('verdict').textContent = result ? 'Right.' : 'Not quite.';
     $('verdict').className = result ? 'ok' : 'no';
+    const seal = $('seal'), key = result ? 'right' : 'not-quite';
+    seal.src = `art/seal-${key}-256.webp`;
+    seal.srcset = `art/seal-${key}-256.webp 256w, art/seal-${key}-512.webp 512w`;
+    seal.sizes = '96px';
+    seal.alt = result ? 'A gold medal with a starburst and ribbons.' : 'A dusty rose medal with a crack, slightly tilted.';
+    seal.hidden = false;
     $('hook').textContent = cur.t.hook;
     drawTimeline();
     const pairs = [[cur.ids[0], cur.ids[1]], [cur.ids[0], cur.ids[2]], [cur.ids[1], cur.ids[2]]]
@@ -198,7 +204,15 @@
     const fade = g.createLinearGradient(0, 380, 0, 470); fade.addColorStop(0, 'rgba(15,59,44,0)'); fade.addColorStop(1, '#0f3b2c');
     g.fillStyle = fade; g.fillRect(0, 380, W, 90);
     g.fillStyle = '#ff7a59'; g.font = `700 34px ${sans}`;
-    g.fillText(result === true ? 'I got this one right.' : result === false ? 'This one got me.' : 'Bet you get this wrong.', 80, 540);
+    const line = result === true ? 'I got this one right.' : result === false ? 'This one got me.' : 'Bet you get this wrong.';
+    g.fillText(line, 80, 540);
+    if (result === true || result === false) {
+      const seal = await loadSeal(result);
+      if (seal) {
+        const sw = 140, sx = Math.min(80 + g.measureText(line).width + 24, W - 80 - sw), sy = 540 - 88;
+        g.drawImage(seal, sx, sy, sw, sw);
+      }
+    }
     g.fillStyle = '#f4eedf'; g.font = `400 76px ${serif}`;
     wrap(g, 'Which two are closer in time?', 80, 630, W - 160, 82);
     let y = 760;
@@ -215,8 +229,12 @@
     g.fillText('Closer in time, a game from Clever Dates.', 80, H - 50);
     return c;
   }
-  let artP = null;
+  let artP = null, sealP = {};
   function loadArt() { return artP || (artP = new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.onerror = () => r(null); i.src = 'art/card-r3.webp'; })); }
+  function loadSeal(ok) {
+    const src = ok ? 'art/seal-right-512.webp' : 'art/seal-not-quite-512.webp';
+    return sealP[src] || (sealP[src] = new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.onerror = () => r(null); i.src = src; }));
+  }
   function rr(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
   function lines2(g, text, max) {
     const words = text.split(' '), out = []; let line = '';
