@@ -1,3 +1,12 @@
+# DONE 2026-11-25 1:10 PM CT (Gizmo): share card footer now prints the web address.
+
+The PNG used to end on "Closer in time, a game from Clever Dates." with no URL. It now prints the canonical page (same localhost fallback as the other sites) plus the round's `#t=` on the line below. Commit 89a2ce7, pushed, noindex kept, no DNS or go-live.
+
+- Local e2e: ALL PASS, including a new assert that the footer names `evanmack45.github.io/cleverdates-c6-preview` and never localhost.
+- Live e2e: ALL PASS (same footer assert). Log: /tmp/c6-e2e-live-url.log (also viewed the live card: qa/art-folds/url-footer/card-trio1-right.png).
+- Live gate (qa/art-folds/url-footer/gate-live/): Lighthouse **100 / 100 / 100 / SEO 63**, CLS 0, LCP 1.4 s, impeccable 0 at 390, 1280 and static.
+- Go-live dry run (`golive.sh c6 --e2e`): 171 pass. The switched card prints `closer.cleverdates.com/#t=iphone.cleo.pyramid`.
+
 # DONE 2026-11-25 10:45 AM CT (Gizmo): r4 right / not-quite seals wired beside the verdict and drawn on the share card. Hook stays off the card. Local e2e ALL PASS, local gate 98 / CLS 0 / impeccable 0. Live on c246198: e2e ALL PASS, gate 100 / CLS 0 / impeccable 0, LCP 1.4 s. Seals captured in qa/art-folds/r4/.
 
 Cream chroma-key, no text on the medals. Local gate: qa/local-r4/.

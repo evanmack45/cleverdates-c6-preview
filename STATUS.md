@@ -1,3 +1,7 @@
+## Share URL on the card, 2026-11-25 1:10 PM CT
+
+Commit 89a2ce7. The share PNG footer now prints the canonical URL and the round hash. Live e2e ALL PASS. Live gate 100/100/100, CLS 0, impeccable 0. noindex kept; no DNS or go-live.
+
 ## r4 art wired (local), 2026-11-25 10:45 AM CT
 
 Right and not-quite seals sit beside `#verdict` after a reveal (srcset 256/512, 96px, no fetchpriority). The matching seal is drawn on the share canvas next to "I got this one right." / "This one got me." The hook (the answer) stays off the card. Ground stays the r3 generic card-r3.webp.
