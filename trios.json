@@ -318,7 +318,7 @@
    "src": "https://en.wikipedia.org/wiki/IPhone_(1st_generation)"
   },
   "kongo": {
-   "name": "Kongō Gumi, a Japanese temple-building firm, is founded",
+   "name": "Kongo Gumi, a Japanese temple-building firm, is founded",
    "when": "6th century AD",
    "lo": 500,
    "hi": 600.999,
@@ -672,7 +672,7 @@
   "taj": {
    "name": "Work begins on the Taj Mahal",
    "when": "1632",
-   "lo": 1631,
+   "lo": 1632,
    "hi": 1632.999,
    "prec": "year",
    "src": "https://en.wikipedia.org/wiki/Taj_Mahal"
@@ -1213,11 +1213,11 @@
    "hook": "The Taj Mahal is younger than the Mayflower landing.",
    "gaps": {
     "taj-mayflower": [
-     10,
+     11,
      13
     ],
     "taj-machu": [
-     161,
+     162,
      213
     ],
     "mayflower-machu": [
@@ -1630,7 +1630,7 @@
     "salem",
     "boe"
    ],
-   "hook": "The Salem witch trials and the Bank of England are 2 years apart.",
+   "hook": "The Salem witch trials ended a year before the Bank of England opened.",
    "gaps": {
     "salem-boe": [
      1,

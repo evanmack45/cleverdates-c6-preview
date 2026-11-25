@@ -45,7 +45,7 @@ ev('bastille','The storming of the Bastille','1789',1789,1789.999,'year','Stormi
 ev('antarctica','People first see Antarctica','1820',1820,1820.999,'year','Antarctica','1820')
 ev('battery','Volta builds the first battery','1799–1800',1799,1800.999,'year','Voltaic_pile','1800, Volta stacked')
 ev('magellan',"Magellan's crew finishes the first trip around the world",'1522',1522,1522.999,'year','Magellan_expedition','1522')
-ev('taj','Work begins on the Taj Mahal','1632',1631,1632.999,'year','Taj_Mahal','1632')
+ev('taj','Work begins on the Taj Mahal','1632',1632,1632.999,'year','Taj_Mahal','1632')
 ev('mayflower','The Mayflower lands at Plymouth','1620',1620,1620.999,'year','Mayflower','1620')
 ev('sharks','The earliest shark relatives swim the seas','over 420 million years ago',ma(458),ma(419),'approx','Shark','458–444 million')
 ev('trees','The first trees','c. 385 million years ago',ma(395),ma(380),'approx','Wattieza','385')
@@ -76,7 +76,7 @@ ev('terracotta',"China's Terracotta Army is made",'c. 246–208 BC',bc(246),bc(2
 ev('nokia','Nokia starts out as a paper mill','1865',1865,1865.999,'year','Nokia','1865')
 ev('lincoln','Abraham Lincoln is assassinated','1865',1865,1865.999,'year','Assassination_of_Abraham_Lincoln','1865')
 ev('mobile','The first handheld mobile phone call','1973',1973,1973.999,'year','Mobile_phone','1973')
-ev('kongo','Kongō Gumi, a Japanese temple-building firm, is founded','6th century AD',500,600.999,'century','Kong%C5%8D_Gumi','6th century')
+ev('kongo','Kongo Gumi, a Japanese temple-building firm, is founded','6th century AD',500,600.999,'century','Kong%C5%8D_Gumi','6th century')
 ev('oxford','Teaching begins at Oxford','1096 (by 1167 at the latest)',1096,1167,'approx','University_of_Oxford','1096')
 ev('salem','The Salem witch trials','1692',1692,1693.4,'year','Salem_witch_trials','1692')
 ev('boe','The Bank of England opens','1694',1694,1694.999,'year','Bank_of_England','1694')
@@ -139,7 +139,7 @@ T=[
 ('terracotta','pyramid','moon',"China's Terracotta Army is closer in time to the Moon landing than to the Great Pyramid."),
 ('nokia','lincoln','mobile','Nokia started out the year Lincoln was shot.'),
 ('kongo','romefall','oxford','A Japanese building firm was founded in the century after the fall of Rome, five centuries before Oxford.'),
-('salem','boe','armada','The Salem witch trials and the Bank of England are 2 years apart.'),
+('salem','boe','armada','The Salem witch trials ended a year before the Bank of England opened.'),
 ('megalodon','lucy','trex','Megalodon and our ancestor Lucy are close in time.'),
 ('glasses','magna','gutenberg','Eyeglasses are more than 150 years older than the printing press.'),
 ('toilet','hamlet','constantinople','The flush toilet is a few years older than Hamlet.'),
