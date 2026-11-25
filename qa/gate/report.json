@@ -12,11 +12,11 @@
       "/workspace/sites/cleverdates.com/c6/qa/gate/evanmack45-github-io-cleverdates-c6-preview__phone__full.png",
       "/workspace/sites/cleverdates.com/c6/qa/gate/evanmack45-github-io-cleverdates-c6-preview__phone__reduced-motion.png"
     ],
-    "loadMs": 940,
+    "loadMs": 631,
     "framePacing": {
-      "frames": 256,
+      "frames": 255,
       "p50": 16.699999999999818,
-      "p95": 16.799999999999727,
+      "p95": 16.700000000000728,
       "over50ms": 0
     },
     "dom": {
@@ -52,12 +52,12 @@
       "/workspace/sites/cleverdates.com/c6/qa/gate/evanmack45-github-io-cleverdates-c6-preview__desktop__full.png",
       "/workspace/sites/cleverdates.com/c6/qa/gate/evanmack45-github-io-cleverdates-c6-preview__desktop__reduced-motion.png"
     ],
-    "loadMs": 649,
+    "loadMs": 625,
     "framePacing": {
-      "frames": 256,
+      "frames": 237,
       "p50": 16.699999999999818,
-      "p95": 16.700000000000728,
-      "over50ms": 1
+      "p95": 16.700000000000273,
+      "over50ms": 0
     },
     "dom": {
       "overflowX": 0,
@@ -91,7 +91,7 @@
     "LCP": "1.2 s",
     "CLS": "0",
     "TBT": "0 ms",
-    "weight": "Total size was 153 KiB",
+    "weight": "Total size was 164 KiB",
     "issues": []
   }
 ]

@@ -53,3 +53,10 @@
     - All 43 trios answer right with no overflow and labels kept inside the plot.
     - The dare link copies this exact round. The card is a 1080x1350 PNG and the download works. Next round clears the dare.
     - Reduced motion and no-JS both checked.
+
+## 2026-11-25 7:35 AM CT: DONE, 101 trios
+- trios.json grew from 43 to 101. Every event still has a date, a low/high range, a precision and a citation the validator finds in the fetched article. The answer holds at both ends of every range (tightest margin 7 years, NZ vote vs Nintendo).
+- Anchor cap 4 enforced: the Great Pyramid went from 8 trios to 4. Stonehenge, Wright flight, the Moon landing and the first Terracotta/Cun event were trimmed too.
+- 5 weak trios dropped (basketball, Nokia, fax, Uranus, Salem) to bring Europe plus North America to 48.8% of event slots.
+- Source fixes after reading the articles: Lascaux 17,000 to 22,000 years, Ishango 18,000 to 20,000 BC, Jomon 14,500 BC, Caral 2600 to 2000 BC, Edison's 13.5 hour test (22 Oct 1879), Cook sighting Australia (19 Apr 1770), Hannibal setting out 218 BC, Hokusai 1831, Ashoka 268 to 232 BC, cockroach ancestors.
+- QA live: gate PASS 390 and 1280, Lighthouse 100/100/100 (SEO 63, noindex), page weight 164 KiB, impeccable 0, e2e ALL PASS. Fold shots refreshed.
