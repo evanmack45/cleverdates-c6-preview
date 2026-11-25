@@ -8,11 +8,15 @@
 <meta name="description" content="Three moments in history. Pick the two that happened closest together, then see all three to scale.">
 <meta property="og:title" content="Bet you get this wrong: which two are closer in time?">
 <meta property="og:description" content="Three moments. Pick the two closest together. Then see them to scale.">
-<meta property="og:image" content="https://evanmack45.github.io/cleverdates-c6-preview/og.png">
+<meta property="og:image" content="https://evanmack45.github.io/cleverdates-c6-preview/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A pyramid, an ancient amphora and a smartphone float in a row under a turquoise sky, joined by two gold measuring lines.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/gloock.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/schibsted.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="art/hero-800.webp" imagesrcset="art/hero-800.webp 800w, art/hero-1400.webp 1400w" imagesizes="(min-width: 900px) 560px, 100vw" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230f3b2c'/%3E%3Ccircle cx='4' cy='8' r='2' fill='%23f4eedf'/%3E%3Ccircle cx='10' cy='8' r='2' fill='%23ff7a59'/%3E%3Ccircle cx='13' cy='8' r='2' fill='%23ff7a59'/%3E%3C/svg%3E">
 <script>document.documentElement.className='js'</script>
@@ -22,8 +26,13 @@
 <main>
 <section class="game" aria-labelledby="q">
  <p class="dare" id="dare" hidden>Someone sent you this one. They bet you get it wrong.</p>
- <h1 id="q">Which two are closer in time?</h1>
- <p class="dek">Pick the two moments that happened nearest each other. Then see all three to scale.</p>
+ <div class="top">
+  <div class="top-txt">
+   <h1 id="q">Which two are closer in time?</h1>
+   <p class="dek">Pick the two moments that happened nearest each other. Then see all three to scale.</p>
+  </div>
+  <figure class="hero-art"><img src="art/hero-800.webp" srcset="art/hero-800.webp 800w, art/hero-1400.webp 1400w" sizes="(min-width: 900px) 560px, 100vw" width="1400" height="782" fetchpriority="high" alt="Gouache poster: a smartphone and a gold coin half buried in desert sand beside the Great Pyramid, with a small stepped temple far off."></figure>
+ </div>
  <p class="note" id="note" role="status" hidden></p>
  <div class="picks" id="picks" role="group" aria-label="Three moments. Pick two.">
   <button type="button" class="ev" data-id="iphone" aria-pressed="false"><span class="ev-n">A</span><span class="ev-name">The first iPhone goes on sale</span><span class="ev-when" hidden></span></button>
@@ -32,6 +41,7 @@
  </div>
  <div class="go"><button type="button" id="lock" class="primary" disabled>Pick two</button><p class="hint" id="hint">Tap two cards.</p></div>
  <section class="reveal" id="reveal" hidden aria-labelledby="verdict" tabindex="-1">
+  <img class="ruler" src="art/ruler-800.webp" srcset="art/ruler-800.webp 800w, art/ruler-1584.webp 1584w" sizes="(min-width: 1180px) 1116px, 100vw" width="1584" height="672" loading="lazy" decoding="async" alt="">
   <h2 id="verdict"></h2>
   <p class="hook" id="hook"></p>
   <figure class="tl" id="tl" aria-describedby="gaps"><figcaption class="tl-cap">To scale. Bars show how sure we are of each date.</figcaption><div class="tl-plot" id="plot"></div></figure>
@@ -89,10 +99,14 @@
 <li><p class="sp-hook">People first stood on Everest the year DNA&#39;s shape was published.</p><p class="sp-src"><a href="https://en.wikipedia.org/wiki/Nucleic_acid_double_helix" rel="noopener">The shape of DNA (the double helix) is published: 1953</a><span aria-hidden="true"> · </span><a href="https://en.wikipedia.org/wiki/On_the_Origin_of_Species" rel="noopener">Darwin publishes On the Origin of Species: 1859</a><span aria-hidden="true"> · </span><a href="https://en.wikipedia.org/wiki/1953_British_Mount_Everest_expedition" rel="noopener">First people on top of Everest: 1953</a></p></li></ol></details>
 </section>
 <section class="how" aria-labelledby="how-h">
+ <figure class="how-art"><img src="art/triptych-640.webp" srcset="art/triptych-640.webp 640w, art/triptych-1100.webp 1100w" sizes="(min-width: 900px) 460px, 100vw" width="1100" height="738" loading="lazy" decoding="async" alt="Three museum pedestals hold a papyrus scroll, a blank-faced helmeted bust and a smartphone, joined by glowing gold strings with measuring ticks."></figure>
+ <div class="how-txt">
  <h2 id="how-h">How the answers are checked</h2>
  <p>Every date comes from the Wikipedia article linked next to it, read on 2026-11-25. Old dates carry a range (the Great Pyramid is dated "between 2700 and 2500 BC"). A round is used only if its answer stays the same at both ends of every range. The closest call in the set is 17 years.</p>
  <p>"You, reading this" is the current year. There is no year zero, so 1 BC to AD 1 counts as one year.</p>
  <p>Nothing you tap leaves your browser. No cookies, no tracking, no accounts.</p>
+ <p class="credit">Illustrations made with an AI image model (Nano Banana Pro). No real people are shown.</p>
+ </div>
 </section>
 </main>
 <footer class="foot"><p>A preview, not yet published.</p><p><a href="https://www.afternic.com/domain/cleverdates.com" rel="noopener">This domain is for sale.</a></p></footer>

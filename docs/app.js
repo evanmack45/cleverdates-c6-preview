@@ -188,29 +188,30 @@
     try { await Promise.all([document.fonts.load('80px Gloock'), document.fonts.load('700 40px Schibsted'), document.fonts.load('400 40px Schibsted')]); } catch (e) { /* system fonts */ }
     const serif = 'Gloock, Georgia, serif', sans = 'Schibsted, Arial, sans-serif';
     g.fillStyle = '#0f3b2c'; g.fillRect(0, 0, W, H);
-    g.fillStyle = '#f4eedf'; g.font = `400 40px ${serif}`; g.fillText('Clever Dates', 80, 120);
+    const art = await loadArt();
+    if (art) g.drawImage(art, 0, 0, W, 470);
+    const fade = g.createLinearGradient(0, 380, 0, 470); fade.addColorStop(0, 'rgba(15,59,44,0)'); fade.addColorStop(1, '#0f3b2c');
+    g.fillStyle = fade; g.fillRect(0, 380, W, 90);
     g.fillStyle = '#ff7a59'; g.font = `700 34px ${sans}`;
-    g.fillText(result === true ? 'I got this one right.' : result === false ? 'This one got me.' : 'Bet you get this wrong.', 80, 230);
-    g.fillStyle = '#f4eedf'; g.font = `400 88px ${serif}`;
-    wrap(g, 'Which two are closer in time?', 80, 340, W - 160, 96);
-    // timeline motif: three dots, answer hidden
-    g.strokeStyle = '#46665a'; g.lineWidth = 6; g.beginPath(); g.moveTo(80, 528); g.lineTo(W - 80, 528); g.stroke();
-    [[150, '#f4eedf'], [560, '#ff7a59'], [930, '#ff7a59']].forEach(([x, col]) => { g.fillStyle = col; g.beginPath(); g.arc(x, 528, 18, 0, 7); g.fill(); });
-    g.fillStyle = '#e3d9bf'; g.font = `700 30px ${sans}`; g.textAlign = 'center'; g.fillText('?', 355, 500); g.fillText('?', 745, 500); g.textAlign = 'left';
-    let y = 612;
+    g.fillText(result === true ? 'I got this one right.' : result === false ? 'This one got me.' : 'Bet you get this wrong.', 80, 540);
+    g.fillStyle = '#f4eedf'; g.font = `400 76px ${serif}`;
+    wrap(g, 'Which two are closer in time?', 80, 630, W - 160, 82);
+    let y = 760;
     cur.ids.forEach((id, k) => {
-      const h = 190;
+      const h = 150;
       g.fillStyle = '#f6efe0'; rr(g, 80, y, W - 160, h, 28); g.fill();
-      g.fillStyle = '#b83a18'; g.font = `400 64px ${serif}`; g.fillText('ABC'[k], 120, y + 118);
+      g.fillStyle = '#b83a18'; g.font = `400 60px ${serif}`; g.fillText('ABC'[k], 120, y + 96);
       g.fillStyle = '#0f3b2c'; g.font = `700 40px ${sans}`;
       const lines = lines2(g, EV[id].name, W - 160 - 160);
-      lines.forEach((ln, j) => g.fillText(ln, 210, y + h / 2 + 14 - (lines.length - 1) * 25 + j * 50));
-      y += h + 28;
+      lines.forEach((ln, j) => g.fillText(ln, 210, y + h / 2 + 14 - (lines.length - 1) * 23 + j * 46));
+      y += h + 22;
     });
     g.fillStyle = '#e3d9bf'; g.font = `400 30px ${sans}`;
-    g.fillText('Closer in time, a game from Clever Dates.', 80, H - 70);
+    g.fillText('Closer in time, a game from Clever Dates.', 80, H - 50);
     return c;
   }
+  let artP = null;
+  function loadArt() { return artP || (artP = new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.onerror = () => r(null); i.src = 'art/card-1080.webp'; })); }
   function rr(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
   function lines2(g, text, max) {
     const words = text.split(' '), out = []; let line = '';

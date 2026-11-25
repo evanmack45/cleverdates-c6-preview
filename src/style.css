@@ -32,6 +32,14 @@ button { font: 700 17px/1 var(--sans); border: 0; border-radius: 12px; padding: 
 .game { max-width: 1180px; margin: 0 auto; padding: 8px 20px 40px; }
 .dare { display: inline-block; margin: 0 0 14px; padding: 8px 14px; border-radius: 999px; background: var(--coral); color: var(--ink); font-weight: 700; font-size: 15px; }
 h1 { font: 400 clamp(40px, 11vw, 92px)/0.98 var(--serif); letter-spacing: -0.015em; margin: 0 0 14px; max-width: 12ch; text-wrap: balance; }
+.top { display: grid; gap: 4px; }
+.hero-art { margin: 0 -20px 18px; order: -1; }
+.hero-art img { display: block; width: 100%; height: 170px; object-fit: cover; object-position: 78% 60%; }
+.ruler { display: block; width: 100%; height: 110px; object-fit: cover; object-position: center 55%; border-radius: 16px; margin: 0 0 18px; }
+.how { display: grid; gap: 18px; }
+.how-art { margin: 0; }
+.how-art img { display: block; width: 100%; height: auto; border-radius: 16px; }
+.credit { font-size: 14px; }
 .dek { margin: 0 0 22px; color: var(--cream2); max-width: 34em; }
 .note { margin: 0 0 16px; padding: 10px 14px; border-radius: 10px; background: var(--green2); color: var(--cream); font-weight: 600; }
 .note[hidden] { display: none; }
@@ -118,6 +126,11 @@ html:not(.js) .picks, html:not(.js) .go { display: none; }
   body { font-size: 18px; }
   .bar, .game, .all, .how { padding-left: 32px; padding-right: 32px; }
   .bar { padding-top: 22px; padding-bottom: 22px; }
+  .top { grid-template-columns: minmax(0, 1fr) minmax(0, 560px); column-gap: 48px; align-items: center; margin-bottom: 8px; }
+  .hero-art { order: 0; margin: 0; }
+  .hero-art img { height: auto; aspect-ratio: 1400 / 782; border-radius: 20px; }
+  .ruler { height: 150px; }
+  .how { grid-template-columns: 460px minmax(0, 1fr); column-gap: 48px; align-items: start; }
   .picks { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
   .ev { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; align-items: start; min-height: 200px; padding: 22px 24px; font-size: 22px; }
   .ev-n { grid-row: auto; margin-bottom: 14px; }
