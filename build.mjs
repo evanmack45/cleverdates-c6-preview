@@ -62,9 +62,9 @@ const html = `<!doctype html>
  <div class="top">
   <div class="top-txt">
    <h1 id="q">Which two are closer in time?</h1>
-   <p class="dek">Pick the two moments that happened nearest each other. Then see all three to scale.</p>
+   <p class="dek">Pick the two moments nearest each other.</p>
   </div>
-  <figure class="hero-art"><img src="art/hero-800.webp" srcset="art/hero-800.webp 800w, art/hero-1400.webp 1400w" sizes="(min-width: 900px) 560px, 100vw" width="1400" height="782" fetchpriority="high" alt="Gouache poster: a smartphone and a gold coin half buried in desert sand beside the Great Pyramid, with a small stepped temple far off."></figure>
+  <figure class="hero-art"><img src="art/hero-800.webp" srcset="art/hero-800.webp 800w, art/hero-1400.webp 1400w" sizes="(min-width: 900px) 560px, 180vw" width="1400" height="782" fetchpriority="high" alt="Gouache poster: a smartphone and a gold coin half buried in desert sand beside the Great Pyramid, with a small stepped temple far off."></figure>
  </div>
  <p class="note" id="note" role="status" hidden></p>
  <div class="picks" id="picks" role="group" aria-label="Three moments. Pick two.">

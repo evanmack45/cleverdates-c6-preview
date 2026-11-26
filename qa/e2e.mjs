@@ -168,6 +168,17 @@ for (const w of [390, 1280]) {
     await p.context().close();
   }
 }
+
+// Hero rule (bar v1.2, Shears 11/25): at 390x844 the hero art's visible box is at least 0.40 of the fold, the first control is in the first screen, and the art is not blown up past 1.25x
+{
+  const p = await page(390);
+  await p.goto(base, { waitUntil: 'networkidle' });
+  const h = await p.evaluate(() => { const VW = innerWidth, VH = innerHeight; const el = document.querySelector('figure.hero-art'), im = el.querySelector('img'); const r = el.getBoundingClientRect(); const w = Math.max(0, Math.min(VW, r.right) - Math.max(0, r.left)), hh = Math.max(0, Math.min(VH, r.bottom) - Math.max(0, r.top)); const ir = im.getBoundingClientRect(); const sc = Math.max(ir.width / im.naturalWidth, ir.height / im.naturalHeight); const first = document.querySelector('.ev').getBoundingClientRect(), lock = document.querySelector('#lock').getBoundingClientRect(); return { ratio: w * hh / (VW * VH), up: (im.naturalWidth * sc * devicePixelRatio) / +(/-(\d+)\.webp/.exec(im.currentSrc) || [0, 1])[1], natW: +(/-(\d+)\.webp/.exec(im.currentSrc) || [0, 0])[1], firstBottom: first.bottom, lockBottom: lock.bottom, VH, words: document.body.innerText.slice(0, 0) }; });
+  ok(h.ratio >= 0.4, `hero: figure.hero-art fills ${h.ratio.toFixed(3)} of the 390x844 first screen (need 0.40)`);
+  ok(h.up <= 1.25, `hero: art is sharp, ${h.up.toFixed(2)}x upscale from a ${h.natW}px file at DPR 2`);
+  ok(h.lockBottom <= h.VH && h.firstBottom <= h.VH, `hero: the cards and the Pick-two button stay in the first screen (button bottom ${Math.round(h.lockBottom)} of ${h.VH})`);
+  await p.context().close();
+}
 console.log(fails ? `${fails} FAILED` : 'ALL PASS');
 await b.close();
 process.exit(fails ? 1 : 0);
