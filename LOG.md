@@ -92,3 +92,12 @@ Commit 016ce90 (pushed). Share card ground wired from card-r3.webp; the on-page 
 Barker's live check (launch-venues-2026-11-25.md §3): the third answer box covered half of "Closer in time, a game from Clever Dates." Reproduced on https://closer.cleverdates.com (pinned Chrome, default trio iphone.cleo.pyramid): the last box ended at y=1254 and the credit line's top was at y=1239 (15px overlap). The boxes started at a fixed y=760 with 150px height and 22px gaps, and the footer was pinned to H-88, so three boxes always ran into it.
 
 Fix: start the stack at y=736, 16px gaps, and place the footer 28px under the last box (plus a layout object for tests). e2e now asserts a >=16px gap and that the footer stays on the card, on the teaser, after a right answer, a short-name trio, and the longest names. Local e2e ALL PASS. The e2e localhost canonical expectation was also updated from the old github.io preview URL to closer.cleverdates.com, matching the go-live publicLink fallback. Live e2e after the push: 187 PASS, 0 FAIL. golive-verify --gate PASS. Fixed share PNGs (viewed): qa/art-folds/share-fix/after-teaser.png, after-played.png, after-short.png (28px gap). Before: qa/art-folds/share-fix/before-default.png and before-barker.png.
+
+## 2026-11-25 ~9:00 PM CT: drop "A preview, not yet published." (Gizmo, for Dash / Shears)
+
+Commit df1dbb7 (pushed, live on closer.cleverdates.com). Deleted the leftover preview footer line from build.mjs. The page is public, so the line was a factual error. The for-sale line stays. The line was not in the share PNG and not in C2.
+
+- e2e: 195 PASS, 0 FAIL live (new asserts: page, no-JS footer, and share PNG do not contain the preview line).
+- golive-verify --gate: PASS. Lighthouse 100/100/100/100, CLS 0, impeccable 0.
+- Live `grep -c "not yet published"`: 0. Shots: /workspace/gizmo/shots/c6-after-preview-fold-{390,1280}.png and c6-after-preview-footer-390.png.
+- No DNS changes. C2 not touched. Nobody messaged. Details: /workspace/gizmo/slop-fix.md.
