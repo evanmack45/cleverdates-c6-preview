@@ -100,7 +100,18 @@ for (const w of [390, 1280]) {
   const nj = await page(390, { javaScriptEnabled: false });
   await nj.goto(base);
   ok(await nj.isHidden('.picks') && (await nj.$$('.sp li')).length === data.trios.length, 'no JS: game hidden, all answers with sources listed');
+  ok(!(await nj.textContent('body')).includes('A preview, not yet published.') && !(await nj.textContent('body')).includes('not yet published'), 'no JS: footer does not say the page is a preview');
+  ok((await nj.textContent('.foot')).includes('This domain is for sale.'), 'no JS: for-sale footer remains');
   await nj.context().close();
+}
+{
+  const p = await page(390);
+  await p.goto(base);
+  const body = await p.textContent('body');
+  const html = await p.content();
+  ok(!body.includes('A preview, not yet published.') && !body.includes('not yet published') && !html.includes('A preview, not yet published.'), 'page footer does not say the page is a preview');
+  ok((await p.textContent('.foot')).includes('This domain is for sale.'), 'for-sale footer remains');
+  await p.context().close();
 }
 // r3 art: share-card ground drawn into the canvas; three real trios, right and wrong, plus an odd one (longest event names)
 {
@@ -124,6 +135,7 @@ for (const w of [390, 1280]) {
     ok(!txt.includes(t.hook) && t.e.every((id) => txt.includes(data.events[id].name.split(' ')[0])) && txt.includes(win ? 'I got this one right.' : 'This one got me.'), `${tag}: type is the three events and the result line; the hook (the answer) stays off the card`);
     const host = (/^https?:\/\/(localhost|127\.0\.0\.1)[:/]/.test(base) ? 'https://closer.cleverdates.com/' : base).replace(/^https?:\/\//, '').replace(/\/?$/, '');
     ok(txt.includes('Closer in time, a game from Clever Dates.') && txt.includes(host) && !/localhost|127\.0\.0\.1/.test(txt), `${tag}: footer names the canonical host (${host})`);
+    ok(!/A preview, not yet published|not yet published/.test(txt), `${tag}: share PNG footer does not say the page is a preview`);
     const lay = await p.evaluate(async () => window.__c6cardLayout());
     const footer = (lay.texts || []).filter((t) => /Closer in time, a game from|cleverdates\.com/.test(t.s));
     const gap = Math.min(...footer.map((t) => t.top)) - Math.max(...lay.boxes.map((b) => b.y + b.h));

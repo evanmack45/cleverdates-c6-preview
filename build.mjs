@@ -101,7 +101,7 @@ const html = `<!doctype html>
  </div>
 </section>
 </main>
-<footer class="foot"><p>A preview, not yet published.</p><p><a href="${AFTERNIC}" rel="noopener">This domain is for sale.</a></p></footer>
+<footer class="foot"><p><a href="${AFTERNIC}" rel="noopener">This domain is for sale.</a></p></footer>
 <script type="application/json" id="data">${JSON.stringify({ events: data.events, trios: data.trios.map(({ e, answer, hook }) => ({ e, answer, hook })) }).replace(/</g, '\\u003c')}</script>
 <script src="app.js" defer></script>
 </body>
