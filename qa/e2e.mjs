@@ -11,7 +11,7 @@ async function page(w, opts = {}) {
   const ctx = await b.newContext({ viewport: { width: w, height: mobile ? 844 : 800 }, isMobile: mobile, hasTouch: mobile, deviceScaleFactor: mobile ? 2 : 1, ...opts });
   const p = await ctx.newPage();
   p.errs = []; p.on('pageerror', (e) => p.errs.push(e.message)); p.on('console', (m) => m.type() === 'error' && p.errs.push(m.text()));
-  p.reqs = []; p.on('request', (r) => { if (!r.url().startsWith(base) && !r.url().startsWith('data:') && !r.url().startsWith('blob:')) p.reqs.push(r.url()); });
+  p.reqs = []; p.on('request', (r) => { if (!r.url().startsWith(new URL(base).origin) && !r.url().startsWith('data:') && !r.url().startsWith('blob:')) p.reqs.push(r.url()); });
   return p;
 }
 const shown = (p) => p.$$eval('.ev', (bs) => bs.map((x) => x.dataset.id));
@@ -146,7 +146,7 @@ for (const w of [390, 1280]) {
     await p.context().close();
   }
   const p = await page(390); await p.goto(base);
-  ok(await p.$$eval('img', (is) => is.length === 4 && is.every((i) => /^art\/(hero|ruler|triptych|seal-right|seal-not-quite)-/.test(i.getAttribute('src')))), 'r4: on-page art is hero, ruler, triptych and the result seal');
+  ok(await p.$$eval('img', (is) => is.length === 4 && is.every((i) => /^(\.\.\/)?art\/(hero|ruler|triptych|seal-right|seal-not-quite)-/.test(i.getAttribute('src')))), 'r4: on-page art is hero, ruler, triptych and the result seal');
   await p.context().close();
 }
 

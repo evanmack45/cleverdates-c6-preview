@@ -1,0 +1,31 @@
+/* /scan-preview/ on top of style.css: lockup, pictogram tiles, big Pick two, collapsed method. */
+.lockup { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; text-decoration: none; color: inherit; }
+.lk-mark { width: 34px; height: 34px; flex: none; }
+.lk-word { font: 400 24px/1 var(--serif); letter-spacing: -0.01em; }
+.foot .lockup { margin: 0 auto 6px; }
+
+.scan .ev-n { position: relative; width: 52px; height: 52px; background: var(--cream2); }
+.scan .ev { grid-template-columns: 52px minmax(0, 1fr); min-height: 76px; column-gap: 14px; }
+.ev-ic { width: 30px; height: 30px; fill: none; stroke: var(--ink); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ev-l { position: absolute; right: -4px; bottom: -4px; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: var(--paper); font: 700 12px/1 var(--sans); }
+.scan .ev[aria-pressed=true] .ev-l { background: var(--coral-ink); }
+.scan .done .ev.is-ans .ev-ic { stroke: var(--paper); }
+.scan #lock { min-height: 56px; padding: 0 28px; font-size: 19px; }
+
+.ic { width: 28px; height: 28px; flex: none; fill: none; stroke: var(--coral); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.scan .all summary, .scan .how summary { display: flex; align-items: center; gap: 12px; min-height: 48px; cursor: pointer; }
+.scan .how summary h2 { margin: 0; }
+
+@media (max-width: 899px) {
+  .scan .hero-art img { height: 150px; object-position: 70% 55%; }
+  .scan #lock { width: 100%; }
+  .scan .go { flex-direction: column; align-items: stretch; gap: 6px; }
+  .scan .go .hint { text-align: center; }
+}
+@media (min-width: 900px) {
+  .scan .ev { grid-template-columns: minmax(0, 1fr); min-height: 190px; }
+  .scan .ev-n { width: 64px; height: 64px; }
+  .scan .ev-ic { width: 38px; height: 38px; }
+  .scan .hero-art img { max-height: 300px; }
+}
+.foot a { display: inline-flex; align-items: center; min-height: 48px; }

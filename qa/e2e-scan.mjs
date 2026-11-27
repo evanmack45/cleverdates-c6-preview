@@ -1,0 +1,74 @@
+// E2E for the C6 /scan-preview/. Usage: node e2e-scan.mjs <preview-url>
+import { chromium } from 'playwright';
+import { readFileSync } from 'node:fs';
+const url = process.argv[2];
+const data = JSON.parse(readFileSync(new URL('../trios.json', import.meta.url)));
+const KIND = JSON.parse(readFileSync(new URL('../kinds.json', import.meta.url)));
+const HOME = 'https://closer.cleverdates.com/';
+const b = await chromium.launch({ channel: 'chrome' });
+let fails = 0, n = 0;
+const ok = (c, m) => { n++; console.log((c ? 'PASS  ' : 'FAIL  ') + m); if (!c) fails++; };
+const origin = new URL(url).origin, home = new URL('../', url).href;
+const foldProse = () => { let w = 0; const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); let t;
+  while ((t = walk.nextNode())) { const el = t.parentElement; if (!el || el.closest('button,a,label,input,select,svg,summary,[hidden],script,style,template') || !el.closest('h1,h2,h3,h4,h5,h6,p,figcaption') || !el.checkVisibility()) continue;
+    const r = document.createRange(); r.selectNodeContents(t); const rc = r.getBoundingClientRect(); if (rc.height === 0 || rc.top >= innerHeight) continue;
+    w += (t.textContent.match(/[A-Za-z][A-Za-z'’-]*/g) || []).length; } return w; };
+const smallTaps = () => [...document.querySelectorAll('a,button,input,summary,select')].filter((e) => e.checkVisibility() && !e.disabled).map((e) => { const r = e.getBoundingClientRect(); return { t: (e.textContent || e.tagName).trim().slice(0, 18), w: Math.round(r.width), h: Math.round(r.height) }; }).filter((r) => r.w > 0 && (r.h < 48 || r.w < 48));
+const icons = () => [...document.querySelectorAll('.ev')].map((e) => ({ id: e.dataset.id, use: e.querySelector('.ev-ic use')?.getAttribute('href'), sym: !!document.querySelector(e.querySelector('.ev-ic use')?.getAttribute('href') || '#none') }));
+for (const w of [390, 1280]) {
+  const tag = `(${w})`, mobile = w < 600;
+  const ctx = await b.newContext({ viewport: { width: w, height: mobile ? 844 : 800 }, isMobile: mobile, hasTouch: mobile, permissions: ['clipboard-read', 'clipboard-write'], acceptDownloads: true });
+  const p = await ctx.newPage(); const errs = [], foreign = [];
+  p.on('pageerror', (e) => errs.push(e.message)); p.on('console', (m) => m.type() === 'error' && errs.push(m.text()));
+  p.on('request', (r) => { const u = r.url(); if (!u.startsWith(origin) && !/^(data|blob):/.test(u)) foreign.push(u); });
+  await p.goto(url, { waitUntil: 'networkidle' });
+  const head = await p.evaluate(() => ({ robots: document.querySelector('meta[name=robots]')?.content, canon: document.querySelector('link[rel=canonical]')?.href }));
+  ok(/noindex/.test(head.robots || '') && head.canon === HOME, `noindex (${head.robots}), canonical ${head.canon} ${tag}`);
+  const lk = await p.evaluate(() => { const l = document.querySelector('header .lockup'); const s = l?.querySelector('svg'); const r = s?.getBoundingClientRect(); return { has: !!s, name: l?.textContent.trim() || l?.getAttribute('aria-label'), w: r?.width }; });
+  ok(lk.has && /Clever Dates/.test(lk.name) && lk.w >= 24, `header lockup: mark ${Math.round(lk.w)}px + "${lk.name}" ${tag}`);
+  if (w < 600) { const hr = await p.evaluate(([a, z]) => { const t = document.querySelector(a).getBoundingClientRect().top, bt = document.querySelector(z).getBoundingClientRect().bottom; return (Math.min(bt, innerHeight) - Math.max(t, 0)) / innerHeight; }, ['#picks', '.go']);
+    ok(hr >= 0.4, `hero is the live toy (three moment tiles + Pick two), filling ${hr.toFixed(3)} of the first screen (need 0.40) ${tag}`); }
+  const fp = await p.evaluate(foldProse);
+  ok(fp <= 40, `prose above the fold is ${fp} words (cap 40) ${tag}`);
+  let sm = await p.evaluate(smallTaps);
+  ok(sm.length === 0, `every visible tap target is >= 48x48 ${JSON.stringify(sm.slice(0, 5))} ${tag}`);
+  let ic = await p.evaluate(icons);
+  ok(ic.length === 3 && ic.every((x) => x.sym && x.use === `#k-${KIND[x.id]}`), `each moment tile has its kind pictogram ${ic.map((x) => x.id + ':' + x.use).join(' ')} ${tag}`);
+  const art = await p.evaluate(() => [...document.querySelectorAll('main > section')].map((s) => ({ c: s.className, g: !!s.querySelector('img, svg') })));
+  ok(art.length >= 3 && art.every((x) => x.g), `every section carries an image or graphic ${JSON.stringify(art)} ${tag}`);
+  // play the first round with the right answer
+  const ids = await p.$$eval('.ev', (bs) => bs.map((x) => x.dataset.id));
+  const t = data.trios.find((x) => x.e.join('.') === ids.join('.'));
+  ok(!!t, `round 1 is a real trio (${ids.join('.')}) ${tag}`);
+  for (const id of t.answer) await p.click(`.ev[data-id="${id}"]`);
+  await p.click('#lock'); await p.waitForSelector('#reveal:not([hidden])'); await p.waitForTimeout(400);
+  ok((await p.textContent('#verdict')) === 'Right.' && (await p.textContent('#hook')) === t.hook, `right pair gives "Right." and the hook ${tag}`);
+  sm = await p.evaluate(smallTaps);
+  ok(sm.length === 0, `reveal: every visible tap target is >= 48x48 ${JSON.stringify(sm.slice(0, 5))} ${tag}`);
+  ok((await p.$$('#srcs a')).length >= 1, `reveal lists source links ${tag}`);
+  await p.click('#dare-btn'); await p.waitForTimeout(200);
+  const clip = await p.evaluate(() => navigator.clipboard.readText().catch(() => ''));
+  ok(clip.startsWith(HOME + '#t=') && clip.includes(t.e.join('.')), `Dare a friend copies a home link for this trio (${clip}) ${tag}`);
+  const dl = p.waitForEvent('download', { timeout: 8000 }).catch(() => null); await p.click('#card-btn'); const d = await dl;
+  ok(!!d && /\.png$/.test(d.suggestedFilename()), `Save card image hands over a PNG (${d?.suggestedFilename()}) ${tag}`);
+  await p.click('#next'); await p.waitForTimeout(400);
+  ic = await p.evaluate(icons);
+  const ids2 = ic.map((x) => x.id);
+  ok(ids2.join('.') !== ids.join('.') && ic.every((x) => x.sym && x.use === `#k-${KIND[x.id]}`), `Next round: pictograms follow the new moments ${ids2.join('.')} ${tag}`);
+  // every event in the data has a kind with a symbol
+  const allK = await p.evaluate((ks) => ks.every((k) => !!document.querySelector('#k-' + k)), [...new Set(Object.values(KIND))]);
+  ok(Object.keys(data.events).every((id) => KIND[id]) && allK, `all ${Object.keys(data.events).length} events map to a drawn pictogram ${tag}`);
+  ok(/for sale/i.test(await p.textContent('footer')), `for-sale footer kept ${tag}`);
+  const store = await p.evaluate(() => ({ ls: localStorage.length, ss: sessionStorage.length, ck: document.cookie }));
+  ok(store.ls === 0 && store.ss === 0 && store.ck === '', `nothing stored (${JSON.stringify(store)}) ${tag}`);
+  ok(errs.length === 0 && foreign.length === 0, `no console errors, no third-party requests ${errs.concat(foreign).join(' | ')} ${tag}`);
+  await ctx.close();
+}
+const ctx = await b.newContext(); const p = await ctx.newPage();
+const smx = await (await p.request.get(new URL('sitemap.xml', home).href)).text();
+ok(!/scan-preview/.test(smx), 'sitemap does not list /scan-preview/');
+const ht = await (await p.request.get(home)).text();
+ok(!/scan-preview/.test(ht) && !/noindex/.test(ht) && !/class="ev-ic"/.test(ht), 'home does not link the preview and is still the old indexable layout');
+await b.close();
+console.log(fails ? `FAILED ${fails} of ${n}` : `ALL PASS (${n})`);
+process.exit(fails ? 1 : 0);
