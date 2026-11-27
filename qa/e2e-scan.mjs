@@ -15,6 +15,14 @@ const foldProse = () => { let w = 0; const walk = document.createTreeWalker(docu
     w += (t.textContent.match(/[A-Za-z][A-Za-z'’-]*/g) || []).length; } return w; };
 const smallTaps = () => [...document.querySelectorAll('a,button,input,summary,select')].filter((e) => e.checkVisibility() && !e.disabled).map((e) => { const r = e.getBoundingClientRect(); return { t: (e.textContent || e.tagName).trim().slice(0, 18), w: Math.round(r.width), h: Math.round(r.height) }; }).filter((r) => r.w > 0 && (r.h < 48 || r.w < 48));
 const icons = () => [...document.querySelectorAll('.ev')].map((e) => ({ id: e.dataset.id, use: e.querySelector('.ev-ic use')?.getAttribute('href'), sym: !!document.querySelector(e.querySelector('.ev-ic use')?.getAttribute('href') || '#none') }));
+// QUALITY-BAR v1.3 hero: ONE element's visible box clipped to the viewport / (innerWidth*innerHeight). evaluate only, no scrolling.
+const heroArea = (sel) => { const e = document.querySelector(sel); if (!e) return { sel, w: 0, h: 0, r: 0, sy: scrollY }; const b = e.getBoundingClientRect();
+  const w = Math.max(0, Math.min(b.right, innerWidth) - Math.max(b.left, 0)), h = Math.max(0, Math.min(b.bottom, innerHeight) - Math.max(b.top, 0));
+  return { sel, w: +w.toFixed(2), h: +h.toFixed(2), r: +(w * h / (innerWidth * innerHeight)).toFixed(6), sy: scrollY }; };
+// every element fully inside the viewport and the topmost thing at its centre (not under the sticky bar). evaluate only.
+const inFold = (sel) => [...document.querySelectorAll(sel)].map((e) => { const b = e.getBoundingClientRect(); const cx = b.left + b.width / 2, cy = b.top + b.height / 2;
+  const full = b.width > 0 && b.top >= 0 && b.left >= 0 && b.bottom <= innerHeight && b.right <= innerWidth; const at = full ? document.elementFromPoint(cx, cy) : null;
+  return { t: e.textContent.trim().slice(0, 4), ok: full && !!at && (at === e || e.contains(at)), top: Math.round(b.top), bottom: Math.round(b.bottom), at: at ? (at.id || at.className || at.tagName) : 'out' }; }).filter((x) => !x.ok);
 for (const w of [390, 1280]) {
   const tag = `(${w})`, mobile = w < 600;
   const ctx = await b.newContext({ viewport: { width: w, height: mobile ? 844 : 800 }, isMobile: mobile, hasTouch: mobile, permissions: ['clipboard-read', 'clipboard-write'], acceptDownloads: true });
@@ -26,8 +34,10 @@ for (const w of [390, 1280]) {
   ok(/noindex/.test(head.robots || '') && head.canon === HOME, `noindex (${head.robots}), canonical ${head.canon} ${tag}`);
   const lk = await p.evaluate(() => { const l = document.querySelector('header .lockup'); const s = l?.querySelector('svg'); const r = s?.getBoundingClientRect(); return { has: !!s, name: l?.textContent.trim() || l?.getAttribute('aria-label'), w: r?.width }; });
   ok(lk.has && /Clever Dates/.test(lk.name) && lk.w >= 24, `header lockup: mark ${Math.round(lk.w)}px + "${lk.name}" ${tag}`);
-  if (w < 600) { const hr = await p.evaluate(([a, z]) => { const t = document.querySelector(a).getBoundingClientRect().top, bt = document.querySelector(z).getBoundingClientRect().bottom; return (Math.min(bt, innerHeight) - Math.max(t, 0)) / innerHeight; }, ['#picks', '.go']);
-    ok(hr >= 0.4, `hero is the live toy (three moment tiles + Pick two), filling ${hr.toFixed(3)} of the first screen (need 0.40) ${tag}`); }
+  if (mobile) { const ha = await p.evaluate(heroArea, '#picks');
+    ok(ha.sy === 0 && ha.r >= 0.35, `hero = one element #picks (three moment tiles): visible ${ha.w}x${ha.h}, ${ha.r} of 390x844 (need 0.35), scrollY ${ha.sy} ${tag}`); }
+  const tf = await p.evaluate(inFold, '.ev, #lock');
+  ok(tf.length === 0, `three tiles and Pick two fully in the first screen, not covered ${JSON.stringify(tf)} ${tag}`);
   const fp = await p.evaluate(foldProse);
   ok(fp <= 40, `prose above the fold is ${fp} words (cap 40) ${tag}`);
   let sm = await p.evaluate(smallTaps);

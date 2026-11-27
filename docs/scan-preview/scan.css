@@ -18,6 +18,11 @@
 
 @media (max-width: 899px) {
   .scan .hero-art img { height: 150px; object-position: 70% 55%; }
+  /* Shears cut 1: #picks is the one-element hero at 390 (visible area >= 0.35): bleed 8px each side, taller tiles, bigger pictograms. */
+  .scan .picks { margin-inline: -8px; gap: 12px; }
+  .scan .ev { min-height: 104px; grid-template-columns: 60px minmax(0, 1fr); align-content: center; padding: 12px 18px; font-size: 20px; }
+  .scan .ev-n { width: 60px; height: 60px; }
+  .scan .ev-ic { width: 34px; height: 34px; }
   .scan #lock { width: 100%; }
   .scan .go { flex-direction: column; align-items: stretch; gap: 6px; }
   .scan .go .hint { text-align: center; }
