@@ -1,4 +1,4 @@
-// E2E for the C6 /scan-preview/. Usage: node e2e-scan.mjs <preview-url>
+// E2E for the C6 scan-first home (promoted 11/27; Shears PASS 4df9dfa). Usage: node e2e-scan.mjs <home-url>. qa/make-e2e.py folds this into e2e.mjs.
 import { chromium } from 'playwright';
 import { readFileSync } from 'node:fs';
 const url = process.argv[2];
@@ -8,7 +8,7 @@ const HOME = 'https://closer.cleverdates.com/';
 const b = await chromium.launch({ channel: 'chrome' });
 let fails = 0, n = 0;
 const ok = (c, m) => { n++; console.log((c ? 'PASS  ' : 'FAIL  ') + m); if (!c) fails++; };
-const origin = new URL(url).origin, home = new URL('../', url).href;
+const origin = new URL(url).origin, home = new URL(url).origin + '/';
 const foldProse = () => { let w = 0; const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); let t;
   while ((t = walk.nextNode())) { const el = t.parentElement; if (!el || el.closest('button,a,label,input,select,svg,summary,[hidden],script,style,template') || !el.closest('h1,h2,h3,h4,h5,h6,p,figcaption') || !el.checkVisibility()) continue;
     const r = document.createRange(); r.selectNodeContents(t); const rc = r.getBoundingClientRect(); if (rc.height === 0 || rc.top >= innerHeight) continue;
@@ -31,7 +31,7 @@ for (const w of [390, 1280]) {
   p.on('request', (r) => { const u = r.url(); if (!u.startsWith(origin) && !/^(data|blob):/.test(u)) foreign.push(u); });
   await p.goto(url, { waitUntil: 'networkidle' });
   const head = await p.evaluate(() => ({ robots: document.querySelector('meta[name=robots]')?.content, canon: document.querySelector('link[rel=canonical]')?.href }));
-  ok(/noindex/.test(head.robots || '') && head.canon === HOME, `noindex (${head.robots}), canonical ${head.canon} ${tag}`);
+  ok(!head.robots && head.canon === HOME, `indexable (no robots meta), canonical is the home ${head.canon} ${tag}`);
   const lk = await p.evaluate(() => { const l = document.querySelector('header .lockup'); const s = l?.querySelector('svg'); const r = s?.getBoundingClientRect(); return { has: !!s, name: l?.textContent.trim() || l?.getAttribute('aria-label'), w: r?.width }; });
   ok(lk.has && /Clever Dates/.test(lk.name) && lk.w >= 24, `header lockup: mark ${Math.round(lk.w)}px + "${lk.name}" ${tag}`);
   if (mobile) { const ha = await p.evaluate(heroArea, '#picks');
@@ -76,9 +76,15 @@ for (const w of [390, 1280]) {
 }
 const ctx = await b.newContext(); const p = await ctx.newPage();
 const smx = await (await p.request.get(new URL('sitemap.xml', home).href)).text();
-ok(!/scan-preview/.test(smx), 'sitemap does not list /scan-preview/');
+ok(!/scan-preview/.test(smx) && /<loc>[^<]*\/<\/loc><lastmod>2026-\d\d-\d\d<\/lastmod>/.test(smx), 'sitemap lists the home with a lastmod and not /scan-preview/');
 const ht = await (await p.request.get(home)).text();
-ok(!/scan-preview/.test(ht) && !/noindex/.test(ht) && !/class="ev-ic"/.test(ht), 'home does not link the preview and is still the old indexable layout');
+ok(!/scan-preview/.test(ht), 'the home does not link /scan-preview/');
+const rd = await (await p.request.get(new URL('scan-preview/', home).href)).text();
+ok(/name="robots" content="noindex"/.test(rd) && rd.includes(`rel="canonical" href="${HOME}"`) && rd.includes("location.replace('../' + location.search + location.hash)") && rd.includes('http-equiv="refresh"'), '/scan-preview/ is a noindex redirect page that keeps the query and hash');
+const tr = data.trios[12], key = tr.e.join('.');
+await p.goto(new URL(`scan-preview/#t=${key}`, home).href, { waitUntil: 'networkidle' }); await p.waitForSelector('.ev'); await p.waitForTimeout(200);
+const shown = await p.$$eval('.ev', (bs) => bs.map((x) => x.dataset.id).join('.'));
+ok(new URL(p.url()).pathname === '/' && new URL(p.url()).hash === `#t=${key}` && shown === key, `old /scan-preview/#t=${key} lands on the home with the same trio (${new URL(p.url()).pathname}${new URL(p.url()).hash})`);
 await b.close();
 console.log(fails ? `FAILED ${fails} of ${n}` : `ALL PASS (${n})`);
 process.exit(fails ? 1 : 0);

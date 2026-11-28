@@ -108,8 +108,7 @@ const html = `<!doctype html>
 </html>
 `;
 
-// ---- /scan-preview/: scan-first home candidate (Dash 11/27). noindex, canonical to the home, not in the sitemap, nothing links to it. ----
-// Same ids as the home, so app.js runs unchanged (a copy that shares the home URL and loads ../art/). scan.js keeps each tile's pictogram in step with the round.
+// ---- The home is the scan-first layout (Shears PASS 12:41 PM CT, promoted 11/27 per Dash). Same ids as before, so app.js runs unchanged; scan.js keeps each tile's pictogram in step with the round. /scan-preview/ is a hash-preserving redirect to /. ----
 const KIND = JSON.parse(readFileSync(join(here, 'kinds.json'), 'utf8'));
 for (const id of Object.keys(data.events)) if (!KIND[id]) throw new Error(`no pictogram kind for ${id}`);
 // Pictograms drawn here (24x24 line icons, not logos). One per kind of moment; none shows a real person.
@@ -129,12 +128,10 @@ const ICONS = {
 };
 const sprite = `<svg class="sprite" aria-hidden="true" style="display:none"><defs>${Object.entries(ICONS).map(([k, d]) => `<symbol id="k-${k}" viewBox="0 0 24 24">${d}</symbol>`).join('')}</defs></svg>`;
 const LOCKUP = (href) => `<a class="lockup" href="${href}" aria-label="Clever Dates home"><svg class="lk-mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="5" width="36" height="33" rx="8" fill="#f4eedf"/><rect x="2" y="5" width="36" height="10" rx="8" fill="#ff7a59"/><rect x="2" y="11" width="36" height="4" fill="#ff7a59"/><rect x="11" y="2" width="4" height="8" rx="2" fill="#0f3b2c"/><rect x="25" y="2" width="4" height="8" rx="2" fill="#0f3b2c"/>${[0, 1, 2].map((r) => [0, 1, 2, 3].map((c) => `<rect x="${7 + c * 7.2}" y="${19 + r * 6}" width="4.6" height="4" rx="1" fill="${r === 2 && c === 2 ? '#ff7a59' : '#0f3b2c'}"${r === 2 && c === 2 ? '' : ' opacity=".8"'}/>`).join('')).join('')}</svg><span class="lk-word">Clever Dates</span></a>`;
-const rel = (h) => h.replace(/(["\s,])art\//g, '$1../art/').replace(/(["(])fonts\//g, '$1../fonts/').replace('href="style.css"', 'href="../style.css"');
 const swap = (h, a, b) => { if (h.split(a).length !== 2) throw new Error(`scan-preview: anchor not found once: ${a.slice(0, 60)}`); return h.replace(a, () => b); };
-let scanHTML = rel(html);
-scanHTML = swap(scanHTML, '<link rel="canonical"', '<meta name="robots" content="noindex">\n<link rel="canonical"');
-scanHTML = swap(scanHTML, '<link rel="stylesheet" href="../style.css">', '<link rel="stylesheet" href="../style.css">\n<link rel="stylesheet" href="scan.css">');
-scanHTML = swap(scanHTML, '<body>\n<header class="bar"><a class="mark" href="./">Clever Dates</a>', `<body>\n${sprite}\n<header class="bar">${LOCKUP('../')}`);
+let scanHTML = html;
+scanHTML = swap(scanHTML, '<link rel="stylesheet" href="style.css">', '<link rel="stylesheet" href="style.css">\n<link rel="stylesheet" href="scan.css">');
+scanHTML = swap(scanHTML, '<body>\n<header class="bar"><a class="mark" href="./">Clever Dates</a>', `<body>\n${sprite}\n<header class="bar">${LOCKUP('./')}`);
 scanHTML = swap(scanHTML, '<main>', '<main class="scan">');
 scanHTML = swap(scanHTML, '\n   <p class="dek">Pick the two moments nearest each other.</p>', '');
 first.e.forEach((id, i) => { scanHTML = swap(scanHTML, `<span class="ev-n">${'ABC'[i]}</span>`, `<span class="ev-n"><svg class="ev-ic" aria-hidden="true"><use href="#k-${KIND[id]}"/></svg><span class="ev-l">${'ABC'[i]}</span></span>`); });
@@ -142,28 +139,37 @@ scanHTML = swap(scanHTML, '<details><summary id="all-h">', '<details><summary id
 { const a = scanHTML.indexOf(' <div class="how-txt">'), b = scanHTML.indexOf(' </div>\n</section>', a);
   const inner = scanHTML.slice(a, b).replace('<h2 id="how-h">How the answers are checked</h2>', '<details><summary><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><h2 id="how-h">How the answers are checked</h2></summary>') + ' </details>\n';
   scanHTML = scanHTML.slice(0, a) + inner + scanHTML.slice(b); }
-scanHTML = swap(scanHTML, '<footer class="foot"><p>', `<footer class="foot">${LOCKUP('../')}<p>`);
+scanHTML = swap(scanHTML, '<footer class="foot"><p>', `<footer class="foot">${LOCKUP('./')}<p>`);
 scanHTML = swap(scanHTML, '<script type="application/json" id="data">', `<script type="application/json" id="kinds">${JSON.stringify(KIND)}</script>\n<script type="application/json" id="data">`);
 scanHTML = swap(scanHTML, '<script src="app.js" defer></script>', '<script src="app.js" defer></script>\n<script src="scan.js" defer></script>');
 if (/scan-preview/.test(html)) throw new Error('home must not link the preview');
-const scanApp = readFileSync(join(here, 'src/app.js'), 'utf8')
-  .replace(/const publicPage = \(\) => .*\n/, () => 'const publicPage = () => CANONICAL; // preview copy: dares and cards always point at the home\n')
-  .replace(/(['`])art\//g, '$1../art/');
-if (!scanApp.includes('const publicPage = () => CANONICAL;') || /['`]art\//.test(scanApp)) throw new Error('scan-preview app.js patch failed');
-
 rmSync(out, { recursive: true, force: true });
 mkdirSync(join(out, 'fonts'), { recursive: true });
-writeFileSync(join(out, 'index.html'), html);
-for (const f of ['app.js', 'style.css', 'og.jpg']) copyFileSync(join(here, 'src', f), join(out, f));
+writeFileSync(join(out, 'index.html'), scanHTML);
+for (const f of ['app.js', 'scan.js', 'scan.css', 'style.css', 'og.jpg']) copyFileSync(join(here, 'src', f), join(out, f));
 mkdirSync(join(out, 'art'), { recursive: true });
 for (const f of readdirSync(join(here, 'src/art'))) copyFileSync(join(here, 'src/art', f), join(out, 'art', f));
 for (const f of readdirSync(join(here, 'src/fonts'))) copyFileSync(join(here, 'src/fonts', f), join(out, 'fonts', f));
+// /scan-preview/ (the old candidate URL): noindex redirect to the home that keeps the query and the hash, so #t= dare links still land.
 mkdirSync(join(out, 'scan-preview'), { recursive: true });
-writeFileSync(join(out, 'scan-preview/index.html'), scanHTML);
-writeFileSync(join(out, 'scan-preview/app.js'), scanApp);
-for (const f of ['scan.js', 'scan.css']) copyFileSync(join(here, 'src', f), join(out, 'scan-preview', f));
+writeFileSync(join(out, 'scan-preview/index.html'), `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="${SITE}">
+<title>Moved: Closer in Time</title>
+<script>location.replace('../' + location.search + location.hash)</script>
+<meta http-equiv="refresh" content="0; url=../">
+</head>
+<body>
+<p>This page moved to <a href="../">closer.cleverdates.com</a>.</p>
+</body>
+</html>
+`);
 writeFileSync(join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE}sitemap.xml\n`);
-writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${SITE}</loc></url></urlset>\n`);
+writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${SITE}</loc><lastmod>2026-11-27</lastmod></url></urlset>\n`);
 writeFileSync(join(out, 'CNAME'), 'closer.cleverdates.com\n');
 writeFileSync(join(out, '.nojekyll'), '');
 console.log('built', data.trios.length, 'trios');

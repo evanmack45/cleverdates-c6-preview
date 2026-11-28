@@ -101,3 +101,11 @@ Commit df1dbb7 (pushed, live on closer.cleverdates.com). Deleted the leftover pr
 - golive-verify --gate: PASS. Lighthouse 100/100/100/100, CLS 0, impeccable 0.
 - Live `grep -c "not yet published"`: 0. Shots: /workspace/gizmo/shots/c6-after-preview-fold-{390,1280}.png and c6-after-preview-footer-390.png.
 - No DNS changes. C2 not touched. Nobody messaged. Details: /workspace/gizmo/slop-fix.md.
+
+## 2026-11-27 12:10 PM CT: /scan-preview/ live (Gizmo, Dash scan-first order)
+- 8faf64f: https://closer.cleverdates.com/scan-preview/ (noindex, canonical /, not in sitemap, unlinked). Home untouched.
+- Gates: e2e-scan 37/0, home e2e ALL PASS, golive-verify c6 PASS (198/0), vqa 390/1440/1280 PASS, slopcheck fold prose 9/9, total 50 words. Details: /workspace/gizmo/c2-scan.md.
+
+## 2026-11-27 12:35 PM CT: Shears CUT fixed on /scan-preview/ (4df9dfa)
+- #picks is the one-element hero at 390: 366x336 = 0.374 (was 350x244 = 0.259). Tiles + Pick two in both folds.
+- e2e-scan 39/0 live (failed 1 of 39 before the fix), home e2e ALL PASS, golive c6 PASS, vqa 390/1440/1280 PASS, slopcheck 38/38. Home untouched.
